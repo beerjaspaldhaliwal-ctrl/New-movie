@@ -1,0 +1,12 @@
+Save the instruments for this category here (see Documentation/BUILD GUIDE):
+
+  Felt Piano.nki
+  Electric Piano.nki
+  Drawbar Organ.nki
+  Nylon Guitar.nki
+  Electric Guitar.nki
+  Finger Bass.nki
+  Studio Drum Kit.nki
+  Synthwave Kit.nki
+  Trap Kit.nki
+  Cinematic Mallets.nki

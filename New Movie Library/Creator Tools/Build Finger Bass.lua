@@ -12,7 +12,7 @@
 --      (Ctrl/Cmd+R).
 --   4. Press Push (Ctrl/Cmd+Alt+Up) so the changes go to Kontakt.
 --   5. In Kontakt: File > Save as... and save it as
---        New Movie Library/Instruments/02 Orchestral and Band/Finger Bass.nki
+--        New Movie Library/Instruments/03 Band and Keys/Finger Bass.nki
 --      ("Patch only", and keep "absolute sample paths" OFF).
 --
 -- The script only reads files inside the "New Movie Library" folder, relative to the
@@ -85,39 +85,57 @@ end
 
 do  -- group V1RR1
   local g = newGroup("V1RR1")
-  addZone(g, "Samples/02 Orchestral and Band/Finger Bass/V1RR1/Bass_V1RR1_028_023_031_001_127.wav", 28, 23, 31, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Finger Bass/V1RR1/Bass_V1RR1_034_032_037_001_127.wav", 34, 32, 37, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Finger Bass/V1RR1/Bass_V1RR1_040_038_043_001_127.wav", 40, 38, 43, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Finger Bass/V1RR1/Bass_V1RR1_046_044_049_001_127.wav", 46, 44, 49, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Finger Bass/V1RR1/Bass_V1RR1_052_050_055_001_127.wav", 52, 50, 55, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Finger Bass/V1RR1/Bass_V1RR1_058_056_064_001_127.wav", 58, 56, 64, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V1RR1/Bass_V1RR1_028_023_031_001_127.wav", 28, 23, 31, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V1RR1/Bass_V1RR1_034_032_037_001_127.wav", 34, 32, 37, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V1RR1/Bass_V1RR1_040_038_043_001_127.wav", 40, 38, 43, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V1RR1/Bass_V1RR1_046_044_049_001_127.wav", 46, 44, 49, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V1RR1/Bass_V1RR1_052_050_055_001_127.wav", 52, 50, 55, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V1RR1/Bass_V1RR1_058_056_064_001_127.wav", 58, 56, 64, 1, 127)
 end
 do  -- group V1RR2
   local g = newGroup("V1RR2")
-  addZone(g, "Samples/02 Orchestral and Band/Finger Bass/V1RR2/Bass_V1RR2_028_023_031_001_127.wav", 28, 23, 31, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Finger Bass/V1RR2/Bass_V1RR2_034_032_037_001_127.wav", 34, 32, 37, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Finger Bass/V1RR2/Bass_V1RR2_040_038_043_001_127.wav", 40, 38, 43, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Finger Bass/V1RR2/Bass_V1RR2_046_044_049_001_127.wav", 46, 44, 49, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Finger Bass/V1RR2/Bass_V1RR2_052_050_055_001_127.wav", 52, 50, 55, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Finger Bass/V1RR2/Bass_V1RR2_058_056_064_001_127.wav", 58, 56, 64, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V1RR2/Bass_V1RR2_028_023_031_001_127.wav", 28, 23, 31, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V1RR2/Bass_V1RR2_034_032_037_001_127.wav", 34, 32, 37, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V1RR2/Bass_V1RR2_040_038_043_001_127.wav", 40, 38, 43, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V1RR2/Bass_V1RR2_046_044_049_001_127.wav", 46, 44, 49, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V1RR2/Bass_V1RR2_052_050_055_001_127.wav", 52, 50, 55, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V1RR2/Bass_V1RR2_058_056_064_001_127.wav", 58, 56, 64, 1, 127)
 end
 do  -- group V2RR1
   local g = newGroup("V2RR1")
-  addZone(g, "Samples/02 Orchestral and Band/Finger Bass/V2RR1/Bass_V2RR1_028_023_031_001_127.wav", 28, 23, 31, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Finger Bass/V2RR1/Bass_V2RR1_034_032_037_001_127.wav", 34, 32, 37, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Finger Bass/V2RR1/Bass_V2RR1_040_038_043_001_127.wav", 40, 38, 43, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Finger Bass/V2RR1/Bass_V2RR1_046_044_049_001_127.wav", 46, 44, 49, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Finger Bass/V2RR1/Bass_V2RR1_052_050_055_001_127.wav", 52, 50, 55, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Finger Bass/V2RR1/Bass_V2RR1_058_056_064_001_127.wav", 58, 56, 64, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V2RR1/Bass_V2RR1_028_023_031_001_127.wav", 28, 23, 31, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V2RR1/Bass_V2RR1_034_032_037_001_127.wav", 34, 32, 37, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V2RR1/Bass_V2RR1_040_038_043_001_127.wav", 40, 38, 43, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V2RR1/Bass_V2RR1_046_044_049_001_127.wav", 46, 44, 49, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V2RR1/Bass_V2RR1_052_050_055_001_127.wav", 52, 50, 55, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V2RR1/Bass_V2RR1_058_056_064_001_127.wav", 58, 56, 64, 1, 127)
 end
 do  -- group V2RR2
   local g = newGroup("V2RR2")
-  addZone(g, "Samples/02 Orchestral and Band/Finger Bass/V2RR2/Bass_V2RR2_028_023_031_001_127.wav", 28, 23, 31, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Finger Bass/V2RR2/Bass_V2RR2_034_032_037_001_127.wav", 34, 32, 37, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Finger Bass/V2RR2/Bass_V2RR2_040_038_043_001_127.wav", 40, 38, 43, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Finger Bass/V2RR2/Bass_V2RR2_046_044_049_001_127.wav", 46, 44, 49, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Finger Bass/V2RR2/Bass_V2RR2_052_050_055_001_127.wav", 52, 50, 55, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Finger Bass/V2RR2/Bass_V2RR2_058_056_064_001_127.wav", 58, 56, 64, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V2RR2/Bass_V2RR2_028_023_031_001_127.wav", 28, 23, 31, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V2RR2/Bass_V2RR2_034_032_037_001_127.wav", 34, 32, 37, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V2RR2/Bass_V2RR2_040_038_043_001_127.wav", 40, 38, 43, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V2RR2/Bass_V2RR2_046_044_049_001_127.wav", 46, 44, 49, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V2RR2/Bass_V2RR2_052_050_055_001_127.wav", 52, 50, 55, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V2RR2/Bass_V2RR2_058_056_064_001_127.wav", 58, 56, 64, 1, 127)
+end
+do  -- group V3RR1
+  local g = newGroup("V3RR1")
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V3RR1/Bass_V3RR1_028_023_031_001_127.wav", 28, 23, 31, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V3RR1/Bass_V3RR1_034_032_037_001_127.wav", 34, 32, 37, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V3RR1/Bass_V3RR1_040_038_043_001_127.wav", 40, 38, 43, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V3RR1/Bass_V3RR1_046_044_049_001_127.wav", 46, 44, 49, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V3RR1/Bass_V3RR1_052_050_055_001_127.wav", 52, 50, 55, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V3RR1/Bass_V3RR1_058_056_064_001_127.wav", 58, 56, 64, 1, 127)
+end
+do  -- group V3RR2
+  local g = newGroup("V3RR2")
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V3RR2/Bass_V3RR2_028_023_031_001_127.wav", 28, 23, 31, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V3RR2/Bass_V3RR2_034_032_037_001_127.wav", 34, 32, 37, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V3RR2/Bass_V3RR2_040_038_043_001_127.wav", 40, 38, 43, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V3RR2/Bass_V3RR2_046_044_049_001_127.wav", 46, 44, 49, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V3RR2/Bass_V3RR2_052_050_055_001_127.wav", 52, 50, 55, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Finger Bass/V3RR2/Bass_V3RR2_058_056_064_001_127.wav", 58, 56, 64, 1, 127)
 end
 
 local KSP_SOURCE = [==[
@@ -133,13 +151,15 @@ on init
   set_ui_height_px(330)
   set_listener($NI_SIGNAL_TIMER_BEAT, 24)
   { ---- groups (looked up by name, so the order in the instrument does not matter) ---- }
-  declare const $NUM_GRP := 4
-  declare %grp[4]
-  declare !grp_name[4]
+  declare const $NUM_GRP := 6
+  declare %grp[6]
+  declare !grp_name[6]
   !grp_name[0] := "V1RR1"
   !grp_name[1] := "V1RR2"
   !grp_name[2] := "V2RR1"
   !grp_name[3] := "V2RR2"
+  !grp_name[4] := "V3RR1"
+  !grp_name[5] := "V3RR2"
   declare $gi
   $gi := 0
   while ($gi < $NUM_GRP)
@@ -290,26 +310,26 @@ on init
   declare polyphonic $p_i
   declare polyphonic $p_cnt
   declare polyphonic $p_vel
-  %pl_n[0] := 2
+  %pl_n[0] := 3
   %p_loop[0] := 0
-  %pl_split[0] := 90
+  %pl_split[0] := 60
   %pl_rrn[0] := 2
   %pl_g[0] := 0
   %pl_g[1] := 1
   %pl_g[2] := 0
   %pl_g[3] := 0
-  %pl_split[1] := 127
+  %pl_split[1] := 100
   %pl_rrn[1] := 2
   %pl_g[4] := 2
   %pl_g[5] := 3
   %pl_g[6] := 2
   %pl_g[7] := 2
   %pl_split[2] := 127
-  %pl_rrn[2] := 1
-  %pl_g[8] := 0
-  %pl_g[9] := 0
-  %pl_g[10] := 0
-  %pl_g[11] := 0
+  %pl_rrn[2] := 2
+  %pl_g[8] := 4
+  %pl_g[9] := 5
+  %pl_g[10] := 4
+  %pl_g[11] := 4
   %pl_split[3] := 127
   %pl_rrn[3] := 1
   %pl_g[12] := 0
@@ -320,13 +340,13 @@ on init
   declare $vc_db
   declare $vc_curved
   declare ~vc_r
-  declare const $NUM_UI := 41
-  declare %ui_id[41]
-  declare %ui_page[41]
+  declare const $NUM_UI := 42
+  declare %ui_id[42]
+  declare %ui_page[42]
   declare ui_label $info (1, 1)
-  set_text($info, "Finger Bass  |  2 velocity layers x 2 round robins")
-  set_control_par(get_ui_id($info), $CONTROL_PAR_WIDTH, 500)
-  move_control_px($info, 290, 6)
+  set_text($info, "Finger Bass  |  3 velocity layers x 2 round robins")
+  set_control_par(get_ui_id($info), $CONTROL_PAR_WIDTH, 360)
+  move_control_px($info, 284, 6)
   %ui_id[0] := get_ui_id($info)
   %ui_page[0] := -1
   declare ui_label $lbl_scale (1, 1)
@@ -738,6 +758,19 @@ on init
   make_persistent($repeat_damp)
   %ui_id[40] := get_ui_id($repeat_damp)
   %ui_page[40] := 0
+  declare ui_menu $preset
+  add_menu_item($preset, "Presets...", 0)
+  add_menu_item($preset, "Default", 1)
+  add_menu_item($preset, "Studio", 2)
+  add_menu_item($preset, "Ambient Wash", 3)
+  add_menu_item($preset, "Strummed Chords", 4)
+  set_control_par(get_ui_id($preset), $CONTROL_PAR_WIDTH, 140)
+  $preset := 0
+  set_control_help($preset, "Factory presets for this instrument. 'Default' resets every control.")
+  move_control_px($preset, 650, 6)
+  make_persistent($preset)
+  %ui_id[41] := get_ui_id($preset)
+  %ui_page[41] := -1
 end on
 
 function show_page
@@ -1278,6 +1311,267 @@ function upd_repeat_damp
   $retrig_us := $repeat_damp * 1000
 end function
 
+function upd_preset
+  { no side effects }
+end function
+
+function apply_preset
+  select ($preset)
+    case 1
+      $tone := 1000
+      call upd_tone
+      $drive := 150
+      call upd_drive
+      $width := 0
+      call upd_width
+      $chorus := 0
+      call upd_chorus
+      $dly_mix := 0
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 0
+      call upd_rev_mix
+      $rev_size := 600
+      call upd_rev_size
+      $rev_decay := 550
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 1
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 0
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 0
+      call upd_chord
+      $strum := 0
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 0
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 60
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $attack := 0
+      call upd_attack
+      $release := 120
+      call upd_release
+      $vrange := 20
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $repeat_damp := 60
+      call upd_repeat_damp
+    case 2
+      $tone := 1000
+      call upd_tone
+      $drive := 150
+      call upd_drive
+      $width := 450
+      call upd_width
+      $chorus := 0
+      call upd_chorus
+      $dly_mix := 0
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 120
+      call upd_rev_mix
+      $rev_size := 600
+      call upd_rev_size
+      $rev_decay := 550
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 1
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 0
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 0
+      call upd_chord
+      $strum := 0
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 0
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 60
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $attack := 0
+      call upd_attack
+      $release := 120
+      call upd_release
+      $vrange := 20
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $repeat_damp := 60
+      call upd_repeat_damp
+    case 3
+      $tone := 1000
+      call upd_tone
+      $drive := 150
+      call upd_drive
+      $width := 0
+      call upd_width
+      $chorus := 0
+      call upd_chorus
+      $dly_mix := 280
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 520
+      call upd_rev_mix
+      $rev_size := 850
+      call upd_rev_size
+      $rev_decay := 550
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 1
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 0
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 0
+      call upd_chord
+      $strum := 0
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 0
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 60
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $attack := 0
+      call upd_attack
+      $release := 1500
+      call upd_release
+      $vrange := 20
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $repeat_damp := 60
+      call upd_repeat_damp
+    case 4
+      $tone := 1000
+      call upd_tone
+      $drive := 150
+      call upd_drive
+      $width := 0
+      call upd_width
+      $chorus := 0
+      call upd_chorus
+      $dly_mix := 0
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 0
+      call upd_rev_mix
+      $rev_size := 600
+      call upd_rev_size
+      $rev_decay := 550
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 1
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 1
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 15
+      call upd_chord
+      $strum := 35
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 0
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 60
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $attack := 0
+      call upd_attack
+      $release := 120
+      call upd_release
+      $vrange := 20
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $repeat_damp := 60
+      call upd_repeat_damp
+  end select
+end function
+
 on persistence_changed
   call upd_tab_play
   call upd_tab_sound
@@ -1313,6 +1607,7 @@ on persistence_changed
   call upd_vrange
   call upd_vcurve
   call upd_repeat_damp
+  call upd_preset
   call show_page
   call color_keys
 end on
@@ -1568,6 +1863,11 @@ end on
 
 on ui_control ($repeat_damp)
   call upd_repeat_damp
+end on
+
+on ui_control ($preset)
+  call upd_preset
+  call apply_preset
 end on
 ]==]
 

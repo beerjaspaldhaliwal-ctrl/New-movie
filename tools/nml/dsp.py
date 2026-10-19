@@ -594,12 +594,19 @@ def bake_loop(x, ls, le, xf):
     return y
 
 
-def make_looped(x, loop_start_s, loop_len_s, xfade_s=0.35, sr=SR):
-    """Given a rendered sustain (long enough), return (audio, (ls, le))."""
+def loop_points(x, loop_start_s, loop_len_s, xfade_s=0.35, sr=SR):
+    """Choose loop points (ls, le, xf) for a rendered sustain."""
     ls = int(loop_start_s * sr)
     le_t = ls + int(loop_len_s * sr)
     le, _ = best_loop_end(x, ls, le_t, int(0.02 * sr))
     xf = min(int(xfade_s * sr), ls, le - ls)
+    return ls, le, xf
+
+
+def make_looped(x, loop_start_s, loop_len_s, xfade_s=0.35, sr=SR, points=None):
+    """Given a rendered sustain (long enough), return (audio, (ls, le)).
+    Pass `points` (from loop_points) to reuse loop points of a sibling sample."""
+    ls, le, xf = points or loop_points(x, loop_start_s, loop_len_s, xfade_s, sr)
     y = bake_loop(x, ls, le, xf)
     return y, (ls, le)
 

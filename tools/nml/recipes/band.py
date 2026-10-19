@@ -44,15 +44,16 @@ def guitar(z):
     rng = np.random.default_rng(z.seed)
     f0 = float(mtof(z.root))
     ks = key_scale(z.root, 40, 76)
-    hard = z.group.startswith("V2")
+    lvl = (int(z.group[1]) - 1) / 2.0  # V1..V3 -> 0..1
+    hard = lvl > 0.6
     n = secs(lerp(3.0, 1.8, ks))
     per = SR / f0
-    exc = dsp.pluck_excitation(per, rng, bright=0.8 if hard else 0.35, position=rng.uniform(0.13, 0.2))
-    x = dsp.ks_string(n, f0, exc, t60=lerp(4.5, 1.6, ks), bright=0.17 if hard else 0.33, stiff=0.06)
+    exc = dsp.pluck_excitation(per, rng, bright=lerp(0.3, 0.85, lvl), position=rng.uniform(0.13, 0.2))
+    x = dsp.ks_string(n, f0, exc, t60=lerp(4.5, 1.6, ks), bright=lerp(0.36, 0.15, lvl), stiff=0.06)
     body = dsp.body_ir(rng, GUITAR_BODY)
     x = signal.fftconvolve(x, body)[:n]
     t = dsp.tvec(n)
-    finger = dsp.bp(rng.standard_normal(n), 3000, 1.0) * np.exp(-t / 0.006) * (0.2 if hard else 0.08)
+    finger = dsp.bp(rng.standard_normal(n), 3000, 1.0) * np.exp(-t / 0.006) * lerp(0.06, 0.22, lvl)
     x = x / (dsp.peak(x) + 1e-9) + finger
     x = dsp.hp(x, 70)
     x = dsp.eq(x, "highshelf", 5000, -3.0)
@@ -64,18 +65,19 @@ def finger_bass(z):
     rng = np.random.default_rng(z.seed)
     f0 = float(mtof(z.root))
     ks = key_scale(z.root, 28, 58)
-    hard = z.group.startswith("V2")
+    lvl = (int(z.group[1]) - 1) / 2.0  # V1..V3 -> 0..1
+    hard = lvl > 0.6
     n = secs(lerp(2.3, 1.6, ks))
     per = SR / f0
-    exc = dsp.pluck_excitation(per, rng, bright=0.6 if hard else 0.3, position=0.25, length_periods=1.2)
-    x = dsp.ks_string(n, f0, exc, t60=lerp(3.8, 2.4, ks), bright=0.16 if hard else 0.28, stiff=0.08)
+    exc = dsp.pluck_excitation(per, rng, bright=lerp(0.25, 0.65, lvl), position=0.25, length_periods=1.2)
+    x = dsp.ks_string(n, f0, exc, t60=lerp(3.8, 2.4, ks), bright=lerp(0.3, 0.15, lvl), stiff=0.08)
     pick = int(per * 0.12)
     x = x - 0.6 * np.concatenate([np.zeros(pick), x[:-pick]])  # pickup position comb
     t = dsp.tvec(n)
-    thump = dsp.butter(rng.standard_normal(n), 250, "low", 2) * np.exp(-t / 0.015) * (0.6 if hard else 0.3)
+    thump = dsp.butter(rng.standard_normal(n), 250, "low", 2) * np.exp(-t / 0.015) * lerp(0.25, 0.65, lvl)
     x = x / (dsp.peak(x) + 1e-9) + thump
     x = dsp.saturate(x * 1.2, 1.2)
-    x = dsp.butter(x, 4500 if hard else 3000, "low", 2)
+    x = dsp.butter(x, lerp(2800, 4800, lvl), "low", 2)
     x = dsp.hp(x, 30)
     return dsp.fade_edges(x, 0.0005, 0.2), None
 
@@ -103,7 +105,7 @@ def _cymbal(n, rng, lo=300, hi=14000, count=140, t60=(1.2, 3.2), tilt=0.3):
 
 def drum_piece(piece, n, rng, hard, var):
     t = dsp.tvec(n)
-    v = 1.0 if hard else 0.55
+    v = 1.0 if hard is True else (0.55 if hard is False else float(hard))
     noise = rng.standard_normal(n)
     if piece == "kick":
         f = 46 * var + 120 * v * np.exp(-t / 0.032)
@@ -176,7 +178,7 @@ def drum_piece(piece, n, rng, hard, var):
 def drums(z):
     rng = np.random.default_rng(z.seed)
     piece = z.p["piece"]
-    hard = z.group.startswith("V2")
+    hard = {1: 0.4, 2: 0.7, 3: 1.0}[int(z.group[1])]
     var = z.p.get("var", 1.0) * (1 + rng.normal(0, 0.008))
     n = secs(z.p["len"])
     x = drum_piece(piece, n, rng, hard, var)

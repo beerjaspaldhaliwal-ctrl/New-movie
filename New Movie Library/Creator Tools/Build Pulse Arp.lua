@@ -111,6 +111,20 @@ do  -- group RR2
   addZone(g, "Samples/01 Synths and Pads/Pluck Synth/RR2/Pluck_RR2_087_085_090_001_127.wav", 87, 85, 90, 1, 127)
   addZone(g, "Samples/01 Synths and Pads/Pluck Synth/RR2/Pluck_RR2_093_091_108_001_127.wav", 93, 91, 108, 1, 127)
 end
+do  -- group RR3
+  local g = newGroup("RR3")
+  addZone(g, "Samples/01 Synths and Pads/Pluck Synth/RR3/Pluck_RR3_033_024_036_001_127.wav", 33, 24, 36, 1, 127)
+  addZone(g, "Samples/01 Synths and Pads/Pluck Synth/RR3/Pluck_RR3_039_037_042_001_127.wav", 39, 37, 42, 1, 127)
+  addZone(g, "Samples/01 Synths and Pads/Pluck Synth/RR3/Pluck_RR3_045_043_048_001_127.wav", 45, 43, 48, 1, 127)
+  addZone(g, "Samples/01 Synths and Pads/Pluck Synth/RR3/Pluck_RR3_051_049_054_001_127.wav", 51, 49, 54, 1, 127)
+  addZone(g, "Samples/01 Synths and Pads/Pluck Synth/RR3/Pluck_RR3_057_055_060_001_127.wav", 57, 55, 60, 1, 127)
+  addZone(g, "Samples/01 Synths and Pads/Pluck Synth/RR3/Pluck_RR3_063_061_066_001_127.wav", 63, 61, 66, 1, 127)
+  addZone(g, "Samples/01 Synths and Pads/Pluck Synth/RR3/Pluck_RR3_069_067_072_001_127.wav", 69, 67, 72, 1, 127)
+  addZone(g, "Samples/01 Synths and Pads/Pluck Synth/RR3/Pluck_RR3_075_073_078_001_127.wav", 75, 73, 78, 1, 127)
+  addZone(g, "Samples/01 Synths and Pads/Pluck Synth/RR3/Pluck_RR3_081_079_084_001_127.wav", 81, 79, 84, 1, 127)
+  addZone(g, "Samples/01 Synths and Pads/Pluck Synth/RR3/Pluck_RR3_087_085_090_001_127.wav", 87, 85, 90, 1, 127)
+  addZone(g, "Samples/01 Synths and Pads/Pluck Synth/RR3/Pluck_RR3_093_091_108_001_127.wav", 93, 91, 108, 1, 127)
+end
 
 local KSP_SOURCE = [==[
 { New Movie Library :: Pulse Arp }
@@ -125,11 +139,12 @@ on init
   set_ui_height_px(330)
   set_listener($NI_SIGNAL_TIMER_BEAT, 24)
   { ---- groups (looked up by name, so the order in the instrument does not matter) ---- }
-  declare const $NUM_GRP := 2
-  declare %grp[2]
-  declare !grp_name[2]
+  declare const $NUM_GRP := 3
+  declare %grp[3]
+  declare !grp_name[3]
   !grp_name[0] := "RR1"
   !grp_name[1] := "RR2"
+  !grp_name[2] := "RR3"
   declare $gi
   $gi := 0
   while ($gi < $NUM_GRP)
@@ -280,10 +295,10 @@ on init
   %pl_n[0] := 1
   %p_loop[0] := 0
   %pl_split[0] := 127
-  %pl_rrn[0] := 2
+  %pl_rrn[0] := 3
   %pl_g[0] := 0
   %pl_g[1] := 1
-  %pl_g[2] := 0
+  %pl_g[2] := 2
   %pl_g[3] := 0
   %pl_split[1] := 127
   %pl_rrn[1] := 1
@@ -307,13 +322,13 @@ on init
   declare $vc_db
   declare $vc_curved
   declare ~vc_r
-  declare const $NUM_UI := 42
-  declare %ui_id[42]
-  declare %ui_page[42]
+  declare const $NUM_UI := 43
+  declare %ui_id[43]
+  declare %ui_page[43]
   declare ui_label $info (1, 1)
   set_text($info, "Pulse Arp  |  Hold a chord: 1/16 arpeggio synced to tempo")
-  set_control_par(get_ui_id($info), $CONTROL_PAR_WIDTH, 500)
-  move_control_px($info, 290, 6)
+  set_control_par(get_ui_id($info), $CONTROL_PAR_WIDTH, 360)
+  move_control_px($info, 284, 6)
   %ui_id[0] := get_ui_id($info)
   %ui_page[0] := -1
   declare ui_label $lbl_scale (1, 1)
@@ -734,6 +749,19 @@ on init
   make_persistent($repeat_damp)
   %ui_id[41] := get_ui_id($repeat_damp)
   %ui_page[41] := 0
+  declare ui_menu $preset
+  add_menu_item($preset, "Presets...", 0)
+  add_menu_item($preset, "Default", 1)
+  add_menu_item($preset, "Studio", 2)
+  add_menu_item($preset, "Ambient Wash", 3)
+  add_menu_item($preset, "Strummed Chords", 4)
+  set_control_par(get_ui_id($preset), $CONTROL_PAR_WIDTH, 140)
+  $preset := 0
+  set_control_help($preset, "Factory presets for this instrument. 'Default' resets every control.")
+  move_control_px($preset, 650, 6)
+  make_persistent($preset)
+  %ui_id[42] := get_ui_id($preset)
+  %ui_page[42] := -1
 end on
 
 function show_page
@@ -1277,6 +1305,275 @@ function upd_repeat_damp
   $retrig_us := $repeat_damp * 1000
 end function
 
+function upd_preset
+  { no side effects }
+end function
+
+function apply_preset
+  select ($preset)
+    case 1
+      $tone := 850
+      call upd_tone
+      $reso := 250
+      call upd_reso
+      $width := 700
+      call upd_width
+      $chorus := 0
+      call upd_chorus
+      $dly_mix := 300
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 420
+      call upd_dly_fb
+      $rev_mix := 300
+      call upd_rev_mix
+      $rev_size := 600
+      call upd_rev_size
+      $rev_decay := 550
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 1
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 0
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 0
+      call upd_chord
+      $strum := 0
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 1
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 60
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $attack := 0
+      call upd_attack
+      $release := 200
+      call upd_release
+      $vrange := 12
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $let_ring := 0
+      call upd_let_ring
+      $repeat_damp := 60
+      call upd_repeat_damp
+    case 2
+      $tone := 850
+      call upd_tone
+      $reso := 250
+      call upd_reso
+      $width := 450
+      call upd_width
+      $chorus := 0
+      call upd_chorus
+      $dly_mix := 0
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 420
+      call upd_dly_fb
+      $rev_mix := 120
+      call upd_rev_mix
+      $rev_size := 600
+      call upd_rev_size
+      $rev_decay := 550
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 1
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 0
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 0
+      call upd_chord
+      $strum := 0
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 1
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 60
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $attack := 0
+      call upd_attack
+      $release := 200
+      call upd_release
+      $vrange := 12
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $let_ring := 0
+      call upd_let_ring
+      $repeat_damp := 60
+      call upd_repeat_damp
+    case 3
+      $tone := 850
+      call upd_tone
+      $reso := 250
+      call upd_reso
+      $width := 700
+      call upd_width
+      $chorus := 0
+      call upd_chorus
+      $dly_mix := 280
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 420
+      call upd_dly_fb
+      $rev_mix := 520
+      call upd_rev_mix
+      $rev_size := 850
+      call upd_rev_size
+      $rev_decay := 550
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 1
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 0
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 0
+      call upd_chord
+      $strum := 0
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 1
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 60
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $attack := 0
+      call upd_attack
+      $release := 1500
+      call upd_release
+      $vrange := 12
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $let_ring := 0
+      call upd_let_ring
+      $repeat_damp := 60
+      call upd_repeat_damp
+    case 4
+      $tone := 850
+      call upd_tone
+      $reso := 250
+      call upd_reso
+      $width := 700
+      call upd_width
+      $chorus := 0
+      call upd_chorus
+      $dly_mix := 300
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 420
+      call upd_dly_fb
+      $rev_mix := 300
+      call upd_rev_mix
+      $rev_size := 600
+      call upd_rev_size
+      $rev_decay := 550
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 1
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 1
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 15
+      call upd_chord
+      $strum := 35
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 1
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 60
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $attack := 0
+      call upd_attack
+      $release := 200
+      call upd_release
+      $vrange := 12
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $let_ring := 0
+      call upd_let_ring
+      $repeat_damp := 60
+      call upd_repeat_damp
+  end select
+end function
+
 on persistence_changed
   call upd_tab_play
   call upd_tab_sound
@@ -1313,6 +1610,7 @@ on persistence_changed
   call upd_vcurve
   call upd_let_ring
   call upd_repeat_damp
+  call upd_preset
   call show_page
   call color_keys
 end on
@@ -1576,6 +1874,11 @@ end on
 
 on ui_control ($repeat_damp)
   call upd_repeat_damp
+end on
+
+on ui_control ($preset)
+  call upd_preset
+  call apply_preset
 end on
 ]==]
 

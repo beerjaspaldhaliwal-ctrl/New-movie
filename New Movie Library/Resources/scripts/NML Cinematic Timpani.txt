@@ -10,13 +10,15 @@ on init
   set_ui_height_px(330)
   set_listener($NI_SIGNAL_TIMER_BEAT, 24)
   { ---- groups (looked up by name, so the order in the instrument does not matter) ---- }
-  declare const $NUM_GRP := 4
-  declare %grp[4]
-  declare !grp_name[4]
+  declare const $NUM_GRP := 6
+  declare %grp[6]
+  declare !grp_name[6]
   !grp_name[0] := "HitRR1"
   !grp_name[1] := "HitRR2"
-  !grp_name[2] := "RollP"
-  !grp_name[3] := "RollF"
+  !grp_name[2] := "HitRR3"
+  !grp_name[3] := "HitRR4"
+  !grp_name[4] := "RollP"
+  !grp_name[5] := "RollF"
   declare $gi
   $gi := 0
   while ($gi < $NUM_GRP)
@@ -170,6 +172,15 @@ on init
   declare $st_g
   declare $st_k
   declare $st_v
+  declare $st_gi
+  declare $st_gg
+  declare $st_m
+  declare $st_base
+  declare $st_role
+  declare $vr_m
+  declare $vr_r
+  declare %mic_db[2]
+  declare %hall_of[6] := (-1)
   declare %mono_v[32]
   declare %mono_r[32]
   declare %mono_b[32]
@@ -198,31 +209,31 @@ on init
   declare polyphonic $q_tgt
   !art_name[0] := "Hits"
   %art_type[0] := 1
-  %art_gn[0] := 2
+  %art_gn[0] := 4
   %art_ks[0] := 24
   %art_g[0] := 0
   %art_g[1] := 1
-  %art_g[2] := -1
-  %art_g[3] := -1
+  %art_g[2] := 2
+  %art_g[3] := 3
   !art_name[1] := "Roll"
   %art_type[1] := 0
   %art_gn[1] := 2
   %art_ks[1] := 25
-  %art_g[4] := 2
-  %art_g[5] := 3
+  %art_g[4] := 4
+  %art_g[5] := 5
   %art_g[6] := -1
   %art_g[7] := -1
   declare $vc_in
   declare $vc_db
   declare $vc_curved
   declare ~vc_r
-  declare const $NUM_UI := 49
-  declare %ui_id[49]
-  declare %ui_page[49]
+  declare const $NUM_UI := 50
+  declare %ui_id[50]
+  declare %ui_page[50]
   declare ui_label $info (1, 1)
   set_text($info, "Cinematic Timpani  |  C0 hits, C#0 rolls (CC1 = roll dynamics)")
-  set_control_par(get_ui_id($info), $CONTROL_PAR_WIDTH, 500)
-  move_control_px($info, 290, 6)
+  set_control_par(get_ui_id($info), $CONTROL_PAR_WIDTH, 360)
+  move_control_px($info, 284, 6)
   %ui_id[0] := get_ui_id($info)
   %ui_page[0] := -1
   declare ui_label $lbl_scale (1, 1)
@@ -704,6 +715,18 @@ on init
   make_persistent($vcurve)
   %ui_id[48] := get_ui_id($vcurve)
   %ui_page[48] := 0
+  declare ui_menu $preset
+  add_menu_item($preset, "Presets...", 0)
+  add_menu_item($preset, "Default", 1)
+  add_menu_item($preset, "Epic Legato", 2)
+  add_menu_item($preset, "Soft Underscore", 3)
+  set_control_par(get_ui_id($preset), $CONTROL_PAR_WIDTH, 140)
+  $preset := 0
+  set_control_help($preset, "Factory presets for this instrument. 'Default' resets every control.")
+  move_control_px($preset, 650, 6)
+  make_persistent($preset)
+  %ui_id[49] := get_ui_id($preset)
+  %ui_page[49] := -1
 end on
 
 function show_page
@@ -925,6 +948,22 @@ function vel_curve
   $vc_db := int(real($vrange) * 1000.0 * (~vc_r - 1.0))
 end function
 
+function voice_vol
+  $vr_m := $vr_role / 10
+  $vr_r := $vr_role mod 10
+  select ($vr_r)
+    case 0
+      $vr_vol := $dyn_gp + $dyn_db + $expr_db
+    case 1
+      $vr_vol := $dyn_gf + $dyn_db + $expr_db
+    case 2
+      $vr_vol := $dyn_db + $expr_db
+    case 3
+      $vr_vol := $vr_base + $expr_db
+  end select
+  $vr_vol := $vr_vol + %mic_db[$vr_m]
+end function
+
 function calc_dyn
   ~fr := real($dyn) / 127.0
   ~fg := cos(~fr * 1.5707963)
@@ -945,19 +984,6 @@ function calc_dyn
   $expr_db := int(20000.0 * log10(~fg) * 0.9)
 end function
 
-function voice_vol
-  select ($vr_role)
-    case 0
-      $vr_vol := $dyn_gp + $dyn_db + $expr_db
-    case 1
-      $vr_vol := $dyn_gf + $dyn_db + $expr_db
-    case 2
-      $vr_vol := $dyn_db + $expr_db
-    case 3
-      $vr_vol := $vr_base + $expr_db
-  end select
-end function
-
 function start_note
   $nv_n := 0
   $pv_note := $sn_note
@@ -975,13 +1001,16 @@ function start_note
     if ($st_g # $NI_NOT_FOUND)
       $vc_in := $sn_vel
       call vel_curve
+      $st_base := $vc_db + random(-600, 600)
+      $vr_role := 3
+      $vr_base := $st_base
+      call voice_vol
       $pv_grp := $st_g
       $pv_role := 3
-      $pv_vol := $vc_db + random(-600, 600)
+      $pv_vol := $vr_vol
       $pv_fade := 0
       call play_voice
-      %nv_b[$nv_n - 1] := $pv_vol
-      change_vol($pv_id, $pv_vol + $expr_db, 0)
+      %nv_b[$nv_n - 1] := $st_base
     end if
   else
     if (%art_type[$art] = 2)
@@ -989,14 +1018,16 @@ function start_note
     end if
     $st_k := 0
     while ($st_k < %art_gn[$art])
-      $st_g := %grp[%art_g[$art * 4 + $st_k]]
+      $st_gi := %art_g[$art * 4 + $st_k]
+      $st_g := %grp[$st_gi]
       if ($st_g # $NI_NOT_FOUND)
-        $pv_grp := $st_g
         if (%art_gn[$art] = 1)
           $vr_role := 2
         else
           $vr_role := $st_k
         end if
+        $st_base := 0
+        $st_role := $vr_role
         if ($dyn_src = 1)
           $st_v := $dyn
           $dyn := $sn_vel
@@ -1004,17 +1035,31 @@ function start_note
           call voice_vol
           $dyn := $st_v
           call calc_dyn
-          $pv_role := 3
-          $pv_vol := $vr_vol - $expr_db
-        else
-          call voice_vol
-          $pv_role := $vr_role
-          $pv_vol := $vr_vol
+          $st_base := $vr_vol - $expr_db - %mic_db[0]
+          $st_role := 3
         end if
-        call play_voice
-        if ($pv_role = 3)
-          change_vol($pv_id, $pv_vol + $expr_db, 0)
-        end if
+        $st_m := 0
+        while ($st_m < 2)
+          $st_gg := -1
+          if ($st_m = 0)
+            $st_gg := $st_g
+          else
+            if (%hall_of[$st_gi] >= 0)
+              $st_gg := %grp[%hall_of[$st_gi]]
+            end if
+          end if
+          if ($st_gg # -1 and $st_gg # $NI_NOT_FOUND and ($st_m = 0))
+            $pv_grp := $st_gg
+            $pv_role := $st_role + 10 * $st_m
+            $vr_role := $pv_role
+            $vr_base := $st_base
+            call voice_vol
+            $pv_vol := $vr_vol
+            call play_voice
+            %nv_b[$nv_n - 1] := $st_base
+          end if
+          inc($st_m)
+        end while
       end if
       inc($st_k)
     end while
@@ -1419,6 +1464,240 @@ function upd_vcurve
   { no side effects }
 end function
 
+function upd_preset
+  { no side effects }
+end function
+
+function apply_preset
+  select ($preset)
+    case 1
+      $tone := 1000
+      call upd_tone
+      $width := 400
+      call upd_width
+      $chorus := 0
+      call upd_chorus
+      $dly_mix := 0
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 300
+      call upd_rev_mix
+      $rev_size := 850
+      call upd_rev_size
+      $rev_decay := 650
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 0
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 0
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 0
+      call upd_chord
+      $strum := 0
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 0
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 60
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $art_menu := 0
+      call upd_art_menu
+      $dyn_knob := 90
+      call upd_dyn_knob
+      $dyn_src := 0
+      call upd_dyn_src
+      $dyn_range := 20
+      call upd_dyn_range
+      $attack := 0
+      call upd_attack
+      $release := 600
+      call upd_release
+      $swell_t := 1800
+      call upd_swell_t
+      $legato := 0
+      call upd_legato
+      $leg_time := 110
+      call upd_leg_time
+      $porta := 25
+      call upd_porta
+      $vrange := 22
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+    case 2
+      $tone := 1000
+      call upd_tone
+      $width := 400
+      call upd_width
+      $chorus := 0
+      call upd_chorus
+      $dly_mix := 0
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 350
+      call upd_rev_mix
+      $rev_size := 850
+      call upd_rev_size
+      $rev_decay := 650
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 0
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 0
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 0
+      call upd_chord
+      $strum := 0
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 0
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 60
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $art_menu := 0
+      call upd_art_menu
+      $dyn_knob := 90
+      call upd_dyn_knob
+      $dyn_src := 0
+      call upd_dyn_src
+      $dyn_range := 20
+      call upd_dyn_range
+      $attack := 0
+      call upd_attack
+      $release := 600
+      call upd_release
+      $swell_t := 1800
+      call upd_swell_t
+      $legato := 1
+      call upd_legato
+      $leg_time := 140
+      call upd_leg_time
+      $porta := 35
+      call upd_porta
+      $vrange := 22
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+    case 3
+      $tone := 1000
+      call upd_tone
+      $width := 400
+      call upd_width
+      $chorus := 0
+      call upd_chorus
+      $dly_mix := 0
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 380
+      call upd_rev_mix
+      $rev_size := 850
+      call upd_rev_size
+      $rev_decay := 650
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 0
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 0
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 0
+      call upd_chord
+      $strum := 0
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 0
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 60
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $art_menu := 0
+      call upd_art_menu
+      $dyn_knob := 45
+      call upd_dyn_knob
+      $dyn_src := 0
+      call upd_dyn_src
+      $dyn_range := 20
+      call upd_dyn_range
+      $attack := 250
+      call upd_attack
+      $release := 900
+      call upd_release
+      $swell_t := 1800
+      call upd_swell_t
+      $legato := 0
+      call upd_legato
+      $leg_time := 110
+      call upd_leg_time
+      $porta := 25
+      call upd_porta
+      $vrange := 22
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+  end select
+end function
+
 on persistence_changed
   call upd_tab_play
   call upd_tab_sound
@@ -1460,6 +1739,7 @@ on persistence_changed
   call upd_porta
   call upd_vrange
   call upd_vcurve
+  call upd_preset
   call show_page
   call color_keys
 end on
@@ -1867,5 +2147,10 @@ end on
 
 on ui_control ($vcurve)
   call upd_vcurve
+end on
+
+on ui_control ($preset)
+  call upd_preset
+  call apply_preset
 end on
 

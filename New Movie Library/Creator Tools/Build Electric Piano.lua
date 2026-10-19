@@ -12,7 +12,7 @@
 --      (Ctrl/Cmd+R).
 --   4. Press Push (Ctrl/Cmd+Alt+Up) so the changes go to Kontakt.
 --   5. In Kontakt: File > Save as... and save it as
---        New Movie Library/Instruments/02 Orchestral and Band/Electric Piano.nki
+--        New Movie Library/Instruments/03 Band and Keys/Electric Piano.nki
 --      ("Patch only", and keep "absolute sample paths" OFF).
 --
 -- The script only reads files inside the "New Movie Library" folder, relative to the
@@ -85,51 +85,51 @@ end
 
 do  -- group V1
   local g = newGroup("V1")
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V1/EPiano_V1_028_021_031_001_127.wav", 28, 21, 31, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V1/EPiano_V1_034_032_037_001_127.wav", 34, 32, 37, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V1/EPiano_V1_040_038_043_001_127.wav", 40, 38, 43, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V1/EPiano_V1_046_044_049_001_127.wav", 46, 44, 49, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V1/EPiano_V1_052_050_055_001_127.wav", 52, 50, 55, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V1/EPiano_V1_058_056_061_001_127.wav", 58, 56, 61, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V1/EPiano_V1_064_062_067_001_127.wav", 64, 62, 67, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V1/EPiano_V1_070_068_073_001_127.wav", 70, 68, 73, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V1/EPiano_V1_076_074_079_001_127.wav", 76, 74, 79, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V1/EPiano_V1_082_080_085_001_127.wav", 82, 80, 85, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V1/EPiano_V1_088_086_091_001_127.wav", 88, 86, 91, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V1/EPiano_V1_094_092_097_001_127.wav", 94, 92, 97, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V1/EPiano_V1_100_098_108_001_127.wav", 100, 98, 108, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V1/EPiano_V1_028_021_031_001_127.wav", 28, 21, 31, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V1/EPiano_V1_034_032_037_001_127.wav", 34, 32, 37, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V1/EPiano_V1_040_038_043_001_127.wav", 40, 38, 43, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V1/EPiano_V1_046_044_049_001_127.wav", 46, 44, 49, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V1/EPiano_V1_052_050_055_001_127.wav", 52, 50, 55, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V1/EPiano_V1_058_056_061_001_127.wav", 58, 56, 61, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V1/EPiano_V1_064_062_067_001_127.wav", 64, 62, 67, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V1/EPiano_V1_070_068_073_001_127.wav", 70, 68, 73, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V1/EPiano_V1_076_074_079_001_127.wav", 76, 74, 79, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V1/EPiano_V1_082_080_085_001_127.wav", 82, 80, 85, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V1/EPiano_V1_088_086_091_001_127.wav", 88, 86, 91, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V1/EPiano_V1_094_092_097_001_127.wav", 94, 92, 97, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V1/EPiano_V1_100_098_108_001_127.wav", 100, 98, 108, 1, 127)
 end
 do  -- group V2
   local g = newGroup("V2")
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V2/EPiano_V2_028_021_031_001_127.wav", 28, 21, 31, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V2/EPiano_V2_034_032_037_001_127.wav", 34, 32, 37, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V2/EPiano_V2_040_038_043_001_127.wav", 40, 38, 43, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V2/EPiano_V2_046_044_049_001_127.wav", 46, 44, 49, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V2/EPiano_V2_052_050_055_001_127.wav", 52, 50, 55, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V2/EPiano_V2_058_056_061_001_127.wav", 58, 56, 61, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V2/EPiano_V2_064_062_067_001_127.wav", 64, 62, 67, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V2/EPiano_V2_070_068_073_001_127.wav", 70, 68, 73, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V2/EPiano_V2_076_074_079_001_127.wav", 76, 74, 79, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V2/EPiano_V2_082_080_085_001_127.wav", 82, 80, 85, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V2/EPiano_V2_088_086_091_001_127.wav", 88, 86, 91, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V2/EPiano_V2_094_092_097_001_127.wav", 94, 92, 97, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V2/EPiano_V2_100_098_108_001_127.wav", 100, 98, 108, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V2/EPiano_V2_028_021_031_001_127.wav", 28, 21, 31, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V2/EPiano_V2_034_032_037_001_127.wav", 34, 32, 37, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V2/EPiano_V2_040_038_043_001_127.wav", 40, 38, 43, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V2/EPiano_V2_046_044_049_001_127.wav", 46, 44, 49, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V2/EPiano_V2_052_050_055_001_127.wav", 52, 50, 55, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V2/EPiano_V2_058_056_061_001_127.wav", 58, 56, 61, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V2/EPiano_V2_064_062_067_001_127.wav", 64, 62, 67, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V2/EPiano_V2_070_068_073_001_127.wav", 70, 68, 73, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V2/EPiano_V2_076_074_079_001_127.wav", 76, 74, 79, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V2/EPiano_V2_082_080_085_001_127.wav", 82, 80, 85, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V2/EPiano_V2_088_086_091_001_127.wav", 88, 86, 91, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V2/EPiano_V2_094_092_097_001_127.wav", 94, 92, 97, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V2/EPiano_V2_100_098_108_001_127.wav", 100, 98, 108, 1, 127)
 end
 do  -- group V3
   local g = newGroup("V3")
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V3/EPiano_V3_028_021_031_001_127.wav", 28, 21, 31, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V3/EPiano_V3_034_032_037_001_127.wav", 34, 32, 37, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V3/EPiano_V3_040_038_043_001_127.wav", 40, 38, 43, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V3/EPiano_V3_046_044_049_001_127.wav", 46, 44, 49, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V3/EPiano_V3_052_050_055_001_127.wav", 52, 50, 55, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V3/EPiano_V3_058_056_061_001_127.wav", 58, 56, 61, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V3/EPiano_V3_064_062_067_001_127.wav", 64, 62, 67, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V3/EPiano_V3_070_068_073_001_127.wav", 70, 68, 73, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V3/EPiano_V3_076_074_079_001_127.wav", 76, 74, 79, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V3/EPiano_V3_082_080_085_001_127.wav", 82, 80, 85, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V3/EPiano_V3_088_086_091_001_127.wav", 88, 86, 91, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V3/EPiano_V3_094_092_097_001_127.wav", 94, 92, 97, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Electric Piano/V3/EPiano_V3_100_098_108_001_127.wav", 100, 98, 108, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V3/EPiano_V3_028_021_031_001_127.wav", 28, 21, 31, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V3/EPiano_V3_034_032_037_001_127.wav", 34, 32, 37, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V3/EPiano_V3_040_038_043_001_127.wav", 40, 38, 43, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V3/EPiano_V3_046_044_049_001_127.wav", 46, 44, 49, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V3/EPiano_V3_052_050_055_001_127.wav", 52, 50, 55, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V3/EPiano_V3_058_056_061_001_127.wav", 58, 56, 61, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V3/EPiano_V3_064_062_067_001_127.wav", 64, 62, 67, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V3/EPiano_V3_070_068_073_001_127.wav", 70, 68, 73, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V3/EPiano_V3_076_074_079_001_127.wav", 76, 74, 79, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V3/EPiano_V3_082_080_085_001_127.wav", 82, 80, 85, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V3/EPiano_V3_088_086_091_001_127.wav", 88, 86, 91, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V3/EPiano_V3_094_092_097_001_127.wav", 94, 92, 97, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Electric Piano/V3/EPiano_V3_100_098_108_001_127.wav", 100, 98, 108, 1, 127)
 end
 
 local KSP_SOURCE = [==[
@@ -333,13 +333,13 @@ on init
   declare $vc_db
   declare $vc_curved
   declare ~vc_r
-  declare const $NUM_UI := 43
-  declare %ui_id[43]
-  declare %ui_page[43]
+  declare const $NUM_UI := 44
+  declare %ui_id[44]
+  declare %ui_page[44]
   declare ui_label $info (1, 1)
   set_text($info, "Electric Piano  |  3 velocity layers, tremolo and drive on the SOUND page")
-  set_control_par(get_ui_id($info), $CONTROL_PAR_WIDTH, 500)
-  move_control_px($info, 290, 6)
+  set_control_par(get_ui_id($info), $CONTROL_PAR_WIDTH, 360)
+  move_control_px($info, 284, 6)
   %ui_id[0] := get_ui_id($info)
   %ui_page[0] := -1
   declare ui_label $lbl_scale (1, 1)
@@ -771,6 +771,19 @@ on init
   make_persistent($repeat_damp)
   %ui_id[42] := get_ui_id($repeat_damp)
   %ui_page[42] := 0
+  declare ui_menu $preset
+  add_menu_item($preset, "Presets...", 0)
+  add_menu_item($preset, "Default", 1)
+  add_menu_item($preset, "Studio", 2)
+  add_menu_item($preset, "Ambient Wash", 3)
+  add_menu_item($preset, "Strummed Chords", 4)
+  set_control_par(get_ui_id($preset), $CONTROL_PAR_WIDTH, 140)
+  $preset := 0
+  set_control_help($preset, "Factory presets for this instrument. 'Default' resets every control.")
+  move_control_px($preset, 650, 6)
+  make_persistent($preset)
+  %ui_id[43] := get_ui_id($preset)
+  %ui_page[43] := -1
 end on
 
 function show_page
@@ -1319,6 +1332,283 @@ function upd_repeat_damp
   $retrig_us := $repeat_damp * 1000
 end function
 
+function upd_preset
+  { no side effects }
+end function
+
+function apply_preset
+  select ($preset)
+    case 1
+      $tone := 1000
+      call upd_tone
+      $trem_amt := 300
+      call upd_trem_amt
+      $trem_rate := 450
+      call upd_trem_rate
+      $ep_drive := 250
+      call upd_ep_drive
+      $width := 500
+      call upd_width
+      $chorus := 150
+      call upd_chorus
+      $dly_mix := 0
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 200
+      call upd_rev_mix
+      $rev_size := 600
+      call upd_rev_size
+      $rev_decay := 550
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 1
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 0
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 0
+      call upd_chord
+      $strum := 0
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 0
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 60
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $attack := 0
+      call upd_attack
+      $release := 180
+      call upd_release
+      $vrange := 28
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $repeat_damp := 60
+      call upd_repeat_damp
+    case 2
+      $tone := 1000
+      call upd_tone
+      $trem_amt := 300
+      call upd_trem_amt
+      $trem_rate := 450
+      call upd_trem_rate
+      $ep_drive := 250
+      call upd_ep_drive
+      $width := 450
+      call upd_width
+      $chorus := 150
+      call upd_chorus
+      $dly_mix := 0
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 120
+      call upd_rev_mix
+      $rev_size := 600
+      call upd_rev_size
+      $rev_decay := 550
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 1
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 0
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 0
+      call upd_chord
+      $strum := 0
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 0
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 60
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $attack := 0
+      call upd_attack
+      $release := 180
+      call upd_release
+      $vrange := 28
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $repeat_damp := 60
+      call upd_repeat_damp
+    case 3
+      $tone := 1000
+      call upd_tone
+      $trem_amt := 300
+      call upd_trem_amt
+      $trem_rate := 450
+      call upd_trem_rate
+      $ep_drive := 250
+      call upd_ep_drive
+      $width := 500
+      call upd_width
+      $chorus := 150
+      call upd_chorus
+      $dly_mix := 280
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 520
+      call upd_rev_mix
+      $rev_size := 850
+      call upd_rev_size
+      $rev_decay := 550
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 1
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 0
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 0
+      call upd_chord
+      $strum := 0
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 0
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 60
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $attack := 0
+      call upd_attack
+      $release := 1500
+      call upd_release
+      $vrange := 28
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $repeat_damp := 60
+      call upd_repeat_damp
+    case 4
+      $tone := 1000
+      call upd_tone
+      $trem_amt := 300
+      call upd_trem_amt
+      $trem_rate := 450
+      call upd_trem_rate
+      $ep_drive := 250
+      call upd_ep_drive
+      $width := 500
+      call upd_width
+      $chorus := 150
+      call upd_chorus
+      $dly_mix := 0
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 200
+      call upd_rev_mix
+      $rev_size := 600
+      call upd_rev_size
+      $rev_decay := 550
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 1
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 1
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 15
+      call upd_chord
+      $strum := 35
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 0
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 60
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $attack := 0
+      call upd_attack
+      $release := 180
+      call upd_release
+      $vrange := 28
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $repeat_damp := 60
+      call upd_repeat_damp
+  end select
+end function
+
 on persistence_changed
   call upd_tab_play
   call upd_tab_sound
@@ -1356,6 +1646,7 @@ on persistence_changed
   call upd_vrange
   call upd_vcurve
   call upd_repeat_damp
+  call upd_preset
   call show_page
   call color_keys
 end on
@@ -1619,6 +1910,11 @@ end on
 
 on ui_control ($repeat_damp)
   call upd_repeat_damp
+end on
+
+on ui_control ($preset)
+  call upd_preset
+  call apply_preset
 end on
 ]==]
 

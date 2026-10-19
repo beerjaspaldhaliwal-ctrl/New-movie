@@ -6,8 +6,11 @@ LIB_NAME = "New Movie Library"
 LIB_SHORT = "NML"
 
 CAT_SYNTH = "01 Synths and Pads"
-CAT_ORCH = "02 Orchestral and Band"
-CAT_CINE = "03 Cinematic"
+CAT_ORCH = "02 Orchestral"
+CAT_BAND = "03 Band and Keys"
+CAT_CINE = "04 Cinematic"
+CAT_WORLD = "05 World"
+CATEGORIES = [CAT_SYNTH, CAT_ORCH, CAT_BAND, CAT_CINE, CAT_WORLD]
 
 NOTE_NAMES = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
 
@@ -47,6 +50,7 @@ class Instrument:
     cfg: dict = field(default_factory=dict)  # engine configuration for the KSP generator
     blurb: str = ""
     samples_from: str = ""  # reuse another instrument's samples (no rendering)
+    presets: list = field(default_factory=list)  # [(name, {control: value})], KSP control units
 
     @property
     def groups(self):
@@ -75,3 +79,13 @@ def zones_for(groups, roots, lo_ext, hi_ext, seed_base=0, **p):
         for zi, (r, lo, hi) in enumerate(keymap(roots, lo_ext, hi_ext)):
             zs.append(Zone(g, r, lo, hi, seed=seed_base + gi * 1000 + zi, p=dict(p)))
     return zs
+
+
+def add_hall_mics(zones, groups):
+    """Add a 'Hall' microphone twin for each listed group. A twin uses the
+    same seed as its close group, so both mics come from the same performance."""
+    out = list(zones)
+    for z in zones:
+        if z.group in groups:
+            out.append(Zone(z.group + "Hall", z.root, z.lo, z.hi, z.vlo, z.vhi, seed=z.seed, p=dict(z.p, mic="hall")))
+    return out

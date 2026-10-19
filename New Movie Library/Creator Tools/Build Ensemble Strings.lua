@@ -12,7 +12,7 @@
 --      (Ctrl/Cmd+R).
 --   4. Press Push (Ctrl/Cmd+Alt+Up) so the changes go to Kontakt.
 --   5. In Kontakt: File > Save as... and save it as
---        New Movie Library/Instruments/02 Orchestral and Band/Ensemble Strings.nki
+--        New Movie Library/Instruments/02 Orchestral/Ensemble Strings.nki
 --      ("Patch only", and keep "absolute sample paths" OFF).
 --
 -- The script only reads files inside the "New Movie Library" folder, relative to the
@@ -85,108 +85,213 @@ end
 
 do  -- group SusP
   local g = newGroup("SusP")
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/SusP/Strings_SusP_033_031_036_001_127.wav", 33, 31, 36, 1, 127, 41895, 54499)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/SusP/Strings_SusP_039_037_042_001_127.wav", 39, 37, 42, 1, 127, 41895, 55461)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/SusP/Strings_SusP_045_043_048_001_127.wav", 45, 43, 48, 1, 127, 41895, 54475)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/SusP/Strings_SusP_051_049_054_001_127.wav", 51, 49, 54, 1, 127, 41895, 55913)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/SusP/Strings_SusP_057_055_060_001_127.wav", 57, 55, 60, 1, 127, 41895, 55943)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/SusP/Strings_SusP_063_061_066_001_127.wav", 63, 61, 66, 1, 127, 41895, 55963)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/SusP/Strings_SusP_069_067_072_001_127.wav", 69, 67, 72, 1, 127, 41895, 55955)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/SusP/Strings_SusP_075_073_078_001_127.wav", 75, 73, 78, 1, 127, 41895, 54307)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/SusP/Strings_SusP_081_079_084_001_127.wav", 81, 79, 84, 1, 127, 41895, 55399)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/SusP/Strings_SusP_087_085_090_001_127.wav", 87, 85, 90, 1, 127, 41895, 55977)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/SusP/Strings_SusP_093_091_096_001_127.wav", 93, 91, 96, 1, 127, 41895, 54835)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/SusP/Strings_SusP_099_097_103_001_127.wav", 99, 97, 103, 1, 127, 41895, 55141)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusP/Strings_SusP_033_031_036_001_127.wav", 33, 31, 36, 1, 127, 41895, 54499)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusP/Strings_SusP_039_037_042_001_127.wav", 39, 37, 42, 1, 127, 41895, 55461)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusP/Strings_SusP_045_043_048_001_127.wav", 45, 43, 48, 1, 127, 41895, 54473)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusP/Strings_SusP_051_049_054_001_127.wav", 51, 49, 54, 1, 127, 41895, 55913)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusP/Strings_SusP_057_055_060_001_127.wav", 57, 55, 60, 1, 127, 41895, 55941)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusP/Strings_SusP_063_061_066_001_127.wav", 63, 61, 66, 1, 127, 41895, 55821)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusP/Strings_SusP_069_067_072_001_127.wav", 69, 67, 72, 1, 127, 41895, 55955)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusP/Strings_SusP_075_073_078_001_127.wav", 75, 73, 78, 1, 127, 41895, 54307)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusP/Strings_SusP_081_079_084_001_127.wav", 81, 79, 84, 1, 127, 41895, 55299)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusP/Strings_SusP_087_085_090_001_127.wav", 87, 85, 90, 1, 127, 41895, 55977)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusP/Strings_SusP_093_091_096_001_127.wav", 93, 91, 96, 1, 127, 41895, 54835)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusP/Strings_SusP_099_097_103_001_127.wav", 99, 97, 103, 1, 127, 41895, 55141)
 end
 do  -- group SusF
   local g = newGroup("SusF")
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/SusF/Strings_SusF_033_031_036_001_127.wav", 33, 31, 36, 1, 127, 41895, 55935)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/SusF/Strings_SusF_039_037_042_001_127.wav", 39, 37, 42, 1, 127, 41895, 54561)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/SusF/Strings_SusF_045_043_048_001_127.wav", 45, 43, 48, 1, 127, 41895, 55675)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/SusF/Strings_SusF_051_049_054_001_127.wav", 51, 49, 54, 1, 127, 41895, 55863)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/SusF/Strings_SusF_057_055_060_001_127.wav", 57, 55, 60, 1, 127, 41895, 54329)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/SusF/Strings_SusF_063_061_066_001_127.wav", 63, 61, 66, 1, 127, 41895, 54801)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/SusF/Strings_SusF_069_067_072_001_127.wav", 69, 67, 72, 1, 127, 41895, 54287)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/SusF/Strings_SusF_075_073_078_001_127.wav", 75, 73, 78, 1, 127, 41895, 54281)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/SusF/Strings_SusF_081_079_084_001_127.wav", 81, 79, 84, 1, 127, 41895, 55987)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/SusF/Strings_SusF_087_085_090_001_127.wav", 87, 85, 90, 1, 127, 41895, 55241)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/SusF/Strings_SusF_093_091_096_001_127.wav", 93, 91, 96, 1, 127, 41895, 55885)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/SusF/Strings_SusF_099_097_103_001_127.wav", 99, 97, 103, 1, 127, 41895, 54247)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusF/Strings_SusF_033_031_036_001_127.wav", 33, 31, 36, 1, 127, 41895, 55933)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusF/Strings_SusF_039_037_042_001_127.wav", 39, 37, 42, 1, 127, 41895, 54561)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusF/Strings_SusF_045_043_048_001_127.wav", 45, 43, 48, 1, 127, 41895, 54497)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusF/Strings_SusF_051_049_054_001_127.wav", 51, 49, 54, 1, 127, 41895, 55863)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusF/Strings_SusF_057_055_060_001_127.wav", 57, 55, 60, 1, 127, 41895, 54329)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusF/Strings_SusF_063_061_066_001_127.wav", 63, 61, 66, 1, 127, 41895, 54801)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusF/Strings_SusF_069_067_072_001_127.wav", 69, 67, 72, 1, 127, 41895, 54285)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusF/Strings_SusF_075_073_078_001_127.wav", 75, 73, 78, 1, 127, 41895, 54281)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusF/Strings_SusF_081_079_084_001_127.wav", 81, 79, 84, 1, 127, 41895, 55987)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusF/Strings_SusF_087_085_090_001_127.wav", 87, 85, 90, 1, 127, 41895, 55347)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusF/Strings_SusF_093_091_096_001_127.wav", 93, 91, 96, 1, 127, 41895, 55835)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusF/Strings_SusF_099_097_103_001_127.wav", 99, 97, 103, 1, 127, 41895, 54247)
 end
 do  -- group Trem
   local g = newGroup("Trem")
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/Trem/Strings_Trem_033_031_036_001_127.wav", 33, 31, 36, 1, 127, 41895, 54591)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/Trem/Strings_Trem_039_037_042_001_127.wav", 39, 37, 42, 1, 127, 41895, 54685)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/Trem/Strings_Trem_045_043_048_001_127.wav", 45, 43, 48, 1, 127, 41895, 55827)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/Trem/Strings_Trem_051_049_054_001_127.wav", 51, 49, 54, 1, 127, 41895, 54381)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/Trem/Strings_Trem_057_055_060_001_127.wav", 57, 55, 60, 1, 127, 41895, 55533)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/Trem/Strings_Trem_063_061_066_001_127.wav", 63, 61, 66, 1, 127, 41895, 54429)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/Trem/Strings_Trem_069_067_072_001_127.wav", 69, 67, 72, 1, 127, 41895, 54299)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/Trem/Strings_Trem_075_073_078_001_127.wav", 75, 73, 78, 1, 127, 41895, 55265)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/Trem/Strings_Trem_081_079_084_001_127.wav", 81, 79, 84, 1, 127, 41895, 55217)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/Trem/Strings_Trem_087_085_090_001_127.wav", 87, 85, 90, 1, 127, 41895, 55865)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/Trem/Strings_Trem_093_091_096_001_127.wav", 93, 91, 96, 1, 127, 41895, 54937)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/Trem/Strings_Trem_099_097_103_001_127.wav", 99, 97, 103, 1, 127, 41895, 55615)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/Trem/Strings_Trem_033_031_036_001_127.wav", 33, 31, 36, 1, 127, 41895, 54591)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/Trem/Strings_Trem_039_037_042_001_127.wav", 39, 37, 42, 1, 127, 41895, 54685)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/Trem/Strings_Trem_045_043_048_001_127.wav", 45, 43, 48, 1, 127, 41895, 55427)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/Trem/Strings_Trem_051_049_054_001_127.wav", 51, 49, 54, 1, 127, 41895, 54663)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/Trem/Strings_Trem_057_055_060_001_127.wav", 57, 55, 60, 1, 127, 41895, 55533)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/Trem/Strings_Trem_063_061_066_001_127.wav", 63, 61, 66, 1, 127, 41895, 54429)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/Trem/Strings_Trem_069_067_072_001_127.wav", 69, 67, 72, 1, 127, 41895, 54299)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/Trem/Strings_Trem_075_073_078_001_127.wav", 75, 73, 78, 1, 127, 41895, 55265)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/Trem/Strings_Trem_081_079_084_001_127.wav", 81, 79, 84, 1, 127, 41895, 55317)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/Trem/Strings_Trem_087_085_090_001_127.wav", 87, 85, 90, 1, 127, 41895, 55865)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/Trem/Strings_Trem_093_091_096_001_127.wav", 93, 91, 96, 1, 127, 41895, 54937)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/Trem/Strings_Trem_099_097_103_001_127.wav", 99, 97, 103, 1, 127, 41895, 55509)
 end
 do  -- group StacRR1
   local g = newGroup("StacRR1")
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/StacRR1/Strings_StacRR1_033_031_036_001_127.wav", 33, 31, 36, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/StacRR1/Strings_StacRR1_039_037_042_001_127.wav", 39, 37, 42, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/StacRR1/Strings_StacRR1_045_043_048_001_127.wav", 45, 43, 48, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/StacRR1/Strings_StacRR1_051_049_054_001_127.wav", 51, 49, 54, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/StacRR1/Strings_StacRR1_057_055_060_001_127.wav", 57, 55, 60, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/StacRR1/Strings_StacRR1_063_061_066_001_127.wav", 63, 61, 66, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/StacRR1/Strings_StacRR1_069_067_072_001_127.wav", 69, 67, 72, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/StacRR1/Strings_StacRR1_075_073_078_001_127.wav", 75, 73, 78, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/StacRR1/Strings_StacRR1_081_079_084_001_127.wav", 81, 79, 84, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/StacRR1/Strings_StacRR1_087_085_090_001_127.wav", 87, 85, 90, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/StacRR1/Strings_StacRR1_093_091_096_001_127.wav", 93, 91, 96, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/StacRR1/Strings_StacRR1_099_097_103_001_127.wav", 99, 97, 103, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR1/Strings_StacRR1_033_031_036_001_127.wav", 33, 31, 36, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR1/Strings_StacRR1_039_037_042_001_127.wav", 39, 37, 42, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR1/Strings_StacRR1_045_043_048_001_127.wav", 45, 43, 48, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR1/Strings_StacRR1_051_049_054_001_127.wav", 51, 49, 54, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR1/Strings_StacRR1_057_055_060_001_127.wav", 57, 55, 60, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR1/Strings_StacRR1_063_061_066_001_127.wav", 63, 61, 66, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR1/Strings_StacRR1_069_067_072_001_127.wav", 69, 67, 72, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR1/Strings_StacRR1_075_073_078_001_127.wav", 75, 73, 78, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR1/Strings_StacRR1_081_079_084_001_127.wav", 81, 79, 84, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR1/Strings_StacRR1_087_085_090_001_127.wav", 87, 85, 90, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR1/Strings_StacRR1_093_091_096_001_127.wav", 93, 91, 96, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR1/Strings_StacRR1_099_097_103_001_127.wav", 99, 97, 103, 1, 127)
 end
 do  -- group StacRR2
   local g = newGroup("StacRR2")
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/StacRR2/Strings_StacRR2_033_031_036_001_127.wav", 33, 31, 36, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/StacRR2/Strings_StacRR2_039_037_042_001_127.wav", 39, 37, 42, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/StacRR2/Strings_StacRR2_045_043_048_001_127.wav", 45, 43, 48, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/StacRR2/Strings_StacRR2_051_049_054_001_127.wav", 51, 49, 54, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/StacRR2/Strings_StacRR2_057_055_060_001_127.wav", 57, 55, 60, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/StacRR2/Strings_StacRR2_063_061_066_001_127.wav", 63, 61, 66, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/StacRR2/Strings_StacRR2_069_067_072_001_127.wav", 69, 67, 72, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/StacRR2/Strings_StacRR2_075_073_078_001_127.wav", 75, 73, 78, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/StacRR2/Strings_StacRR2_081_079_084_001_127.wav", 81, 79, 84, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/StacRR2/Strings_StacRR2_087_085_090_001_127.wav", 87, 85, 90, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/StacRR2/Strings_StacRR2_093_091_096_001_127.wav", 93, 91, 96, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/StacRR2/Strings_StacRR2_099_097_103_001_127.wav", 99, 97, 103, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR2/Strings_StacRR2_033_031_036_001_127.wav", 33, 31, 36, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR2/Strings_StacRR2_039_037_042_001_127.wav", 39, 37, 42, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR2/Strings_StacRR2_045_043_048_001_127.wav", 45, 43, 48, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR2/Strings_StacRR2_051_049_054_001_127.wav", 51, 49, 54, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR2/Strings_StacRR2_057_055_060_001_127.wav", 57, 55, 60, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR2/Strings_StacRR2_063_061_066_001_127.wav", 63, 61, 66, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR2/Strings_StacRR2_069_067_072_001_127.wav", 69, 67, 72, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR2/Strings_StacRR2_075_073_078_001_127.wav", 75, 73, 78, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR2/Strings_StacRR2_081_079_084_001_127.wav", 81, 79, 84, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR2/Strings_StacRR2_087_085_090_001_127.wav", 87, 85, 90, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR2/Strings_StacRR2_093_091_096_001_127.wav", 93, 91, 96, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR2/Strings_StacRR2_099_097_103_001_127.wav", 99, 97, 103, 1, 127)
+end
+do  -- group StacRR3
+  local g = newGroup("StacRR3")
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR3/Strings_StacRR3_033_031_036_001_127.wav", 33, 31, 36, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR3/Strings_StacRR3_039_037_042_001_127.wav", 39, 37, 42, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR3/Strings_StacRR3_045_043_048_001_127.wav", 45, 43, 48, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR3/Strings_StacRR3_051_049_054_001_127.wav", 51, 49, 54, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR3/Strings_StacRR3_057_055_060_001_127.wav", 57, 55, 60, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR3/Strings_StacRR3_063_061_066_001_127.wav", 63, 61, 66, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR3/Strings_StacRR3_069_067_072_001_127.wav", 69, 67, 72, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR3/Strings_StacRR3_075_073_078_001_127.wav", 75, 73, 78, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR3/Strings_StacRR3_081_079_084_001_127.wav", 81, 79, 84, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR3/Strings_StacRR3_087_085_090_001_127.wav", 87, 85, 90, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR3/Strings_StacRR3_093_091_096_001_127.wav", 93, 91, 96, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR3/Strings_StacRR3_099_097_103_001_127.wav", 99, 97, 103, 1, 127)
+end
+do  -- group StacRR4
+  local g = newGroup("StacRR4")
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR4/Strings_StacRR4_033_031_036_001_127.wav", 33, 31, 36, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR4/Strings_StacRR4_039_037_042_001_127.wav", 39, 37, 42, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR4/Strings_StacRR4_045_043_048_001_127.wav", 45, 43, 48, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR4/Strings_StacRR4_051_049_054_001_127.wav", 51, 49, 54, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR4/Strings_StacRR4_057_055_060_001_127.wav", 57, 55, 60, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR4/Strings_StacRR4_063_061_066_001_127.wav", 63, 61, 66, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR4/Strings_StacRR4_069_067_072_001_127.wav", 69, 67, 72, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR4/Strings_StacRR4_075_073_078_001_127.wav", 75, 73, 78, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR4/Strings_StacRR4_081_079_084_001_127.wav", 81, 79, 84, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR4/Strings_StacRR4_087_085_090_001_127.wav", 87, 85, 90, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR4/Strings_StacRR4_093_091_096_001_127.wav", 93, 91, 96, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/StacRR4/Strings_StacRR4_099_097_103_001_127.wav", 99, 97, 103, 1, 127)
 end
 do  -- group PizzRR1
   local g = newGroup("PizzRR1")
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/PizzRR1/Strings_PizzRR1_033_031_036_001_127.wav", 33, 31, 36, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/PizzRR1/Strings_PizzRR1_039_037_042_001_127.wav", 39, 37, 42, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/PizzRR1/Strings_PizzRR1_045_043_048_001_127.wav", 45, 43, 48, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/PizzRR1/Strings_PizzRR1_051_049_054_001_127.wav", 51, 49, 54, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/PizzRR1/Strings_PizzRR1_057_055_060_001_127.wav", 57, 55, 60, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/PizzRR1/Strings_PizzRR1_063_061_066_001_127.wav", 63, 61, 66, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/PizzRR1/Strings_PizzRR1_069_067_072_001_127.wav", 69, 67, 72, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/PizzRR1/Strings_PizzRR1_075_073_078_001_127.wav", 75, 73, 78, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/PizzRR1/Strings_PizzRR1_081_079_084_001_127.wav", 81, 79, 84, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/PizzRR1/Strings_PizzRR1_087_085_090_001_127.wav", 87, 85, 90, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/PizzRR1/Strings_PizzRR1_093_091_096_001_127.wav", 93, 91, 96, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/PizzRR1/Strings_PizzRR1_099_097_103_001_127.wav", 99, 97, 103, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR1/Strings_PizzRR1_033_031_036_001_127.wav", 33, 31, 36, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR1/Strings_PizzRR1_039_037_042_001_127.wav", 39, 37, 42, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR1/Strings_PizzRR1_045_043_048_001_127.wav", 45, 43, 48, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR1/Strings_PizzRR1_051_049_054_001_127.wav", 51, 49, 54, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR1/Strings_PizzRR1_057_055_060_001_127.wav", 57, 55, 60, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR1/Strings_PizzRR1_063_061_066_001_127.wav", 63, 61, 66, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR1/Strings_PizzRR1_069_067_072_001_127.wav", 69, 67, 72, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR1/Strings_PizzRR1_075_073_078_001_127.wav", 75, 73, 78, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR1/Strings_PizzRR1_081_079_084_001_127.wav", 81, 79, 84, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR1/Strings_PizzRR1_087_085_090_001_127.wav", 87, 85, 90, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR1/Strings_PizzRR1_093_091_096_001_127.wav", 93, 91, 96, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR1/Strings_PizzRR1_099_097_103_001_127.wav", 99, 97, 103, 1, 127)
 end
 do  -- group PizzRR2
   local g = newGroup("PizzRR2")
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/PizzRR2/Strings_PizzRR2_033_031_036_001_127.wav", 33, 31, 36, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/PizzRR2/Strings_PizzRR2_039_037_042_001_127.wav", 39, 37, 42, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/PizzRR2/Strings_PizzRR2_045_043_048_001_127.wav", 45, 43, 48, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/PizzRR2/Strings_PizzRR2_051_049_054_001_127.wav", 51, 49, 54, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/PizzRR2/Strings_PizzRR2_057_055_060_001_127.wav", 57, 55, 60, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/PizzRR2/Strings_PizzRR2_063_061_066_001_127.wav", 63, 61, 66, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/PizzRR2/Strings_PizzRR2_069_067_072_001_127.wav", 69, 67, 72, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/PizzRR2/Strings_PizzRR2_075_073_078_001_127.wav", 75, 73, 78, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/PizzRR2/Strings_PizzRR2_081_079_084_001_127.wav", 81, 79, 84, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/PizzRR2/Strings_PizzRR2_087_085_090_001_127.wav", 87, 85, 90, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/PizzRR2/Strings_PizzRR2_093_091_096_001_127.wav", 93, 91, 96, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Ensemble Strings/PizzRR2/Strings_PizzRR2_099_097_103_001_127.wav", 99, 97, 103, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR2/Strings_PizzRR2_033_031_036_001_127.wav", 33, 31, 36, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR2/Strings_PizzRR2_039_037_042_001_127.wav", 39, 37, 42, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR2/Strings_PizzRR2_045_043_048_001_127.wav", 45, 43, 48, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR2/Strings_PizzRR2_051_049_054_001_127.wav", 51, 49, 54, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR2/Strings_PizzRR2_057_055_060_001_127.wav", 57, 55, 60, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR2/Strings_PizzRR2_063_061_066_001_127.wav", 63, 61, 66, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR2/Strings_PizzRR2_069_067_072_001_127.wav", 69, 67, 72, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR2/Strings_PizzRR2_075_073_078_001_127.wav", 75, 73, 78, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR2/Strings_PizzRR2_081_079_084_001_127.wav", 81, 79, 84, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR2/Strings_PizzRR2_087_085_090_001_127.wav", 87, 85, 90, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR2/Strings_PizzRR2_093_091_096_001_127.wav", 93, 91, 96, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR2/Strings_PizzRR2_099_097_103_001_127.wav", 99, 97, 103, 1, 127)
+end
+do  -- group PizzRR3
+  local g = newGroup("PizzRR3")
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR3/Strings_PizzRR3_033_031_036_001_127.wav", 33, 31, 36, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR3/Strings_PizzRR3_039_037_042_001_127.wav", 39, 37, 42, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR3/Strings_PizzRR3_045_043_048_001_127.wav", 45, 43, 48, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR3/Strings_PizzRR3_051_049_054_001_127.wav", 51, 49, 54, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR3/Strings_PizzRR3_057_055_060_001_127.wav", 57, 55, 60, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR3/Strings_PizzRR3_063_061_066_001_127.wav", 63, 61, 66, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR3/Strings_PizzRR3_069_067_072_001_127.wav", 69, 67, 72, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR3/Strings_PizzRR3_075_073_078_001_127.wav", 75, 73, 78, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR3/Strings_PizzRR3_081_079_084_001_127.wav", 81, 79, 84, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR3/Strings_PizzRR3_087_085_090_001_127.wav", 87, 85, 90, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR3/Strings_PizzRR3_093_091_096_001_127.wav", 93, 91, 96, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR3/Strings_PizzRR3_099_097_103_001_127.wav", 99, 97, 103, 1, 127)
+end
+do  -- group PizzRR4
+  local g = newGroup("PizzRR4")
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR4/Strings_PizzRR4_033_031_036_001_127.wav", 33, 31, 36, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR4/Strings_PizzRR4_039_037_042_001_127.wav", 39, 37, 42, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR4/Strings_PizzRR4_045_043_048_001_127.wav", 45, 43, 48, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR4/Strings_PizzRR4_051_049_054_001_127.wav", 51, 49, 54, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR4/Strings_PizzRR4_057_055_060_001_127.wav", 57, 55, 60, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR4/Strings_PizzRR4_063_061_066_001_127.wav", 63, 61, 66, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR4/Strings_PizzRR4_069_067_072_001_127.wav", 69, 67, 72, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR4/Strings_PizzRR4_075_073_078_001_127.wav", 75, 73, 78, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR4/Strings_PizzRR4_081_079_084_001_127.wav", 81, 79, 84, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR4/Strings_PizzRR4_087_085_090_001_127.wav", 87, 85, 90, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR4/Strings_PizzRR4_093_091_096_001_127.wav", 93, 91, 96, 1, 127)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/PizzRR4/Strings_PizzRR4_099_097_103_001_127.wav", 99, 97, 103, 1, 127)
+end
+do  -- group SusPHall
+  local g = newGroup("SusPHall")
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusPHall/Strings_SusPHall_033_031_036_001_127.wav", 33, 31, 36, 1, 127, 41895, 54499)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusPHall/Strings_SusPHall_039_037_042_001_127.wav", 39, 37, 42, 1, 127, 41895, 55461)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusPHall/Strings_SusPHall_045_043_048_001_127.wav", 45, 43, 48, 1, 127, 41895, 54473)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusPHall/Strings_SusPHall_051_049_054_001_127.wav", 51, 49, 54, 1, 127, 41895, 55913)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusPHall/Strings_SusPHall_057_055_060_001_127.wav", 57, 55, 60, 1, 127, 41895, 55941)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusPHall/Strings_SusPHall_063_061_066_001_127.wav", 63, 61, 66, 1, 127, 41895, 55821)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusPHall/Strings_SusPHall_069_067_072_001_127.wav", 69, 67, 72, 1, 127, 41895, 55955)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusPHall/Strings_SusPHall_075_073_078_001_127.wav", 75, 73, 78, 1, 127, 41895, 54307)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusPHall/Strings_SusPHall_081_079_084_001_127.wav", 81, 79, 84, 1, 127, 41895, 55299)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusPHall/Strings_SusPHall_087_085_090_001_127.wav", 87, 85, 90, 1, 127, 41895, 55977)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusPHall/Strings_SusPHall_093_091_096_001_127.wav", 93, 91, 96, 1, 127, 41895, 54835)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusPHall/Strings_SusPHall_099_097_103_001_127.wav", 99, 97, 103, 1, 127, 41895, 55141)
+end
+do  -- group SusFHall
+  local g = newGroup("SusFHall")
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusFHall/Strings_SusFHall_033_031_036_001_127.wav", 33, 31, 36, 1, 127, 41895, 55933)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusFHall/Strings_SusFHall_039_037_042_001_127.wav", 39, 37, 42, 1, 127, 41895, 54561)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusFHall/Strings_SusFHall_045_043_048_001_127.wav", 45, 43, 48, 1, 127, 41895, 54497)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusFHall/Strings_SusFHall_051_049_054_001_127.wav", 51, 49, 54, 1, 127, 41895, 55863)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusFHall/Strings_SusFHall_057_055_060_001_127.wav", 57, 55, 60, 1, 127, 41895, 54329)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusFHall/Strings_SusFHall_063_061_066_001_127.wav", 63, 61, 66, 1, 127, 41895, 54801)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusFHall/Strings_SusFHall_069_067_072_001_127.wav", 69, 67, 72, 1, 127, 41895, 54285)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusFHall/Strings_SusFHall_075_073_078_001_127.wav", 75, 73, 78, 1, 127, 41895, 54281)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusFHall/Strings_SusFHall_081_079_084_001_127.wav", 81, 79, 84, 1, 127, 41895, 55987)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusFHall/Strings_SusFHall_087_085_090_001_127.wav", 87, 85, 90, 1, 127, 41895, 55347)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusFHall/Strings_SusFHall_093_091_096_001_127.wav", 93, 91, 96, 1, 127, 41895, 55835)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/SusFHall/Strings_SusFHall_099_097_103_001_127.wav", 99, 97, 103, 1, 127, 41895, 54247)
+end
+do  -- group TremHall
+  local g = newGroup("TremHall")
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/TremHall/Strings_TremHall_033_031_036_001_127.wav", 33, 31, 36, 1, 127, 41895, 54591)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/TremHall/Strings_TremHall_039_037_042_001_127.wav", 39, 37, 42, 1, 127, 41895, 54685)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/TremHall/Strings_TremHall_045_043_048_001_127.wav", 45, 43, 48, 1, 127, 41895, 55427)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/TremHall/Strings_TremHall_051_049_054_001_127.wav", 51, 49, 54, 1, 127, 41895, 54663)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/TremHall/Strings_TremHall_057_055_060_001_127.wav", 57, 55, 60, 1, 127, 41895, 55533)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/TremHall/Strings_TremHall_063_061_066_001_127.wav", 63, 61, 66, 1, 127, 41895, 54429)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/TremHall/Strings_TremHall_069_067_072_001_127.wav", 69, 67, 72, 1, 127, 41895, 54299)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/TremHall/Strings_TremHall_075_073_078_001_127.wav", 75, 73, 78, 1, 127, 41895, 55265)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/TremHall/Strings_TremHall_081_079_084_001_127.wav", 81, 79, 84, 1, 127, 41895, 55317)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/TremHall/Strings_TremHall_087_085_090_001_127.wav", 87, 85, 90, 1, 127, 41895, 55865)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/TremHall/Strings_TremHall_093_091_096_001_127.wav", 93, 91, 96, 1, 127, 41895, 54937)
+  addZone(g, "Samples/02 Orchestral/Ensemble Strings/TremHall/Strings_TremHall_099_097_103_001_127.wav", 99, 97, 103, 1, 127, 41895, 55509)
 end
 
 local KSP_SOURCE = [==[
@@ -202,16 +307,23 @@ on init
   set_ui_height_px(330)
   set_listener($NI_SIGNAL_TIMER_BEAT, 24)
   { ---- groups (looked up by name, so the order in the instrument does not matter) ---- }
-  declare const $NUM_GRP := 7
-  declare %grp[7]
-  declare !grp_name[7]
+  declare const $NUM_GRP := 14
+  declare %grp[14]
+  declare !grp_name[14]
   !grp_name[0] := "SusP"
   !grp_name[1] := "SusF"
   !grp_name[2] := "Trem"
   !grp_name[3] := "StacRR1"
   !grp_name[4] := "StacRR2"
-  !grp_name[5] := "PizzRR1"
-  !grp_name[6] := "PizzRR2"
+  !grp_name[5] := "StacRR3"
+  !grp_name[6] := "StacRR4"
+  !grp_name[7] := "PizzRR1"
+  !grp_name[8] := "PizzRR2"
+  !grp_name[9] := "PizzRR3"
+  !grp_name[10] := "PizzRR4"
+  !grp_name[11] := "SusPHall"
+  !grp_name[12] := "SusFHall"
+  !grp_name[13] := "TremHall"
   declare $gi
   $gi := 0
   while ($gi < $NUM_GRP)
@@ -365,6 +477,15 @@ on init
   declare $st_g
   declare $st_k
   declare $st_v
+  declare $st_gi
+  declare $st_gg
+  declare $st_m
+  declare $st_base
+  declare $st_role
+  declare $vr_m
+  declare $vr_r
+  declare %mic_db[2]
+  declare %hall_of[14] := (-1)
   declare %mono_v[32]
   declare %mono_r[32]
   declare %mono_b[32]
@@ -409,20 +530,20 @@ on init
   %art_g[7] := -1
   !art_name[2] := "Staccato"
   %art_type[2] := 1
-  %art_gn[2] := 2
+  %art_gn[2] := 4
   %art_ks[2] := 26
   %art_g[8] := 3
   %art_g[9] := 4
-  %art_g[10] := -1
-  %art_g[11] := -1
+  %art_g[10] := 5
+  %art_g[11] := 6
   !art_name[3] := "Pizzicato"
   %art_type[3] := 1
-  %art_gn[3] := 2
+  %art_gn[3] := 4
   %art_ks[3] := 27
-  %art_g[12] := 5
-  %art_g[13] := 6
-  %art_g[14] := -1
-  %art_g[15] := -1
+  %art_g[12] := 7
+  %art_g[13] := 8
+  %art_g[14] := 9
+  %art_g[15] := 10
   !art_name[4] := "Swell"
   %art_type[4] := 2
   %art_gn[4] := 2
@@ -431,17 +552,20 @@ on init
   %art_g[17] := 1
   %art_g[18] := -1
   %art_g[19] := -1
+  %hall_of[0] := 11
+  %hall_of[1] := 12
+  %hall_of[2] := 13
   declare $vc_in
   declare $vc_db
   declare $vc_curved
   declare ~vc_r
-  declare const $NUM_UI := 49
-  declare %ui_id[49]
-  declare %ui_page[49]
+  declare const $NUM_UI := 52
+  declare %ui_id[52]
+  declare %ui_page[52]
   declare ui_label $info (1, 1)
-  set_text($info, "Ensemble Strings  |  CC1 = dynamics, keyswitches C0-E0")
-  set_control_par(get_ui_id($info), $CONTROL_PAR_WIDTH, 500)
-  move_control_px($info, 290, 6)
+  set_text($info, "Ensemble Strings  |  CC1 = dynamics, keyswitches C0-E0, Close/Hall mics")
+  set_control_par(get_ui_id($info), $CONTROL_PAR_WIDTH, 360)
+  move_control_px($info, 284, 6)
   %ui_id[0] := get_ui_id($info)
   %ui_page[0] := -1
   declare ui_label $lbl_scale (1, 1)
@@ -578,8 +702,8 @@ on init
   declare ui_knob $rev_mix (0, 1000, 10)
   set_text($rev_mix, "Reverb")
   set_knob_unit($rev_mix, $KNOB_UNIT_PERCENT)
-  set_knob_defval($rev_mix, 300)
-  $rev_mix := 300
+  set_knob_defval($rev_mix, 250)
+  $rev_mix := 250
   set_control_help($rev_mix, "Reverb level (Raum).")
   move_control_px($rev_mix, 598, 44)
   make_persistent($rev_mix)
@@ -926,6 +1050,41 @@ on init
   make_persistent($vcurve)
   %ui_id[48] := get_ui_id($vcurve)
   %ui_page[48] := 0
+  declare ui_knob $mic_close (-400, 60, 10)
+  set_text($mic_close, "Close Mic")
+  set_knob_unit($mic_close, $KNOB_UNIT_DB)
+  set_knob_defval($mic_close, 0)
+  $mic_close := 0
+  set_control_help($mic_close, "Level of the close microphones (also used by the short articulations). Fully down = off.")
+  move_control_px($mic_close, 520, 134)
+  make_persistent($mic_close)
+  %ui_id[49] := get_ui_id($mic_close)
+  %ui_page[49] := 0
+  declare ui_knob $mic_hall (-400, 60, 10)
+  set_text($mic_hall, "Hall Mic")
+  set_knob_unit($mic_hall, $KNOB_UNIT_DB)
+  set_knob_defval($mic_hall, -60)
+  $mic_hall := -60
+  set_control_help($mic_hall, "Level of the distant hall microphones on sustained articulations. Fully down = off.")
+  move_control_px($mic_hall, 618, 134)
+  make_persistent($mic_hall)
+  %ui_id[50] := get_ui_id($mic_hall)
+  %ui_page[50] := 0
+  declare ui_menu $preset
+  add_menu_item($preset, "Presets...", 0)
+  add_menu_item($preset, "Default", 1)
+  add_menu_item($preset, "Close Mics", 2)
+  add_menu_item($preset, "Concert Hall", 3)
+  add_menu_item($preset, "Epic Legato", 4)
+  add_menu_item($preset, "Soft Underscore", 5)
+  add_menu_item($preset, "Ostinato 1/16", 6)
+  set_control_par(get_ui_id($preset), $CONTROL_PAR_WIDTH, 140)
+  $preset := 0
+  set_control_help($preset, "Factory presets for this instrument. 'Default' resets every control.")
+  move_control_px($preset, 650, 6)
+  make_persistent($preset)
+  %ui_id[51] := get_ui_id($preset)
+  %ui_page[51] := -1
 end on
 
 function show_page
@@ -1147,6 +1306,22 @@ function vel_curve
   $vc_db := int(real($vrange) * 1000.0 * (~vc_r - 1.0))
 end function
 
+function voice_vol
+  $vr_m := $vr_role / 10
+  $vr_r := $vr_role mod 10
+  select ($vr_r)
+    case 0
+      $vr_vol := $dyn_gp + $dyn_db + $expr_db
+    case 1
+      $vr_vol := $dyn_gf + $dyn_db + $expr_db
+    case 2
+      $vr_vol := $dyn_db + $expr_db
+    case 3
+      $vr_vol := $vr_base + $expr_db
+  end select
+  $vr_vol := $vr_vol + %mic_db[$vr_m]
+end function
+
 function calc_dyn
   ~fr := real($dyn) / 127.0
   ~fg := cos(~fr * 1.5707963)
@@ -1167,19 +1342,6 @@ function calc_dyn
   $expr_db := int(20000.0 * log10(~fg) * 0.9)
 end function
 
-function voice_vol
-  select ($vr_role)
-    case 0
-      $vr_vol := $dyn_gp + $dyn_db + $expr_db
-    case 1
-      $vr_vol := $dyn_gf + $dyn_db + $expr_db
-    case 2
-      $vr_vol := $dyn_db + $expr_db
-    case 3
-      $vr_vol := $vr_base + $expr_db
-  end select
-end function
-
 function start_note
   $nv_n := 0
   $pv_note := $sn_note
@@ -1197,13 +1359,16 @@ function start_note
     if ($st_g # $NI_NOT_FOUND)
       $vc_in := $sn_vel
       call vel_curve
+      $st_base := $vc_db + random(-600, 600)
+      $vr_role := 3
+      $vr_base := $st_base
+      call voice_vol
       $pv_grp := $st_g
       $pv_role := 3
-      $pv_vol := $vc_db + random(-600, 600)
+      $pv_vol := $vr_vol
       $pv_fade := 0
       call play_voice
-      %nv_b[$nv_n - 1] := $pv_vol
-      change_vol($pv_id, $pv_vol + $expr_db, 0)
+      %nv_b[$nv_n - 1] := $st_base
     end if
   else
     if (%art_type[$art] = 2)
@@ -1211,14 +1376,16 @@ function start_note
     end if
     $st_k := 0
     while ($st_k < %art_gn[$art])
-      $st_g := %grp[%art_g[$art * 4 + $st_k]]
+      $st_gi := %art_g[$art * 4 + $st_k]
+      $st_g := %grp[$st_gi]
       if ($st_g # $NI_NOT_FOUND)
-        $pv_grp := $st_g
         if (%art_gn[$art] = 1)
           $vr_role := 2
         else
           $vr_role := $st_k
         end if
+        $st_base := 0
+        $st_role := $vr_role
         if ($dyn_src = 1)
           $st_v := $dyn
           $dyn := $sn_vel
@@ -1226,17 +1393,31 @@ function start_note
           call voice_vol
           $dyn := $st_v
           call calc_dyn
-          $pv_role := 3
-          $pv_vol := $vr_vol - $expr_db
-        else
-          call voice_vol
-          $pv_role := $vr_role
-          $pv_vol := $vr_vol
+          $st_base := $vr_vol - $expr_db - %mic_db[0]
+          $st_role := 3
         end if
-        call play_voice
-        if ($pv_role = 3)
-          change_vol($pv_id, $pv_vol + $expr_db, 0)
-        end if
+        $st_m := 0
+        while ($st_m < 2)
+          $st_gg := -1
+          if ($st_m = 0)
+            $st_gg := $st_g
+          else
+            if (%hall_of[$st_gi] >= 0)
+              $st_gg := %grp[%hall_of[$st_gi]]
+            end if
+          end if
+          if ($st_gg # -1 and $st_gg # $NI_NOT_FOUND and (($st_m = 0 and $mic_close > -400) or ($st_m = 1 and $mic_hall > -400)))
+            $pv_grp := $st_gg
+            $pv_role := $st_role + 10 * $st_m
+            $vr_role := $pv_role
+            $vr_base := $st_base
+            call voice_vol
+            $pv_vol := $vr_vol
+            call play_voice
+            %nv_b[$nv_n - 1] := $st_base
+          end if
+          inc($st_m)
+        end while
       end if
       inc($st_k)
     end while
@@ -1650,6 +1831,505 @@ function upd_vcurve
   { no side effects }
 end function
 
+function upd_mic_close
+  %mic_db[0] := $mic_close * 100
+  if ($mic_close <= -400)
+    %mic_db[0] := -100000
+  end if
+  call update_dyn
+end function
+
+function upd_mic_hall
+  %mic_db[1] := $mic_hall * 100
+  if ($mic_hall <= -400)
+    %mic_db[1] := -100000
+  end if
+  call update_dyn
+end function
+
+function upd_preset
+  { no side effects }
+end function
+
+function apply_preset
+  select ($preset)
+    case 1
+      $tone := 1000
+      call upd_tone
+      $width := 550
+      call upd_width
+      $chorus := 0
+      call upd_chorus
+      $dly_mix := 0
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 250
+      call upd_rev_mix
+      $rev_size := 750
+      call upd_rev_size
+      $rev_decay := 600
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 1
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 0
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 0
+      call upd_chord
+      $strum := 0
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 0
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 60
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $art_menu := 0
+      call upd_art_menu
+      $dyn_knob := 90
+      call upd_dyn_knob
+      $dyn_src := 0
+      call upd_dyn_src
+      $dyn_range := 20
+      call upd_dyn_range
+      $attack := 0
+      call upd_attack
+      $release := 380
+      call upd_release
+      $swell_t := 1800
+      call upd_swell_t
+      $legato := 0
+      call upd_legato
+      $leg_time := 110
+      call upd_leg_time
+      $porta := 25
+      call upd_porta
+      $vrange := 22
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $mic_close := 0
+      call upd_mic_close
+      $mic_hall := -60
+      call upd_mic_hall
+    case 2
+      $tone := 1000
+      call upd_tone
+      $width := 550
+      call upd_width
+      $chorus := 0
+      call upd_chorus
+      $dly_mix := 0
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 200
+      call upd_rev_mix
+      $rev_size := 750
+      call upd_rev_size
+      $rev_decay := 600
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 1
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 0
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 0
+      call upd_chord
+      $strum := 0
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 0
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 60
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $art_menu := 0
+      call upd_art_menu
+      $dyn_knob := 90
+      call upd_dyn_knob
+      $dyn_src := 0
+      call upd_dyn_src
+      $dyn_range := 20
+      call upd_dyn_range
+      $attack := 0
+      call upd_attack
+      $release := 380
+      call upd_release
+      $swell_t := 1800
+      call upd_swell_t
+      $legato := 0
+      call upd_legato
+      $leg_time := 110
+      call upd_leg_time
+      $porta := 25
+      call upd_porta
+      $vrange := 22
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $mic_close := 0
+      call upd_mic_close
+      $mic_hall := -400
+      call upd_mic_hall
+    case 3
+      $tone := 1000
+      call upd_tone
+      $width := 550
+      call upd_width
+      $chorus := 0
+      call upd_chorus
+      $dly_mix := 0
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 150
+      call upd_rev_mix
+      $rev_size := 750
+      call upd_rev_size
+      $rev_decay := 600
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 1
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 0
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 0
+      call upd_chord
+      $strum := 0
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 0
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 60
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $art_menu := 0
+      call upd_art_menu
+      $dyn_knob := 90
+      call upd_dyn_knob
+      $dyn_src := 0
+      call upd_dyn_src
+      $dyn_range := 20
+      call upd_dyn_range
+      $attack := 0
+      call upd_attack
+      $release := 380
+      call upd_release
+      $swell_t := 1800
+      call upd_swell_t
+      $legato := 0
+      call upd_legato
+      $leg_time := 110
+      call upd_leg_time
+      $porta := 25
+      call upd_porta
+      $vrange := 22
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $mic_close := -80
+      call upd_mic_close
+      $mic_hall := 0
+      call upd_mic_hall
+    case 4
+      $tone := 1000
+      call upd_tone
+      $width := 550
+      call upd_width
+      $chorus := 0
+      call upd_chorus
+      $dly_mix := 0
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 350
+      call upd_rev_mix
+      $rev_size := 750
+      call upd_rev_size
+      $rev_decay := 600
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 1
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 0
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 0
+      call upd_chord
+      $strum := 0
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 0
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 60
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $art_menu := 0
+      call upd_art_menu
+      $dyn_knob := 90
+      call upd_dyn_knob
+      $dyn_src := 0
+      call upd_dyn_src
+      $dyn_range := 20
+      call upd_dyn_range
+      $attack := 0
+      call upd_attack
+      $release := 380
+      call upd_release
+      $swell_t := 1800
+      call upd_swell_t
+      $legato := 1
+      call upd_legato
+      $leg_time := 140
+      call upd_leg_time
+      $porta := 35
+      call upd_porta
+      $vrange := 22
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $mic_close := 0
+      call upd_mic_close
+      $mic_hall := -60
+      call upd_mic_hall
+    case 5
+      $tone := 1000
+      call upd_tone
+      $width := 550
+      call upd_width
+      $chorus := 0
+      call upd_chorus
+      $dly_mix := 0
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 380
+      call upd_rev_mix
+      $rev_size := 750
+      call upd_rev_size
+      $rev_decay := 600
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 1
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 0
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 0
+      call upd_chord
+      $strum := 0
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 0
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 60
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $art_menu := 0
+      call upd_art_menu
+      $dyn_knob := 45
+      call upd_dyn_knob
+      $dyn_src := 0
+      call upd_dyn_src
+      $dyn_range := 20
+      call upd_dyn_range
+      $attack := 250
+      call upd_attack
+      $release := 900
+      call upd_release
+      $swell_t := 1800
+      call upd_swell_t
+      $legato := 0
+      call upd_legato
+      $leg_time := 110
+      call upd_leg_time
+      $porta := 25
+      call upd_porta
+      $vrange := 22
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $mic_close := 0
+      call upd_mic_close
+      $mic_hall := -60
+      call upd_mic_hall
+    case 6
+      $tone := 1000
+      call upd_tone
+      $width := 550
+      call upd_width
+      $chorus := 0
+      call upd_chorus
+      $dly_mix := 0
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 250
+      call upd_rev_mix
+      $rev_size := 750
+      call upd_rev_size
+      $rev_decay := 600
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 1
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 0
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 0
+      call upd_chord
+      $strum := 0
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 1
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 40
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $art_menu := 2
+      call upd_art_menu
+      $dyn_knob := 90
+      call upd_dyn_knob
+      $dyn_src := 0
+      call upd_dyn_src
+      $dyn_range := 20
+      call upd_dyn_range
+      $attack := 0
+      call upd_attack
+      $release := 380
+      call upd_release
+      $swell_t := 1800
+      call upd_swell_t
+      $legato := 0
+      call upd_legato
+      $leg_time := 110
+      call upd_leg_time
+      $porta := 25
+      call upd_porta
+      $vrange := 22
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $mic_close := 0
+      call upd_mic_close
+      $mic_hall := -60
+      call upd_mic_hall
+  end select
+end function
+
 on persistence_changed
   call upd_tab_play
   call upd_tab_sound
@@ -1691,6 +2371,9 @@ on persistence_changed
   call upd_porta
   call upd_vrange
   call upd_vcurve
+  call upd_mic_close
+  call upd_mic_hall
+  call upd_preset
   call show_page
   call color_keys
 end on
@@ -2098,6 +2781,19 @@ end on
 
 on ui_control ($vcurve)
   call upd_vcurve
+end on
+
+on ui_control ($mic_close)
+  call upd_mic_close
+end on
+
+on ui_control ($mic_hall)
+  call upd_mic_hall
+end on
+
+on ui_control ($preset)
+  call upd_preset
+  call apply_preset
 end on
 ]==]
 

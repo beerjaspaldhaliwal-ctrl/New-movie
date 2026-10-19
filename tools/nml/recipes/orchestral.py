@@ -15,7 +15,7 @@ def _string_body(x, bright):
     return dsp.hp(x, 45)
 
 
-def _bowed_section(n, f0, rng, dyn, players=8, attack=0.15, vib=12.0, trem=False, length=None):
+def _bowed_section(n, f0, rng, dyn, players=8, attack=0.15, vib=12.0, trem=False, length=None, body=None):
     t = dsp.tvec(n)
     out = np.zeros((n, 2))
     f = 1.0 if dyn == "f" else 0.0
@@ -39,7 +39,7 @@ def _bowed_section(n, f0, rng, dyn, players=8, attack=0.15, vib=12.0, trem=False
             stroke = 0.35 + 0.65 * (0.5 - 0.5 * np.cos(2 * np.pi * ph)) ** 0.7
             env *= stroke
         env *= 1 + 0.08 * dsp.smooth_noise(n, rng, 0.6)
-        out += dsp.pan(v * env, (p / (players - 1) * 2 - 1) * 0.8)
+        out += dsp.pan(v * env, (p / max(players - 1, 1) * 2 - 1) * 0.8 if players > 1 else 0.0)
     out /= np.sqrt(players)
     # bow noise
     noise = rng.standard_normal((n, 2))
@@ -51,27 +51,42 @@ def _bowed_section(n, f0, rng, dyn, players=8, attack=0.15, vib=12.0, trem=False
     out = dsp.lp24(out, cut, 0.6)
     if f:
         out = dsp.saturate(dsp.norm_rms(out, 0.2), 1.25)
-    return _string_body(out, f)
+    return (body or _string_body)(out, f)
+
+
+def _mic(x, mic, seed=31):
+    """Close = the section with a little room; Hall = darker, wider, mostly reverb.
+    Both are made from the same dry render, so they mix phase-coherently."""
+    if mic == "hall":
+        y = dsp.eq(x, "highshelf", 4500, -4.0, 0.7)
+        y = dsp.eq(y, "lowshelf", 200, 1.5, 0.7)
+        y = dsp.reverb(y, hall_ir(2.8, seed + 6, 0.035), 0.6)
+        return dsp.width(y, 1.3)
+    return dsp.reverb(x, hall_ir(1.8, seed), 0.12)
+
+
+def _with_mics(z, dry, seed=31):
+    """Close and Hall variants of a sustained sample share the same loop points."""
+    close = dsp.fade_edges(_mic(dry, "close", seed), 0.002, 0.001)
+    pts = dsp.loop_points(close, 0.95, 1.25, 0.45)
+    y = close if not z.group.endswith("Hall") else dsp.fade_edges(_mic(dry, "hall", seed), 0.002, 0.001)
+    return dsp.make_looped(y, 0, 0, points=pts)
 
 
 def strings(z):
     rng = np.random.default_rng(z.seed)
     f0 = float(mtof(z.root))
-    g = z.group
+    g = z.group.replace("Hall", "")
     ks = key_scale(z.root, 30, 96)
     if g in ("SusP", "SusF"):
         n = secs(2.6)
         dyn = "f" if g == "SusF" else "p"
         x = _bowed_section(n, f0, rng, dyn, attack=0.22 if dyn == "p" else 0.11, vib=lerp(10, 14, ks))
-        x = dsp.reverb(x, hall_ir(1.8, 31), 0.16)
-        x = dsp.fade_edges(x, 0.002, 0.001)
-        return sustain_loop(x, 0.95, 1.25, 0.45)
+        return _with_mics(z, x)
     if g == "Trem":
         n = secs(2.6)
         x = _bowed_section(n, f0, rng, "f", attack=0.08, vib=4.0, trem=True)
-        x = dsp.reverb(x, hall_ir(1.8, 31), 0.16)
-        x = dsp.fade_edges(x, 0.002, 0.001)
-        return sustain_loop(x, 0.95, 1.25, 0.45)
+        return _with_mics(z, x)
     if g.startswith("Stac"):
         n = secs(0.6)
         x = _bowed_section(n, f0, rng, "f", attack=0.018, vib=0.0, length=0.13)
@@ -98,7 +113,7 @@ def strings(z):
 
 
 # ---------------------------------------------------------------- Brass
-def _brass_section(n, f0, rng, dyn, players=4, attack=0.06, length=None):
+def _brass_section(n, f0, rng, dyn, players=4, attack=0.06, length=None, bright=1.0):
     t = dsp.tvec(n)
     out = np.zeros((n, 2))
     f = 1.0 if dyn == "f" else 0.0
@@ -118,9 +133,9 @@ def _brass_section(n, f0, rng, dyn, players=4, attack=0.06, length=None):
         fr = f0 * dsp.cents_to_ratio(cents)
         v = 0.8 * dsp.saw(fr, SR, rng.uniform()) + 0.3 * dsp.pulse(fr, 0.45, SR, rng.uniform())
         # brightness follows loudness: the essence of a brass tone
-        cut = f0 * lerp(1.6, 2.6, f) + (lerp(800, 3500, f) + f0 * lerp(2, 5, f)) * amp ** 2
+        cut = (f0 * lerp(1.6, 2.6, f) + (lerp(800, 3500, f) + f0 * lerp(2, 5, f)) * amp ** 2) * bright
         v = dsp.svf(dsp.svf(v, cut, 0.55, "lp"), cut * 1.1, 0.9, "lp")
-        out += dsp.pan(v * amp, (p / (players - 1) * 2 - 1) * 0.6)
+        out += dsp.pan(v * amp, (p / max(players - 1, 1) * 2 - 1) * 0.6 if players > 1 else 0.0)
     out /= np.sqrt(players)
     out += dsp.bp(rng.standard_normal((n, 2)), f0 * 3, 4.0) * 0.01 * np.clip(t / 0.05, 0, 1)[:, None]
     if f:
@@ -133,14 +148,12 @@ def _brass_section(n, f0, rng, dyn, players=4, attack=0.06, length=None):
 def brass(z):
     rng = np.random.default_rng(z.seed)
     f0 = float(mtof(z.root))
-    g = z.group
+    g = z.group.replace("Hall", "")
     if g in ("SusP", "SusF"):
         n = secs(2.6)
         dyn = "f" if g == "SusF" else "p"
         x = _brass_section(n, f0, rng, dyn, attack=0.09 if dyn == "p" else 0.05)
-        x = dsp.reverb(x, hall_ir(2.0, 41), 0.17)
-        x = dsp.fade_edges(x, 0.002, 0.001)
-        return sustain_loop(x, 0.95, 1.25, 0.45)
+        return _with_mics(z, x, seed=41)
     n = secs(0.55)
     x = _brass_section(n, f0, rng, "f", attack=0.022, length=0.12)
     x = dsp.reverb(x, hall_ir(2.0, 41), 0.2)

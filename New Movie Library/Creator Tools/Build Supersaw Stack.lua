@@ -287,13 +287,13 @@ on init
   declare polyphonic $q_steps
   declare polyphonic $q_s
   declare polyphonic $q_tgt
-  declare const $NUM_UI := 53
-  declare %ui_id[53]
-  declare %ui_page[53]
+  declare const $NUM_UI := 54
+  declare %ui_id[54]
+  declare %ui_page[54]
   declare ui_label $info (1, 1)
   set_text($info, "Supersaw Stack  |  Mono / Glide for leads, Octave Layer for anthems")
-  set_control_par(get_ui_id($info), $CONTROL_PAR_WIDTH, 500)
-  move_control_px($info, 290, 6)
+  set_control_par(get_ui_id($info), $CONTROL_PAR_WIDTH, 360)
+  move_control_px($info, 284, 6)
   %ui_id[0] := get_ui_id($info)
   %ui_page[0] := -1
   declare ui_label $lbl_scale (1, 1)
@@ -816,6 +816,21 @@ on init
   make_persistent($modwheel)
   %ui_id[52] := get_ui_id($modwheel)
   %ui_page[52] := 0
+  declare ui_menu $preset
+  add_menu_item($preset, "Presets...", 0)
+  add_menu_item($preset, "Default", 1)
+  add_menu_item($preset, "Lush and Wide", 2)
+  add_menu_item($preset, "Dark and Close", 3)
+  add_menu_item($preset, "Epic Octaves", 4)
+  add_menu_item($preset, "Tempo Pulse", 5)
+  add_menu_item($preset, "Mono Lead", 6)
+  set_control_par(get_ui_id($preset), $CONTROL_PAR_WIDTH, 140)
+  $preset := 0
+  set_control_help($preset, "Factory presets for this instrument. 'Default' resets every control.")
+  move_control_px($preset, 650, 6)
+  make_persistent($preset)
+  %ui_id[53] := get_ui_id($preset)
+  %ui_page[53] := -1
 end on
 
 function show_page
@@ -1482,6 +1497,489 @@ function upd_modwheel
   call apply_cutoff
 end function
 
+function upd_preset
+  { no side effects }
+end function
+
+function apply_preset
+  select ($preset)
+    case 1
+      $tone := 900
+      call upd_tone
+      $reso := 150
+      call upd_reso
+      $width := 700
+      call upd_width
+      $chorus := 0
+      call upd_chorus
+      $dly_mix := 180
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 220
+      call upd_rev_mix
+      $rev_size := 600
+      call upd_rev_size
+      $rev_decay := 550
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 1
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 0
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 0
+      call upd_chord
+      $strum := 0
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 0
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 60
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $layer_a := 0
+      call upd_layer_a
+      $layer_b := 0
+      call upd_layer_b
+      $blend := 350
+      call upd_blend
+      $attack := 3
+      call upd_attack
+      $release := 380
+      call upd_release
+      $vsens := 40
+      call upd_vsens
+      $move_amt := 0
+      call upd_move_amt
+      $oct_mode := 0
+      call upd_oct_mode
+      $oct_lvl := -60
+      call upd_oct_lvl
+      $mono := 0
+      call upd_mono
+      $glide := 90
+      call upd_glide
+      $move_rate := 3
+      call upd_move_rate
+      $modwheel := 600
+      call upd_modwheel
+    case 2
+      $tone := 900
+      call upd_tone
+      $reso := 150
+      call upd_reso
+      $width := 850
+      call upd_width
+      $chorus := 350
+      call upd_chorus
+      $dly_mix := 180
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 450
+      call upd_rev_mix
+      $rev_size := 850
+      call upd_rev_size
+      $rev_decay := 700
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 1
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 0
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 0
+      call upd_chord
+      $strum := 0
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 0
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 60
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $layer_a := 0
+      call upd_layer_a
+      $layer_b := 0
+      call upd_layer_b
+      $blend := 350
+      call upd_blend
+      $attack := 3
+      call upd_attack
+      $release := 380
+      call upd_release
+      $vsens := 40
+      call upd_vsens
+      $move_amt := 0
+      call upd_move_amt
+      $oct_mode := 0
+      call upd_oct_mode
+      $oct_lvl := -60
+      call upd_oct_lvl
+      $mono := 0
+      call upd_mono
+      $glide := 90
+      call upd_glide
+      $move_rate := 3
+      call upd_move_rate
+      $modwheel := 600
+      call upd_modwheel
+    case 3
+      $tone := 450
+      call upd_tone
+      $reso := 150
+      call upd_reso
+      $width := 450
+      call upd_width
+      $chorus := 100
+      call upd_chorus
+      $dly_mix := 180
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 150
+      call upd_rev_mix
+      $rev_size := 600
+      call upd_rev_size
+      $rev_decay := 550
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 1
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 0
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 0
+      call upd_chord
+      $strum := 0
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 0
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 60
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $layer_a := 0
+      call upd_layer_a
+      $layer_b := 0
+      call upd_layer_b
+      $blend := 350
+      call upd_blend
+      $attack := 3
+      call upd_attack
+      $release := 380
+      call upd_release
+      $vsens := 40
+      call upd_vsens
+      $move_amt := 0
+      call upd_move_amt
+      $oct_mode := 0
+      call upd_oct_mode
+      $oct_lvl := -60
+      call upd_oct_lvl
+      $mono := 0
+      call upd_mono
+      $glide := 90
+      call upd_glide
+      $move_rate := 3
+      call upd_move_rate
+      $modwheel := 600
+      call upd_modwheel
+    case 4
+      $tone := 900
+      call upd_tone
+      $reso := 150
+      call upd_reso
+      $width := 800
+      call upd_width
+      $chorus := 0
+      call upd_chorus
+      $dly_mix := 180
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 400
+      call upd_rev_mix
+      $rev_size := 600
+      call upd_rev_size
+      $rev_decay := 550
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 1
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 0
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 0
+      call upd_chord
+      $strum := 0
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 0
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 60
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $layer_a := 0
+      call upd_layer_a
+      $layer_b := 0
+      call upd_layer_b
+      $blend := 350
+      call upd_blend
+      $attack := 3
+      call upd_attack
+      $release := 380
+      call upd_release
+      $vsens := 40
+      call upd_vsens
+      $move_amt := 0
+      call upd_move_amt
+      $oct_mode := 3
+      call upd_oct_mode
+      $oct_lvl := -40
+      call upd_oct_lvl
+      $mono := 0
+      call upd_mono
+      $glide := 90
+      call upd_glide
+      $move_rate := 3
+      call upd_move_rate
+      $modwheel := 600
+      call upd_modwheel
+    case 5
+      $tone := 900
+      call upd_tone
+      $reso := 150
+      call upd_reso
+      $width := 700
+      call upd_width
+      $chorus := 0
+      call upd_chorus
+      $dly_mix := 300
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 220
+      call upd_rev_mix
+      $rev_size := 600
+      call upd_rev_size
+      $rev_decay := 550
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 1
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 0
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 0
+      call upd_chord
+      $strum := 0
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 1
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 50
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $layer_a := 0
+      call upd_layer_a
+      $layer_b := 0
+      call upd_layer_b
+      $blend := 350
+      call upd_blend
+      $attack := 3
+      call upd_attack
+      $release := 250
+      call upd_release
+      $vsens := 40
+      call upd_vsens
+      $move_amt := 0
+      call upd_move_amt
+      $oct_mode := 0
+      call upd_oct_mode
+      $oct_lvl := -60
+      call upd_oct_lvl
+      $mono := 0
+      call upd_mono
+      $glide := 90
+      call upd_glide
+      $move_rate := 3
+      call upd_move_rate
+      $modwheel := 600
+      call upd_modwheel
+    case 6
+      $tone := 900
+      call upd_tone
+      $reso := 150
+      call upd_reso
+      $width := 700
+      call upd_width
+      $chorus := 0
+      call upd_chorus
+      $dly_mix := 250
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 200
+      call upd_rev_mix
+      $rev_size := 600
+      call upd_rev_size
+      $rev_decay := 550
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 1
+      call upd_use_pedal
+      $pb_range := 2
+      call upd_pb_range
+      $scale_type := 0
+      call upd_scale_type
+      $scale_key := 0
+      call upd_scale_key
+      $chord := 0
+      call upd_chord
+      $strum := 0
+      call upd_strum
+      $hum_time := 0
+      call upd_hum_time
+      $hum_vel := 0
+      call upd_hum_vel
+      $arp_mode := 0
+      call upd_arp_mode
+      $arp_rate := 3
+      call upd_arp_rate
+      $arp_oct := 1
+      call upd_arp_oct
+      $arp_gate := 60
+      call upd_arp_gate
+      $arp_swing := 0
+      call upd_arp_swing
+      $arp_latch := 0
+      call upd_arp_latch
+      $arp_accent := 10
+      call upd_arp_accent
+      $layer_a := 0
+      call upd_layer_a
+      $layer_b := 0
+      call upd_layer_b
+      $blend := 350
+      call upd_blend
+      $attack := 3
+      call upd_attack
+      $release := 380
+      call upd_release
+      $vsens := 40
+      call upd_vsens
+      $move_amt := 0
+      call upd_move_amt
+      $oct_mode := 0
+      call upd_oct_mode
+      $oct_lvl := -60
+      call upd_oct_lvl
+      $mono := 1
+      call upd_mono
+      $glide := 120
+      call upd_glide
+      $move_rate := 3
+      call upd_move_rate
+      $modwheel := 600
+      call upd_modwheel
+  end select
+end function
+
 on persistence_changed
   call upd_tab_play
   call upd_tab_sound
@@ -1525,6 +2023,7 @@ on persistence_changed
   call upd_glide
   call upd_move_rate
   call upd_modwheel
+  call upd_preset
   call show_page
   call color_keys
 end on
@@ -1909,6 +2408,11 @@ end on
 
 on ui_control ($modwheel)
   call upd_modwheel
+end on
+
+on ui_control ($preset)
+  call upd_preset
+  call apply_preset
 end on
 ]==]
 

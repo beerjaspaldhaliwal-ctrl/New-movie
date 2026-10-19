@@ -1,0 +1,11 @@
+Save the instruments for this category here (see Documentation/BUILD GUIDE):
+
+  Ensemble Strings.nki
+  Solo Violin.nki
+  Solo Cello.nki
+  Brass Ensemble.nki
+  French Horns.nki
+  Woodwind Ensemble.nki
+  Concert Harp.nki
+  Cinematic Timpani.nki
+  Orchestral Percussion.nki

@@ -121,6 +121,13 @@ on init
   declare $ud_s
   declare $ud_i
   declare $ud_j
+  declare $dh_note
+  declare $dh_vel
+  declare %rep_vel[128]
+  declare %rep_next[128]
+  declare $rep_n
+  declare $rp_k
+  declare %rep_ticks[6] := (0, 12, 8, 6, 4, 3)
   %key_pc[36] := 0
   %pz_bus[0] := 0
   %pz_cg[0] := 0
@@ -745,31 +752,37 @@ on init
   declare $vc_db
   declare $vc_curved
   declare ~vc_r
-  declare const $NUM_UI := 25
-  declare %ui_id[25]
-  declare %ui_page[25]
+  declare const $NUM_UI := 28
+  declare %ui_id[28]
+  declare %ui_page[28]
   declare ui_label $info (1, 1)
   set_text($info, "Cinematic FX  |  C2-G3: impacts, risers, whooshes, downers, stingers")
-  set_control_par(get_ui_id($info), $CONTROL_PAR_WIDTH, 500)
-  move_control_px($info, 290, 6)
+  set_control_par(get_ui_id($info), $CONTROL_PAR_WIDTH, 360)
+  move_control_px($info, 284, 6)
   %ui_id[0] := get_ui_id($info)
   %ui_page[0] := -1
+  declare ui_label $lbl_repeat (1, 1)
+  set_text($lbl_repeat, "Note Repeat")
+  set_control_par(get_ui_id($lbl_repeat), $CONTROL_PAR_WIDTH, 96)
+  move_control_px($lbl_repeat, 696, 140)
+  %ui_id[1] := get_ui_id($lbl_repeat)
+  %ui_page[1] := 0
   declare ui_switch $tab_play
   set_text($tab_play, "PLAY")
   set_control_par(get_ui_id($tab_play), $CONTROL_PAR_WIDTH, 86)
   $tab_play := 1
   set_control_help($tab_play, "Main playing controls.")
   move_control_px($tab_play, 8, 6)
-  %ui_id[1] := get_ui_id($tab_play)
-  %ui_page[1] := -1
+  %ui_id[2] := get_ui_id($tab_play)
+  %ui_page[2] := -1
   declare ui_switch $tab_sound
   set_text($tab_sound, "SOUND")
   set_control_par(get_ui_id($tab_sound), $CONTROL_PAR_WIDTH, 86)
   $tab_sound := 0
   set_control_help($tab_sound, "Tone, width, chorus, delay and reverb.")
   move_control_px($tab_sound, 98, 6)
-  %ui_id[2] := get_ui_id($tab_sound)
-  %ui_page[2] := -1
+  %ui_id[3] := get_ui_id($tab_sound)
+  %ui_page[3] := -1
   declare ui_knob $tone (0, 1000, 10)
   set_text($tone, "Tone")
   set_knob_unit($tone, $KNOB_UNIT_PERCENT)
@@ -778,8 +791,8 @@ on init
   set_control_help($tone, "Low-pass filter on the whole instrument. 100% = fully open.")
   move_control_px($tone, 10, 44)
   make_persistent($tone)
-  %ui_id[3] := get_ui_id($tone)
-  %ui_page[3] := 1
+  %ui_id[4] := get_ui_id($tone)
+  %ui_page[4] := 1
   declare ui_knob $width (0, 1000, 5)
   set_text($width, "Width")
   set_knob_unit($width, $KNOB_UNIT_PERCENT)
@@ -788,8 +801,8 @@ on init
   set_control_help($width, "Stereo width. 100% = as recorded, 0% = mono, 200% = extra wide.")
   move_control_px($width, 108, 44)
   make_persistent($width)
-  %ui_id[4] := get_ui_id($width)
-  %ui_page[4] := 1
+  %ui_id[5] := get_ui_id($width)
+  %ui_page[5] := 1
   declare ui_knob $dly_mix (0, 1000, 10)
   set_text($dly_mix, "Delay")
   set_knob_unit($dly_mix, $KNOB_UNIT_PERCENT)
@@ -798,8 +811,8 @@ on init
   set_control_help($dly_mix, "Delay level (Replika, tape mode).")
   move_control_px($dly_mix, 206, 44)
   make_persistent($dly_mix)
-  %ui_id[5] := get_ui_id($dly_mix)
-  %ui_page[5] := 1
+  %ui_id[6] := get_ui_id($dly_mix)
+  %ui_page[6] := 1
   declare ui_knob $dly_time (0, 1000, 10)
   set_text($dly_time, "Time")
   set_knob_defval($dly_time, 450)
@@ -807,8 +820,8 @@ on init
   set_control_help($dly_time, "Delay time. With Sync on, it steps through note values.")
   move_control_px($dly_time, 304, 44)
   make_persistent($dly_time)
-  %ui_id[6] := get_ui_id($dly_time)
-  %ui_page[6] := 1
+  %ui_id[7] := get_ui_id($dly_time)
+  %ui_page[7] := 1
   declare ui_knob $dly_fb (0, 1000, 10)
   set_text($dly_fb, "Feedback")
   set_knob_unit($dly_fb, $KNOB_UNIT_PERCENT)
@@ -817,8 +830,8 @@ on init
   set_control_help($dly_fb, "Delay feedback.")
   move_control_px($dly_fb, 402, 44)
   make_persistent($dly_fb)
-  %ui_id[7] := get_ui_id($dly_fb)
-  %ui_page[7] := 1
+  %ui_id[8] := get_ui_id($dly_fb)
+  %ui_page[8] := 1
   declare ui_knob $rev_mix (0, 1000, 10)
   set_text($rev_mix, "Reverb")
   set_knob_unit($rev_mix, $KNOB_UNIT_PERCENT)
@@ -827,8 +840,8 @@ on init
   set_control_help($rev_mix, "Reverb level (Raum).")
   move_control_px($rev_mix, 500, 44)
   make_persistent($rev_mix)
-  %ui_id[8] := get_ui_id($rev_mix)
-  %ui_page[8] := 1
+  %ui_id[9] := get_ui_id($rev_mix)
+  %ui_page[9] := 1
   declare ui_knob $rev_size (0, 1000, 10)
   set_text($rev_size, "Size")
   set_knob_unit($rev_size, $KNOB_UNIT_PERCENT)
@@ -837,8 +850,8 @@ on init
   set_control_help($rev_size, "Room size.")
   move_control_px($rev_size, 598, 44)
   make_persistent($rev_size)
-  %ui_id[9] := get_ui_id($rev_size)
-  %ui_page[9] := 1
+  %ui_id[10] := get_ui_id($rev_size)
+  %ui_page[10] := 1
   declare ui_knob $rev_decay (0, 1000, 10)
   set_text($rev_decay, "Decay")
   set_knob_defval($rev_decay, 700)
@@ -846,8 +859,8 @@ on init
   set_control_help($rev_decay, "Reverb decay time.")
   move_control_px($rev_decay, 696, 44)
   make_persistent($rev_decay)
-  %ui_id[10] := get_ui_id($rev_decay)
-  %ui_page[10] := 1
+  %ui_id[11] := get_ui_id($rev_decay)
+  %ui_page[11] := 1
   declare ui_switch $dly_sync
   set_text($dly_sync, "Delay Sync")
   set_control_par(get_ui_id($dly_sync), $CONTROL_PAR_WIDTH, 88)
@@ -855,8 +868,8 @@ on init
   set_control_help($dly_sync, "Sync the delay to the host tempo.")
   move_control_px($dly_sync, 10, 234)
   make_persistent($dly_sync)
-  %ui_id[11] := get_ui_id($dly_sync)
-  %ui_page[11] := 1
+  %ui_id[12] := get_ui_id($dly_sync)
+  %ui_page[12] := 1
   declare ui_switch $use_pedal
   set_text($use_pedal, "Sustain Pedal")
   set_control_par(get_ui_id($use_pedal), $CONTROL_PAR_WIDTH, 88)
@@ -864,8 +877,8 @@ on init
   set_control_help($use_pedal, "Follow the sustain pedal (CC64).")
   move_control_px($use_pedal, 108, 234)
   make_persistent($use_pedal)
-  %ui_id[12] := get_ui_id($use_pedal)
-  %ui_page[12] := 1
+  %ui_id[13] := get_ui_id($use_pedal)
+  %ui_page[13] := 1
   declare ui_knob $bus0 (-400, 60, 10)
   set_text($bus0, "Impacts")
   set_knob_unit($bus0, $KNOB_UNIT_DB)
@@ -874,8 +887,8 @@ on init
   set_control_help($bus0, "Level of the Impacts pieces.")
   move_control_px($bus0, 10, 44)
   make_persistent($bus0)
-  %ui_id[13] := get_ui_id($bus0)
-  %ui_page[13] := 0
+  %ui_id[14] := get_ui_id($bus0)
+  %ui_page[14] := 0
   declare ui_knob $bus1 (-400, 60, 10)
   set_text($bus1, "Risers")
   set_knob_unit($bus1, $KNOB_UNIT_DB)
@@ -884,8 +897,8 @@ on init
   set_control_help($bus1, "Level of the Risers pieces.")
   move_control_px($bus1, 108, 44)
   make_persistent($bus1)
-  %ui_id[14] := get_ui_id($bus1)
-  %ui_page[14] := 0
+  %ui_id[15] := get_ui_id($bus1)
+  %ui_page[15] := 0
   declare ui_knob $bus2 (-400, 60, 10)
   set_text($bus2, "Whooshes")
   set_knob_unit($bus2, $KNOB_UNIT_DB)
@@ -894,8 +907,8 @@ on init
   set_control_help($bus2, "Level of the Whooshes pieces.")
   move_control_px($bus2, 206, 44)
   make_persistent($bus2)
-  %ui_id[15] := get_ui_id($bus2)
-  %ui_page[15] := 0
+  %ui_id[16] := get_ui_id($bus2)
+  %ui_page[16] := 0
   declare ui_knob $bus3 (-400, 60, 10)
   set_text($bus3, "Downers")
   set_knob_unit($bus3, $KNOB_UNIT_DB)
@@ -904,8 +917,8 @@ on init
   set_control_help($bus3, "Level of the Downers pieces.")
   move_control_px($bus3, 304, 44)
   make_persistent($bus3)
-  %ui_id[16] := get_ui_id($bus3)
-  %ui_page[16] := 0
+  %ui_id[17] := get_ui_id($bus3)
+  %ui_page[17] := 0
   declare ui_knob $bus4 (-400, 60, 10)
   set_text($bus4, "Misc")
   set_knob_unit($bus4, $KNOB_UNIT_DB)
@@ -914,8 +927,8 @@ on init
   set_control_help($bus4, "Level of the Misc pieces.")
   move_control_px($bus4, 402, 44)
   make_persistent($bus4)
-  %ui_id[17] := get_ui_id($bus4)
-  %ui_page[17] := 0
+  %ui_id[18] := get_ui_id($bus4)
+  %ui_page[18] := 0
   declare ui_knob $tune (-1200, 1200, 100)
   set_text($tune, "Tune")
   set_knob_unit($tune, $KNOB_UNIT_ST)
@@ -924,8 +937,8 @@ on init
   set_control_help($tune, "Tune all pieces (semitones).")
   move_control_px($tune, 10, 134)
   make_persistent($tune)
-  %ui_id[18] := get_ui_id($tune)
-  %ui_page[18] := 0
+  %ui_id[19] := get_ui_id($tune)
+  %ui_page[19] := 0
   declare ui_knob $vrange (0, 48, 1)
   set_text($vrange, "Vel Range")
   set_knob_unit($vrange, $KNOB_UNIT_DB)
@@ -934,8 +947,8 @@ on init
   set_control_help($vrange, "Velocity to volume range.")
   move_control_px($vrange, 108, 134)
   make_persistent($vrange)
-  %ui_id[19] := get_ui_id($vrange)
-  %ui_page[19] := 0
+  %ui_id[20] := get_ui_id($vrange)
+  %ui_page[20] := 0
   declare ui_knob $vcurve (-100, 100, 1)
   set_text($vcurve, "Vel Curve")
   set_knob_defval($vcurve, 0)
@@ -943,8 +956,8 @@ on init
   set_control_help($vcurve, "Velocity curve: negative = softer response, positive = harder.")
   move_control_px($vcurve, 206, 134)
   make_persistent($vcurve)
-  %ui_id[20] := get_ui_id($vcurve)
-  %ui_page[20] := 0
+  %ui_id[21] := get_ui_id($vcurve)
+  %ui_page[21] := 0
   declare ui_knob $hum (0, 100, 1)
   set_text($hum, "Humanize")
   set_knob_unit($hum, $KNOB_UNIT_PERCENT)
@@ -953,8 +966,8 @@ on init
   set_control_help($hum, "Small random level and pitch variation per hit.")
   move_control_px($hum, 304, 134)
   make_persistent($hum)
-  %ui_id[21] := get_ui_id($hum)
-  %ui_page[21] := 0
+  %ui_id[22] := get_ui_id($hum)
+  %ui_page[22] := 0
   declare ui_knob $spread (0, 100, 1)
   set_text($spread, "Kit Spread")
   set_knob_unit($spread, $KNOB_UNIT_PERCENT)
@@ -963,8 +976,8 @@ on init
   set_control_help($spread, "Stereo placement of the pieces (drummer perspective).")
   move_control_px($spread, 402, 134)
   make_persistent($spread)
-  %ui_id[22] := get_ui_id($spread)
-  %ui_page[22] := 0
+  %ui_id[23] := get_ui_id($spread)
+  %ui_page[23] := 0
   declare ui_knob $release (5, 3000, 1)
   set_text($release, "Roll Release")
   set_knob_unit($release, $KNOB_UNIT_MS)
@@ -973,8 +986,8 @@ on init
   set_control_help($release, "Fade time when a held roll / loop is released.")
   move_control_px($release, 500, 134)
   make_persistent($release)
-  %ui_id[23] := get_ui_id($release)
-  %ui_page[23] := 0
+  %ui_id[24] := get_ui_id($release)
+  %ui_page[24] := 0
   declare ui_knob $dyn_knob (0, 127, 1)
   set_text($dyn_knob, "Roll Dyn")
   set_knob_defval($dyn_knob, 100)
@@ -982,8 +995,35 @@ on init
   set_control_help($dyn_knob, "Level of held rolls (follows the mod wheel CC1).")
   move_control_px($dyn_knob, 598, 134)
   make_persistent($dyn_knob)
-  %ui_id[24] := get_ui_id($dyn_knob)
-  %ui_page[24] := 0
+  %ui_id[25] := get_ui_id($dyn_knob)
+  %ui_page[25] := 0
+  declare ui_menu $repeat
+  add_menu_item($repeat, "Off", 0)
+  add_menu_item($repeat, "1/8", 1)
+  add_menu_item($repeat, "1/8 T", 2)
+  add_menu_item($repeat, "1/16", 3)
+  add_menu_item($repeat, "1/16 T", 4)
+  add_menu_item($repeat, "1/32", 5)
+  set_control_par(get_ui_id($repeat), $CONTROL_PAR_WIDTH, 96)
+  $repeat := 0
+  set_control_help($repeat, "Note Repeat: held keys retrigger in time with the host tempo (hi-hat rolls, drum fills).")
+  move_control_px($repeat, 696, 158)
+  make_persistent($repeat)
+  %ui_id[26] := get_ui_id($repeat)
+  %ui_page[26] := 0
+  declare ui_menu $preset
+  add_menu_item($preset, "Presets...", 0)
+  add_menu_item($preset, "Default", 1)
+  add_menu_item($preset, "Studio Dry", 2)
+  add_menu_item($preset, "Big Room", 3)
+  add_menu_item($preset, "Crushed", 4)
+  set_control_par(get_ui_id($preset), $CONTROL_PAR_WIDTH, 140)
+  $preset := 0
+  set_control_help($preset, "Factory presets for this instrument. 'Default' resets every control.")
+  move_control_px($preset, 650, 6)
+  make_persistent($preset)
+  %ui_id[27] := get_ui_id($preset)
+  %ui_page[27] := -1
 end on
 
 function show_page
@@ -1152,6 +1192,63 @@ function update_dyn
     end if
     inc($ud_s)
   end while
+end function
+
+function drum_hit
+  $d_pc := %key_pc[$dh_note]
+  if ($d_pc < 0)
+    exit
+  end if
+  if (%pz_cut[$d_pc] > 0)
+    $d_i := 0
+    while ($d_i < $NUM_PC)
+      if (%pz_cg[$d_i] = %pz_cut[$d_pc] and $d_i # $d_pc)
+        $d_j := 0
+        while ($d_j < 8)
+          if (%pv_ring[$d_i * 8 + $d_j] # 0)
+            fade_out(%pv_ring[$d_i * 8 + $d_j], 45000, 1)
+            %pv_ring[$d_i * 8 + $d_j] := 0
+          end if
+          inc($d_j)
+        end while
+      end if
+      inc($d_i)
+    end while
+  end if
+  $vc_in := $dh_vel
+  call vel_curve
+  $d_l := 0
+  while ($d_l < %pz_nl[$d_pc] - 1 and $vc_curved > %pz_split[$d_pc * 4 + $d_l])
+    inc($d_l)
+  end while
+  $d_r := %pz_rr[$d_pc * 4 + $d_l]
+  if (%pz_rrn[$d_pc * 4 + $d_l] > 1)
+    %pz_rr[$d_pc * 4 + $d_l] := ($d_r + 1 + random(0, %pz_rrn[$d_pc * 4 + $d_l] - 2)) mod %pz_rrn[$d_pc * 4 + $d_l]
+  end if
+  $d_g := %grp[%pz_g[($d_pc * 4 + $d_l) * 4 + $d_r]]
+  if ($d_g = $NI_NOT_FOUND)
+    exit
+  end if
+  $nv_n := 0
+  $pv_note := $dh_note
+  $pv_grp := $d_g
+  $pv_vol := $vc_db + %bus_db[%pz_bus[$d_pc]] + random(0 - $hum * 15, $hum * 15)
+  $pv_tune := $tune * 1000 + random(0 - $hum * 40, $hum * 40)
+  $pv_pan := (%pz_pan[$d_pc] * $spread) / 100
+  $pv_off := 0
+  $pv_fade := 0
+  $pv_role := 3
+  if (%pz_hold[$d_pc] = 1)
+    $pv_vol := $pv_vol + $dyn_db
+  end if
+  call play_voice
+  %pv_ring[$d_pc * 8 + %pv_pos[$d_pc]] := $pv_id
+  %pv_pos[$d_pc] := (%pv_pos[$d_pc] + 1) mod 8
+  if (%pz_hold[$d_pc] = 1)
+    %nv_b[0] := $pv_vol - $dyn_db
+    $rs_src := $dh_note
+    call reg_new
+  end if
 end function
 
 function color_keys
@@ -1345,6 +1442,214 @@ function upd_dyn_knob
   call update_dyn
 end function
 
+function upd_repeat
+  if ($repeat = 0)
+    $rp_k := 0
+    while ($rp_k < 128)
+      %rep_vel[$rp_k] := 0
+      inc($rp_k)
+    end while
+    $rep_n := 0
+  end if
+end function
+
+function upd_preset
+  { no side effects }
+end function
+
+function apply_preset
+  select ($preset)
+    case 1
+      $tone := 1000
+      call upd_tone
+      $width := 500
+      call upd_width
+      $dly_mix := 0
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 200
+      call upd_rev_mix
+      $rev_size := 900
+      call upd_rev_size
+      $rev_decay := 700
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 0
+      call upd_use_pedal
+      $bus0 := 0
+      call upd_bus0
+      $bus1 := 0
+      call upd_bus1
+      $bus2 := 0
+      call upd_bus2
+      $bus3 := 0
+      call upd_bus3
+      $bus4 := 0
+      call upd_bus4
+      $tune := 0
+      call upd_tune
+      $vrange := 18
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $hum := 0
+      call upd_hum
+      $spread := 0
+      call upd_spread
+      $release := 250
+      call upd_release
+      $dyn_knob := 100
+      call upd_dyn_knob
+      $repeat := 0
+      call upd_repeat
+    case 2
+      $tone := 1000
+      call upd_tone
+      $width := 500
+      call upd_width
+      $dly_mix := 0
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 80
+      call upd_rev_mix
+      $rev_size := 900
+      call upd_rev_size
+      $rev_decay := 700
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 0
+      call upd_use_pedal
+      $bus0 := 0
+      call upd_bus0
+      $bus1 := 0
+      call upd_bus1
+      $bus2 := 0
+      call upd_bus2
+      $bus3 := 0
+      call upd_bus3
+      $bus4 := 0
+      call upd_bus4
+      $tune := 0
+      call upd_tune
+      $vrange := 18
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $hum := 0
+      call upd_hum
+      $spread := 0
+      call upd_spread
+      $release := 250
+      call upd_release
+      $dyn_knob := 100
+      call upd_dyn_knob
+      $repeat := 0
+      call upd_repeat
+    case 3
+      $tone := 1000
+      call upd_tone
+      $width := 500
+      call upd_width
+      $dly_mix := 0
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 420
+      call upd_rev_mix
+      $rev_size := 850
+      call upd_rev_size
+      $rev_decay := 650
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 0
+      call upd_use_pedal
+      $bus0 := 0
+      call upd_bus0
+      $bus1 := 0
+      call upd_bus1
+      $bus2 := 0
+      call upd_bus2
+      $bus3 := 0
+      call upd_bus3
+      $bus4 := 0
+      call upd_bus4
+      $tune := 0
+      call upd_tune
+      $vrange := 18
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $hum := 0
+      call upd_hum
+      $spread := 0
+      call upd_spread
+      $release := 250
+      call upd_release
+      $dyn_knob := 100
+      call upd_dyn_knob
+      $repeat := 0
+      call upd_repeat
+    case 4
+      $tone := 850
+      call upd_tone
+      $width := 500
+      call upd_width
+      $dly_mix := 0
+      call upd_dly_mix
+      $dly_time := 450
+      call upd_dly_time
+      $dly_fb := 350
+      call upd_dly_fb
+      $rev_mix := 200
+      call upd_rev_mix
+      $rev_size := 900
+      call upd_rev_size
+      $rev_decay := 700
+      call upd_rev_decay
+      $dly_sync := 1
+      call upd_dly_sync
+      $use_pedal := 0
+      call upd_use_pedal
+      $bus0 := 0
+      call upd_bus0
+      $bus1 := 0
+      call upd_bus1
+      $bus2 := 0
+      call upd_bus2
+      $bus3 := 0
+      call upd_bus3
+      $bus4 := 0
+      call upd_bus4
+      $tune := 0
+      call upd_tune
+      $vrange := 18
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $hum := 0
+      call upd_hum
+      $spread := 0
+      call upd_spread
+      $release := 250
+      call upd_release
+      $dyn_knob := 100
+      call upd_dyn_knob
+      $repeat := 0
+      call upd_repeat
+  end select
+end function
+
 on persistence_changed
   call upd_tab_play
   call upd_tab_sound
@@ -1370,72 +1675,37 @@ on persistence_changed
   call upd_spread
   call upd_release
   call upd_dyn_knob
+  call upd_repeat
+  call upd_preset
   call show_page
   call color_keys
 end on
 
 on note
   ignore_event($EVENT_ID)
-  $d_pc := %key_pc[$EVENT_NOTE]
-  if ($d_pc < 0)
+  if (%key_pc[$EVENT_NOTE] < 0)
     exit
   end if
   inc($keys_down)
   %src_held[$EVENT_NOTE] := 1
-  if (%pz_cut[$d_pc] > 0)
-    $d_i := 0
-    while ($d_i < $NUM_PC)
-      if (%pz_cg[$d_i] = %pz_cut[$d_pc] and $d_i # $d_pc)
-        $d_j := 0
-        while ($d_j < 8)
-          if (%pv_ring[$d_i * 8 + $d_j] # 0)
-            fade_out(%pv_ring[$d_i * 8 + $d_j], 45000, 1)
-            %pv_ring[$d_i * 8 + $d_j] := 0
-          end if
-          inc($d_j)
-        end while
-      end if
-      inc($d_i)
-    end while
-  end if
-  $vc_in := $EVENT_VELOCITY
-  call vel_curve
-  $d_l := 0
-  while ($d_l < %pz_nl[$d_pc] - 1 and $vc_curved > %pz_split[$d_pc * 4 + $d_l])
-    inc($d_l)
-  end while
-  $d_r := %pz_rr[$d_pc * 4 + $d_l]
-  if (%pz_rrn[$d_pc * 4 + $d_l] > 1)
-    %pz_rr[$d_pc * 4 + $d_l] := ($d_r + 1 + random(0, %pz_rrn[$d_pc * 4 + $d_l] - 2)) mod %pz_rrn[$d_pc * 4 + $d_l]
-  end if
-  $d_g := %grp[%pz_g[($d_pc * 4 + $d_l) * 4 + $d_r]]
-  if ($d_g = $NI_NOT_FOUND)
-    exit
-  end if
-  $nv_n := 0
-  $pv_note := $EVENT_NOTE
-  $pv_grp := $d_g
-  $pv_vol := $vc_db + %bus_db[%pz_bus[$d_pc]] + random(0 - $hum * 15, $hum * 15)
-  $pv_tune := $tune * 1000 + random(0 - $hum * 40, $hum * 40)
-  $pv_pan := (%pz_pan[$d_pc] * $spread) / 100
-  $pv_off := 0
-  $pv_fade := 0
-  $pv_role := 3
-  if (%pz_hold[$d_pc] = 1)
-    $pv_vol := $pv_vol + $dyn_db
-  end if
-  call play_voice
-  %pv_ring[$d_pc * 8 + %pv_pos[$d_pc]] := $pv_id
-  %pv_pos[$d_pc] := (%pv_pos[$d_pc] + 1) mod 8
-  if (%pz_hold[$d_pc] = 1)
-    %nv_b[0] := $pv_vol - $dyn_db
-    $rs_src := $EVENT_NOTE
-    call reg_new
+  $dh_note := $EVENT_NOTE
+  $dh_vel := $EVENT_VELOCITY
+  call drum_hit
+  if ($repeat > 0 and %pz_hold[%key_pc[$EVENT_NOTE]] = 0)
+    if (%rep_vel[$EVENT_NOTE] = 0)
+      inc($rep_n)
+    end if
+    %rep_vel[$EVENT_NOTE] := $EVENT_VELOCITY
+    %rep_next[$EVENT_NOTE] := $tick + %rep_ticks[$repeat]
   end if
 end on
 
 on release
   if (%key_pc[$EVENT_NOTE] >= 0)
+    if (%rep_vel[$EVENT_NOTE] > 0)
+      %rep_vel[$EVENT_NOTE] := 0
+      dec($rep_n)
+    end if
     dec($keys_down)
     if ($keys_down < 0)
       $keys_down := 0
@@ -1477,6 +1747,18 @@ on listener
     inc($tick)
     if ($pq_n > 0)
       call process_pending
+    end if
+    if ($repeat > 0 and $rep_n > 0)
+      $rp_k := 0
+      while ($rp_k < 128)
+        if (%rep_vel[$rp_k] > 0 and $tick >= %rep_next[$rp_k])
+          $dh_note := $rp_k
+          $dh_vel := %rep_vel[$rp_k]
+          call drum_hit
+          %rep_next[$rp_k] := $tick + %rep_ticks[$repeat]
+        end if
+        inc($rp_k)
+      end while
     end if
   end if
 end on
@@ -1575,5 +1857,14 @@ end on
 
 on ui_control ($dyn_knob)
   call upd_dyn_knob
+end on
+
+on ui_control ($repeat)
+  call upd_repeat
+end on
+
+on ui_control ($preset)
+  call upd_preset
+  call apply_preset
 end on
 

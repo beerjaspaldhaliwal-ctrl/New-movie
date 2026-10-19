@@ -58,6 +58,7 @@ ARP_MODES = ["Off", "Up", "Down", "Up-Down", "Random", "As Played", "Chord Repea
 ARP_RATES = [("1/4", 24), ("1/8", 12), ("1/8 T", 8), ("1/16", 6), ("1/16 T", 4), ("1/32", 3)]
 LFO_RATES = [("1 Beat", 24), ("2 Beats", 48), ("1 Bar", 96), ("2 Bars", 192), ("4 Bars", 384), ("8 Bars", 768)]
 OCT_LAYERS = ["Off", "+1 Octave", "-1 Octave", "+/-1 Octave", "+Fifth", "+Oct +Fifth"]
+REPEAT_RATES = [("Off", 0), ("1/8", 12), ("1/8 T", 8), ("1/16", 6), ("1/16 T", 4), ("1/32", 3)]
 
 FX_TYPES = {
     "filter": "$EFFECT_TYPE_FILTER",
@@ -78,10 +79,12 @@ def ksp_str(s):
 
 class Ctl:
     def __init__(self, var, kind, page, x, y, text="", lo=0, hi=1000, default=0, ratio=1, unit=None,
-                 items=None, help="", upd=None, width=None, persist=True):
+                 items=None, help="", upd=None, width=None, persist=True, on_ui=None, in_presets=True):
         self.var, self.kind, self.page, self.x, self.y = var, kind, page, x, y
         self.text, self.lo, self.hi, self.default, self.ratio, self.unit = text, lo, hi, default, ratio, unit
         self.items, self.help, self.upd, self.width, self.persist = items, help, upd or [], width, persist
+        self.on_ui = on_ui or []          # extra lines run only when the user moves the control
+        self.in_presets = in_presets      # included in the "Default" preset reset
 
 
 class Script:
@@ -95,6 +98,7 @@ class Script:
         self.persist = []   # extra lines for on persistence_changed (after upd calls)
         self.cb = {"note": [], "release": [], "controller": [], "listener": []}
         self.labels = []
+        self.late = []      # functions that call upd_* functions (emitted after them)
 
     # -- helpers ---------------------------------------------------------
     def d(self, *lines):
@@ -174,6 +178,11 @@ class Script:
             out += ["  " + l for l in (c.upd or ["{ no side effects }"])]
             out.append("end function")
             out.append("")
+        for name, lines in self.late:
+            out.append(f"function {name}")
+            out += ["  " + l for l in lines]
+            out.append("end function")
+            out.append("")
         out.append("on persistence_changed")
         for c in self.ctls:
             out.append(f"  call upd_{c.var}")
@@ -189,8 +198,7 @@ class Script:
         for c in self.ctls:
             out.append(f"on ui_control (${c.var})")
             out.append(f"  call upd_{c.var}")
-            if c.var.startswith("tab_"):
-                pass
+            out += ["  " + l for l in c.on_ui]
             out.append("end on")
             out.append("")
         return "\n".join(_indent(out)) + "\n"
@@ -266,14 +274,14 @@ def common(s, melodic=True):
 
     # UI chrome: tabs and info line
     s.ctl(Ctl("tab_play", "switch", ALWAYS, 8, 6, "PLAY", default=1, persist=False, width=86,
-              help="Main playing controls.", upd=["if ($tab_play = 1)", "$page := 0", "end if", "call show_page"]))
+              in_presets=False, help="Main playing controls.", upd=["if ($tab_play = 1)", "$page := 0", "end if", "call show_page"]))
     s.ctl(Ctl("tab_sound", "switch", ALWAYS, 98, 6, "SOUND", default=0, persist=False, width=86,
-              help="Tone, width, chorus, delay and reverb.", upd=["if ($tab_sound = 1)", "$page := 1", "end if", "call show_page"]))
+              in_presets=False, help="Tone, width, chorus, delay and reverb.", upd=["if ($tab_sound = 1)", "$page := 1", "end if", "call show_page"]))
     if melodic:
         s.ctl(Ctl("tab_perf", "switch", ALWAYS, 188, 6, "PERFORM", default=0, persist=False, width=86,
-                  help="Scale lock, chords, strum, arpeggiator and humanise.",
+                  in_presets=False, help="Scale lock, chords, strum, arpeggiator and humanise.",
                   upd=["if ($tab_perf = 1)", "$page := 2", "end if", "call show_page"]))
-    s.label("info", ALWAYS, 290, 6, cfg.get("info", inst.name), 500)
+    s.label("info", ALWAYS, 284, 6, cfg.get("info", inst.name), 360)
 
     tabs = ["play", "sound"] + (["perf"] if melodic else [])
     lines = []
@@ -1198,6 +1206,8 @@ def engine_artic(s):
         "declare $art", "declare $dyn := 90", "declare $dyn_gp", "declare $dyn_gf", "declare $dyn_db",
         "declare $expr_db", "declare $expr_cc := 127", "declare $vr_role", "declare $vr_base", "declare $vr_vol",
         "declare $ud_s", "declare $ud_i", "declare $ud_j", "declare $st_g", "declare $st_k", "declare $st_v",
+        "declare $st_gi", "declare $st_gg", "declare $st_m", "declare $st_base", "declare $st_role",
+        "declare $vr_m", "declare $vr_r", "declare %mic_db[2]", f"declare %hall_of[{len(groups)}] := (-1)",
         "declare %mono_v[32]", "declare %mono_r[32]", "declare %mono_b[32]", "declare $mono_n", "declare $mono_cur",
         "declare $mono_vel", "declare $gl_token", "declare $mt_i",
         "declare %stk[16]", "declare $stk_n", "declare $sk_i", "declare $sk_j", "declare $sk_note", "declare $ks_i",
@@ -1239,6 +1249,18 @@ def engine_artic(s):
               help="Velocity to volume range for short articulations."))
     s.ctl(Ctl("vcurve", "knob", P, 402, ROW2, "Vel Curve", -100, 100, 0, 1, None,
               help="Velocity curve: negative = softer response, positive = harder."))
+    mics = cfg.get("mics", {})
+    for close, hall in mics.items():
+        s.d(f"%hall_of[{groups.index(close)}] := {groups.index(hall)}")
+    if mics:
+        s.ctl(Ctl("mic_close", "knob", P, 520, ROW2, "Close Mic", -400, 60, 0, 10, "DB",
+                  help="Level of the close microphones (also used by the short articulations). Fully down = off.",
+                  upd=["%mic_db[0] := $mic_close * 100", "if ($mic_close <= -400)", "%mic_db[0] := -100000", "end if",
+                       "call update_dyn"]))
+        s.ctl(Ctl("mic_hall", "knob", P, 618, ROW2, "Hall Mic", -400, 60, -60, 10, "DB",
+                  help="Level of the distant hall microphones on sustained articulations. Fully down = off.",
+                  upd=["%mic_db[1] := $mic_hall * 100", "if ($mic_hall <= -400)", "%mic_db[1] := -100000", "end if",
+                       "call update_dyn"]))
     vel_db_fn(s)
     s.fn("calc_dyn", """
 ~fr := real($dyn) / 127.0
@@ -1260,7 +1282,9 @@ end if
 $expr_db := int(20000.0 * log10(~fg) * 0.9)
 """)
     s.fn("voice_vol", """
-select ($vr_role)
+$vr_m := $vr_role / 10
+$vr_r := $vr_role mod 10
+select ($vr_r)
 case 0
 $vr_vol := $dyn_gp + $dyn_db + $expr_db
 case 1
@@ -1270,6 +1294,7 @@ $vr_vol := $dyn_db + $expr_db
 case 3
 $vr_vol := $vr_base + $expr_db
 end select
+$vr_vol := $vr_vol + %mic_db[$vr_m]
 """)
     s.fn("update_dyn", """
 $ud_s := 0
@@ -1296,7 +1321,8 @@ change_vol(%mono_v[$ud_i], $vr_vol, 0)
 inc($ud_i)
 end while
 """)
-    s.fn("start_note", """
+    mic_cond = "($st_m = 0 and $mic_close > -400) or ($st_m = 1 and $mic_hall > -400)" if mics else "$st_m = 0"
+    s.fn("start_note", f"""
 $nv_n := 0
 $pv_note := $sn_note
 $pv_tune := 0
@@ -1313,13 +1339,16 @@ $st_g := %grp[%art_g[$art * 4 + $st_k]]
 if ($st_g # $NI_NOT_FOUND)
 $vc_in := $sn_vel
 call vel_curve
+$st_base := $vc_db + random(-600, 600)
+$vr_role := 3
+$vr_base := $st_base
+call voice_vol
 $pv_grp := $st_g
 $pv_role := 3
-$pv_vol := $vc_db + random(-600, 600)
+$pv_vol := $vr_vol
 $pv_fade := 0
 call play_voice
-%nv_b[$nv_n - 1] := $pv_vol
-change_vol($pv_id, $pv_vol + $expr_db, 0)
+%nv_b[$nv_n - 1] := $st_base
 end if
 else
 if (%art_type[$art] = 2)
@@ -1327,14 +1356,16 @@ $pv_fade := $swell_t * 1000
 end if
 $st_k := 0
 while ($st_k < %art_gn[$art])
-$st_g := %grp[%art_g[$art * 4 + $st_k]]
+$st_gi := %art_g[$art * 4 + $st_k]
+$st_g := %grp[$st_gi]
 if ($st_g # $NI_NOT_FOUND)
-$pv_grp := $st_g
 if (%art_gn[$art] = 1)
 $vr_role := 2
 else
 $vr_role := $st_k
 end if
+$st_base := 0
+$st_role := $vr_role
 if ($dyn_src = 1)
 $st_v := $dyn
 $dyn := $sn_vel
@@ -1342,17 +1373,31 @@ call calc_dyn
 call voice_vol
 $dyn := $st_v
 call calc_dyn
-$pv_role := 3
-$pv_vol := $vr_vol - $expr_db
+$st_base := $vr_vol - $expr_db - %mic_db[0]
+$st_role := 3
+end if
+$st_m := 0
+while ($st_m < 2)
+$st_gg := -1
+if ($st_m = 0)
+$st_gg := $st_g
 else
+if (%hall_of[$st_gi] >= 0)
+$st_gg := %grp[%hall_of[$st_gi]]
+end if
+end if
+if ($st_gg # -1 and $st_gg # $NI_NOT_FOUND and ({mic_cond}))
+$pv_grp := $st_gg
+$pv_role := $st_role + 10 * $st_m
+$vr_role := $pv_role
+$vr_base := $st_base
 call voice_vol
-$pv_role := $vr_role
 $pv_vol := $vr_vol
-end if
 call play_voice
-if ($pv_role = 3)
-change_vol($pv_id, $pv_vol + $expr_db, 0)
+%nv_b[$nv_n - 1] := $st_base
 end if
+inc($st_m)
+end while
 end if
 inc($st_k)
 end while
@@ -1594,7 +1639,9 @@ def engine_drums(s):
         f"declare %pz_split[{n * 4}]", f"declare %pv_ring[{n * 8}]", f"declare %pv_pos[{n}]",
         f"declare %bus_db[{len(buses)}]",
         "declare $d_pc", "declare $d_l", "declare $d_r", "declare $d_g", "declare $d_i", "declare $d_j",
-        "declare $dyn := 100", "declare $dyn_db", "declare $ud_s", "declare $ud_i", "declare $ud_j")
+        "declare $dyn := 100", "declare $dyn_db", "declare $ud_s", "declare $ud_i", "declare $ud_j",
+        "declare $dh_note", "declare $dh_vel", "declare %rep_vel[128]", "declare %rep_next[128]", "declare $rep_n",
+        "declare $rp_k", f"declare %rep_ticks[{len(REPEAT_RATES)}] := ({', '.join(str(t) for _, t in REPEAT_RATES)})")
     for i, p in enumerate(pieces):
         s.d(f"%key_pc[{p['key']}] := {i}", f"%pz_bus[{i}] := {buses.index(p['bus'])}",
             f"%pz_cg[{i}] := {p.get('cg', 0)}", f"%pz_cut[{i}] := {p.get('cut', 0)}",
@@ -1628,6 +1675,11 @@ def engine_drums(s):
     s.ctl(Ctl("dyn_knob", "knob", P, 598, row, "Roll Dyn", 0, 127, 100, 1, None,
               help="Level of held rolls (follows the mod wheel CC1).",
               upd=["$dyn := $dyn_knob", "call calc_dyn", "call update_dyn"]))
+    s.label("lbl_repeat", P, 696, row + 6, "Note Repeat")
+    s.ctl(Ctl("repeat", "menu", P, 696, row + 24, items=[n for n, _ in REPEAT_RATES], default=cfg.get("repeat", 0),
+              width=96, help="Note Repeat: held keys retrigger in time with the host tempo (hi-hat rolls, drum fills).",
+              upd=["if ($repeat = 0)", "$rp_k := 0", "while ($rp_k < 128)", "%rep_vel[$rp_k] := 0", "inc($rp_k)",
+                   "end while", "$rep_n := 0", "end if"]))
     vel_db_fn(s)
     s.fn("calc_dyn", """
 ~fr := real($dyn) / 127.0
@@ -1650,10 +1702,9 @@ end if
 inc($ud_s)
 end while
 """)
-    s.cb["note"] += note_head(s) + [
-        "$d_pc := %key_pc[$EVENT_NOTE]",
+    hit_lines = [
+        "$d_pc := %key_pc[$dh_note]",
         "if ($d_pc < 0)", "exit", "end if",
-        "inc($keys_down)", "%src_held[$EVENT_NOTE] := 1",
         "if (%pz_cut[$d_pc] > 0)",
         "$d_i := 0",
         "while ($d_i < $NUM_PC)",
@@ -1670,7 +1721,7 @@ end while
         "inc($d_i)",
         "end while",
         "end if",
-        "$vc_in := $EVENT_VELOCITY",
+        "$vc_in := $dh_vel",
         "call vel_curve",
         "$d_l := 0",
         "while ($d_l < %pz_nl[$d_pc] - 1 and $vc_curved > %pz_split[$d_pc * 4 + $d_l])",
@@ -1683,7 +1734,7 @@ end while
         "$d_g := %grp[%pz_g[($d_pc * 4 + $d_l) * 4 + $d_r]]",
         "if ($d_g = $NI_NOT_FOUND)", "exit", "end if",
         "$nv_n := 0",
-        "$pv_note := $EVENT_NOTE",
+        "$pv_note := $dh_note",
         "$pv_grp := $d_g",
         "$pv_vol := $vc_db + %bus_db[%pz_bus[$d_pc]] + random(0 - $hum * 15, $hum * 15)",
         "$pv_tune := $tune * 1000 + random(0 - $hum * 40, $hum * 40)",
@@ -1699,12 +1750,38 @@ end while
         "%pv_pos[$d_pc] := (%pv_pos[$d_pc] + 1) mod 8",
         "if (%pz_hold[$d_pc] = 1)",
         "%nv_b[0] := $pv_vol - $dyn_db",
-        "$rs_src := $EVENT_NOTE",
+        "$rs_src := $dh_note",
         "call reg_new",
+        "end if",
+    ]
+    s.fn("drum_hit", "\n".join(hit_lines))
+    s.cb["note"] += note_head(s) + [
+        "if (%key_pc[$EVENT_NOTE] < 0)", "exit", "end if",
+        "inc($keys_down)", "%src_held[$EVENT_NOTE] := 1",
+        "$dh_note := $EVENT_NOTE", "$dh_vel := $EVENT_VELOCITY",
+        "call drum_hit",
+        "if ($repeat > 0 and %pz_hold[%key_pc[$EVENT_NOTE]] = 0)",
+        "if (%rep_vel[$EVENT_NOTE] = 0)", "inc($rep_n)", "end if",
+        "%rep_vel[$EVENT_NOTE] := $EVENT_VELOCITY",
+        "%rep_next[$EVENT_NOTE] := $tick + %rep_ticks[$repeat]",
+        "end if",
+    ]
+    s.cb["listener"] += [
+        "if ($repeat > 0 and $rep_n > 0)",
+        "$rp_k := 0",
+        "while ($rp_k < 128)",
+        "if (%rep_vel[$rp_k] > 0 and $tick >= %rep_next[$rp_k])",
+        "$dh_note := $rp_k", "$dh_vel := %rep_vel[$rp_k]",
+        "call drum_hit",
+        "%rep_next[$rp_k] := $tick + %rep_ticks[$repeat]",
+        "end if",
+        "inc($rp_k)",
+        "end while",
         "end if",
     ]
     s.cb["release"] += [
         "if (%key_pc[$EVENT_NOTE] >= 0)",
+        "if (%rep_vel[$EVENT_NOTE] > 0)", "%rep_vel[$EVENT_NOTE] := 0", "dec($rep_n)", "end if",
         "dec($keys_down)", "if ($keys_down < 0)", "$keys_down := 0", "end if",
         "%src_held[$EVENT_NOTE] := 0",
         "if (%src_n[$EVENT_NOTE] > 0)",
@@ -1729,6 +1806,40 @@ end while
 ENGINES = {"synth": engine_synth, "artic": engine_artic, "keys": engine_keys, "drums": engine_drums}
 
 
+def preset_snapshots(s):
+    """Resolve the instrument's presets into complete control snapshots
+    (defaults + overrides, clamped). Returns [(name, {var: value})]."""
+    ctls = [c for c in s.ctls if c.in_presets and c.var != "preset"]
+    base = {c.var: c.default for c in ctls}
+    by_var = {c.var: c for c in ctls}
+    out = [("Default", dict(base))]
+    for name, vals in s.inst.presets:
+        snap = dict(base)
+        for k, v in vals.items():
+            c = by_var.get(k)
+            if c is None:
+                continue  # control not present in this instrument
+            hi = len(c.items) - 1 if c.kind == "menu" else (1 if c.kind == "switch" else c.hi)
+            lo = 0 if c.kind in ("menu", "switch") else c.lo
+            snap[k] = int(min(max(v, lo), hi))
+        out.append((name, snap))
+    return out
+
+
+def presets_module(s):
+    snaps = preset_snapshots(s)
+    lines = ["select ($preset)"]
+    for i, (name, snap) in enumerate(snaps, start=1):
+        lines.append(f"case {i}")
+        for var, val in snap.items():
+            lines += [f"${var} := {val}", f"call upd_{var}"]
+    lines.append("end select")
+    s.late.append(("apply_preset", lines))
+    s.ctl(Ctl("preset", "menu", ALWAYS, 650, 6, items=["Presets..."] + [n for n, _ in snaps], default=0, width=140,
+              in_presets=False, on_ui=["call apply_preset"],
+              help="Factory presets for this instrument. 'Default' resets every control."))
+
+
 def generate(inst):
     s = Script(inst)
     melodic = inst.engine != "drums"
@@ -1738,6 +1849,7 @@ def generate(inst):
     if melodic:
         performer(s)
     ENGINES[inst.engine](s)
+    presets_module(s)
     finish(s)
     # functions referenced by the common code must exist in every script
     names = {n for n, _ in s.funcs}

@@ -12,7 +12,7 @@
 --      (Ctrl/Cmd+R).
 --   4. Press Push (Ctrl/Cmd+Alt+Up) so the changes go to Kontakt.
 --   5. In Kontakt: File > Save as... and save it as
---        New Movie Library/Instruments/02 Orchestral and Band/Studio Drum Kit.nki
+--        New Movie Library/Instruments/03 Band and Keys/Studio Drum Kit.nki
 --      ("Patch only", and keep "absolute sample paths" OFF).
 --
 -- The script only reads files inside the "New Movie Library" folder, relative to the
@@ -85,95 +85,210 @@ end
 
 do  -- group V1RR1
   local g = newGroup("V1RR1")
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR1/Drums_V1RR1_036_036_036_001_127.wav", 36, 36, 36, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR1/Drums_V1RR1_037_037_037_001_127.wav", 37, 37, 37, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR1/Drums_V1RR1_038_038_038_001_127.wav", 38, 38, 38, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR1/Drums_V1RR1_039_039_039_001_127.wav", 39, 39, 39, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR1/Drums_V1RR1_040_040_040_001_127.wav", 40, 40, 40, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR1/Drums_V1RR1_041_041_041_001_127.wav", 41, 41, 41, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR1/Drums_V1RR1_042_042_042_001_127.wav", 42, 42, 42, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR1/Drums_V1RR1_043_043_043_001_127.wav", 43, 43, 43, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR1/Drums_V1RR1_044_044_044_001_127.wav", 44, 44, 44, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR1/Drums_V1RR1_045_045_045_001_127.wav", 45, 45, 45, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR1/Drums_V1RR1_046_046_046_001_127.wav", 46, 46, 46, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR1/Drums_V1RR1_047_047_047_001_127.wav", 47, 47, 47, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR1/Drums_V1RR1_048_048_048_001_127.wav", 48, 48, 48, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR1/Drums_V1RR1_049_049_049_001_127.wav", 49, 49, 49, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR1/Drums_V1RR1_050_050_050_001_127.wav", 50, 50, 50, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR1/Drums_V1RR1_051_051_051_001_127.wav", 51, 51, 51, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR1/Drums_V1RR1_053_053_053_001_127.wav", 53, 53, 53, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR1/Drums_V1RR1_054_054_054_001_127.wav", 54, 54, 54, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR1/Drums_V1RR1_057_057_057_001_127.wav", 57, 57, 57, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR1/Drums_V1RR1_070_070_070_001_127.wav", 70, 70, 70, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR1/Drums_V1RR1_036_036_036_001_127.wav", 36, 36, 36, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR1/Drums_V1RR1_037_037_037_001_127.wav", 37, 37, 37, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR1/Drums_V1RR1_038_038_038_001_127.wav", 38, 38, 38, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR1/Drums_V1RR1_039_039_039_001_127.wav", 39, 39, 39, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR1/Drums_V1RR1_040_040_040_001_127.wav", 40, 40, 40, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR1/Drums_V1RR1_041_041_041_001_127.wav", 41, 41, 41, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR1/Drums_V1RR1_042_042_042_001_127.wav", 42, 42, 42, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR1/Drums_V1RR1_043_043_043_001_127.wav", 43, 43, 43, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR1/Drums_V1RR1_044_044_044_001_127.wav", 44, 44, 44, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR1/Drums_V1RR1_045_045_045_001_127.wav", 45, 45, 45, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR1/Drums_V1RR1_046_046_046_001_127.wav", 46, 46, 46, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR1/Drums_V1RR1_047_047_047_001_127.wav", 47, 47, 47, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR1/Drums_V1RR1_048_048_048_001_127.wav", 48, 48, 48, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR1/Drums_V1RR1_049_049_049_001_127.wav", 49, 49, 49, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR1/Drums_V1RR1_050_050_050_001_127.wav", 50, 50, 50, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR1/Drums_V1RR1_051_051_051_001_127.wav", 51, 51, 51, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR1/Drums_V1RR1_053_053_053_001_127.wav", 53, 53, 53, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR1/Drums_V1RR1_054_054_054_001_127.wav", 54, 54, 54, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR1/Drums_V1RR1_057_057_057_001_127.wav", 57, 57, 57, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR1/Drums_V1RR1_070_070_070_001_127.wav", 70, 70, 70, 1, 127)
 end
 do  -- group V1RR2
   local g = newGroup("V1RR2")
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR2/Drums_V1RR2_036_036_036_001_127.wav", 36, 36, 36, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR2/Drums_V1RR2_037_037_037_001_127.wav", 37, 37, 37, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR2/Drums_V1RR2_038_038_038_001_127.wav", 38, 38, 38, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR2/Drums_V1RR2_039_039_039_001_127.wav", 39, 39, 39, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR2/Drums_V1RR2_040_040_040_001_127.wav", 40, 40, 40, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR2/Drums_V1RR2_041_041_041_001_127.wav", 41, 41, 41, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR2/Drums_V1RR2_042_042_042_001_127.wav", 42, 42, 42, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR2/Drums_V1RR2_043_043_043_001_127.wav", 43, 43, 43, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR2/Drums_V1RR2_044_044_044_001_127.wav", 44, 44, 44, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR2/Drums_V1RR2_045_045_045_001_127.wav", 45, 45, 45, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR2/Drums_V1RR2_046_046_046_001_127.wav", 46, 46, 46, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR2/Drums_V1RR2_047_047_047_001_127.wav", 47, 47, 47, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR2/Drums_V1RR2_048_048_048_001_127.wav", 48, 48, 48, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR2/Drums_V1RR2_049_049_049_001_127.wav", 49, 49, 49, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR2/Drums_V1RR2_050_050_050_001_127.wav", 50, 50, 50, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR2/Drums_V1RR2_051_051_051_001_127.wav", 51, 51, 51, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR2/Drums_V1RR2_053_053_053_001_127.wav", 53, 53, 53, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR2/Drums_V1RR2_054_054_054_001_127.wav", 54, 54, 54, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR2/Drums_V1RR2_057_057_057_001_127.wav", 57, 57, 57, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V1RR2/Drums_V1RR2_070_070_070_001_127.wav", 70, 70, 70, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR2/Drums_V1RR2_036_036_036_001_127.wav", 36, 36, 36, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR2/Drums_V1RR2_037_037_037_001_127.wav", 37, 37, 37, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR2/Drums_V1RR2_038_038_038_001_127.wav", 38, 38, 38, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR2/Drums_V1RR2_039_039_039_001_127.wav", 39, 39, 39, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR2/Drums_V1RR2_040_040_040_001_127.wav", 40, 40, 40, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR2/Drums_V1RR2_041_041_041_001_127.wav", 41, 41, 41, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR2/Drums_V1RR2_042_042_042_001_127.wav", 42, 42, 42, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR2/Drums_V1RR2_043_043_043_001_127.wav", 43, 43, 43, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR2/Drums_V1RR2_044_044_044_001_127.wav", 44, 44, 44, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR2/Drums_V1RR2_045_045_045_001_127.wav", 45, 45, 45, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR2/Drums_V1RR2_046_046_046_001_127.wav", 46, 46, 46, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR2/Drums_V1RR2_047_047_047_001_127.wav", 47, 47, 47, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR2/Drums_V1RR2_048_048_048_001_127.wav", 48, 48, 48, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR2/Drums_V1RR2_049_049_049_001_127.wav", 49, 49, 49, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR2/Drums_V1RR2_050_050_050_001_127.wav", 50, 50, 50, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR2/Drums_V1RR2_051_051_051_001_127.wav", 51, 51, 51, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR2/Drums_V1RR2_053_053_053_001_127.wav", 53, 53, 53, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR2/Drums_V1RR2_054_054_054_001_127.wav", 54, 54, 54, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR2/Drums_V1RR2_057_057_057_001_127.wav", 57, 57, 57, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR2/Drums_V1RR2_070_070_070_001_127.wav", 70, 70, 70, 1, 127)
+end
+do  -- group V1RR3
+  local g = newGroup("V1RR3")
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR3/Drums_V1RR3_036_036_036_001_127.wav", 36, 36, 36, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR3/Drums_V1RR3_037_037_037_001_127.wav", 37, 37, 37, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR3/Drums_V1RR3_038_038_038_001_127.wav", 38, 38, 38, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR3/Drums_V1RR3_039_039_039_001_127.wav", 39, 39, 39, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR3/Drums_V1RR3_040_040_040_001_127.wav", 40, 40, 40, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR3/Drums_V1RR3_041_041_041_001_127.wav", 41, 41, 41, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR3/Drums_V1RR3_042_042_042_001_127.wav", 42, 42, 42, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR3/Drums_V1RR3_043_043_043_001_127.wav", 43, 43, 43, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR3/Drums_V1RR3_044_044_044_001_127.wav", 44, 44, 44, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR3/Drums_V1RR3_045_045_045_001_127.wav", 45, 45, 45, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR3/Drums_V1RR3_046_046_046_001_127.wav", 46, 46, 46, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR3/Drums_V1RR3_047_047_047_001_127.wav", 47, 47, 47, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR3/Drums_V1RR3_048_048_048_001_127.wav", 48, 48, 48, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR3/Drums_V1RR3_049_049_049_001_127.wav", 49, 49, 49, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR3/Drums_V1RR3_050_050_050_001_127.wav", 50, 50, 50, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR3/Drums_V1RR3_051_051_051_001_127.wav", 51, 51, 51, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR3/Drums_V1RR3_053_053_053_001_127.wav", 53, 53, 53, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR3/Drums_V1RR3_054_054_054_001_127.wav", 54, 54, 54, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR3/Drums_V1RR3_057_057_057_001_127.wav", 57, 57, 57, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V1RR3/Drums_V1RR3_070_070_070_001_127.wav", 70, 70, 70, 1, 127)
 end
 do  -- group V2RR1
   local g = newGroup("V2RR1")
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR1/Drums_V2RR1_036_036_036_001_127.wav", 36, 36, 36, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR1/Drums_V2RR1_037_037_037_001_127.wav", 37, 37, 37, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR1/Drums_V2RR1_038_038_038_001_127.wav", 38, 38, 38, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR1/Drums_V2RR1_039_039_039_001_127.wav", 39, 39, 39, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR1/Drums_V2RR1_040_040_040_001_127.wav", 40, 40, 40, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR1/Drums_V2RR1_041_041_041_001_127.wav", 41, 41, 41, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR1/Drums_V2RR1_042_042_042_001_127.wav", 42, 42, 42, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR1/Drums_V2RR1_043_043_043_001_127.wav", 43, 43, 43, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR1/Drums_V2RR1_044_044_044_001_127.wav", 44, 44, 44, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR1/Drums_V2RR1_045_045_045_001_127.wav", 45, 45, 45, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR1/Drums_V2RR1_046_046_046_001_127.wav", 46, 46, 46, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR1/Drums_V2RR1_047_047_047_001_127.wav", 47, 47, 47, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR1/Drums_V2RR1_048_048_048_001_127.wav", 48, 48, 48, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR1/Drums_V2RR1_049_049_049_001_127.wav", 49, 49, 49, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR1/Drums_V2RR1_050_050_050_001_127.wav", 50, 50, 50, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR1/Drums_V2RR1_051_051_051_001_127.wav", 51, 51, 51, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR1/Drums_V2RR1_053_053_053_001_127.wav", 53, 53, 53, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR1/Drums_V2RR1_054_054_054_001_127.wav", 54, 54, 54, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR1/Drums_V2RR1_057_057_057_001_127.wav", 57, 57, 57, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR1/Drums_V2RR1_070_070_070_001_127.wav", 70, 70, 70, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR1/Drums_V2RR1_036_036_036_001_127.wav", 36, 36, 36, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR1/Drums_V2RR1_037_037_037_001_127.wav", 37, 37, 37, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR1/Drums_V2RR1_038_038_038_001_127.wav", 38, 38, 38, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR1/Drums_V2RR1_039_039_039_001_127.wav", 39, 39, 39, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR1/Drums_V2RR1_040_040_040_001_127.wav", 40, 40, 40, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR1/Drums_V2RR1_041_041_041_001_127.wav", 41, 41, 41, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR1/Drums_V2RR1_042_042_042_001_127.wav", 42, 42, 42, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR1/Drums_V2RR1_043_043_043_001_127.wav", 43, 43, 43, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR1/Drums_V2RR1_044_044_044_001_127.wav", 44, 44, 44, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR1/Drums_V2RR1_045_045_045_001_127.wav", 45, 45, 45, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR1/Drums_V2RR1_046_046_046_001_127.wav", 46, 46, 46, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR1/Drums_V2RR1_047_047_047_001_127.wav", 47, 47, 47, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR1/Drums_V2RR1_048_048_048_001_127.wav", 48, 48, 48, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR1/Drums_V2RR1_049_049_049_001_127.wav", 49, 49, 49, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR1/Drums_V2RR1_050_050_050_001_127.wav", 50, 50, 50, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR1/Drums_V2RR1_051_051_051_001_127.wav", 51, 51, 51, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR1/Drums_V2RR1_053_053_053_001_127.wav", 53, 53, 53, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR1/Drums_V2RR1_054_054_054_001_127.wav", 54, 54, 54, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR1/Drums_V2RR1_057_057_057_001_127.wav", 57, 57, 57, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR1/Drums_V2RR1_070_070_070_001_127.wav", 70, 70, 70, 1, 127)
 end
 do  -- group V2RR2
   local g = newGroup("V2RR2")
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR2/Drums_V2RR2_036_036_036_001_127.wav", 36, 36, 36, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR2/Drums_V2RR2_037_037_037_001_127.wav", 37, 37, 37, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR2/Drums_V2RR2_038_038_038_001_127.wav", 38, 38, 38, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR2/Drums_V2RR2_039_039_039_001_127.wav", 39, 39, 39, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR2/Drums_V2RR2_040_040_040_001_127.wav", 40, 40, 40, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR2/Drums_V2RR2_041_041_041_001_127.wav", 41, 41, 41, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR2/Drums_V2RR2_042_042_042_001_127.wav", 42, 42, 42, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR2/Drums_V2RR2_043_043_043_001_127.wav", 43, 43, 43, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR2/Drums_V2RR2_044_044_044_001_127.wav", 44, 44, 44, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR2/Drums_V2RR2_045_045_045_001_127.wav", 45, 45, 45, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR2/Drums_V2RR2_046_046_046_001_127.wav", 46, 46, 46, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR2/Drums_V2RR2_047_047_047_001_127.wav", 47, 47, 47, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR2/Drums_V2RR2_048_048_048_001_127.wav", 48, 48, 48, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR2/Drums_V2RR2_049_049_049_001_127.wav", 49, 49, 49, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR2/Drums_V2RR2_050_050_050_001_127.wav", 50, 50, 50, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR2/Drums_V2RR2_051_051_051_001_127.wav", 51, 51, 51, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR2/Drums_V2RR2_053_053_053_001_127.wav", 53, 53, 53, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR2/Drums_V2RR2_054_054_054_001_127.wav", 54, 54, 54, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR2/Drums_V2RR2_057_057_057_001_127.wav", 57, 57, 57, 1, 127)
-  addZone(g, "Samples/02 Orchestral and Band/Studio Drum Kit/V2RR2/Drums_V2RR2_070_070_070_001_127.wav", 70, 70, 70, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR2/Drums_V2RR2_036_036_036_001_127.wav", 36, 36, 36, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR2/Drums_V2RR2_037_037_037_001_127.wav", 37, 37, 37, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR2/Drums_V2RR2_038_038_038_001_127.wav", 38, 38, 38, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR2/Drums_V2RR2_039_039_039_001_127.wav", 39, 39, 39, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR2/Drums_V2RR2_040_040_040_001_127.wav", 40, 40, 40, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR2/Drums_V2RR2_041_041_041_001_127.wav", 41, 41, 41, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR2/Drums_V2RR2_042_042_042_001_127.wav", 42, 42, 42, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR2/Drums_V2RR2_043_043_043_001_127.wav", 43, 43, 43, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR2/Drums_V2RR2_044_044_044_001_127.wav", 44, 44, 44, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR2/Drums_V2RR2_045_045_045_001_127.wav", 45, 45, 45, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR2/Drums_V2RR2_046_046_046_001_127.wav", 46, 46, 46, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR2/Drums_V2RR2_047_047_047_001_127.wav", 47, 47, 47, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR2/Drums_V2RR2_048_048_048_001_127.wav", 48, 48, 48, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR2/Drums_V2RR2_049_049_049_001_127.wav", 49, 49, 49, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR2/Drums_V2RR2_050_050_050_001_127.wav", 50, 50, 50, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR2/Drums_V2RR2_051_051_051_001_127.wav", 51, 51, 51, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR2/Drums_V2RR2_053_053_053_001_127.wav", 53, 53, 53, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR2/Drums_V2RR2_054_054_054_001_127.wav", 54, 54, 54, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR2/Drums_V2RR2_057_057_057_001_127.wav", 57, 57, 57, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR2/Drums_V2RR2_070_070_070_001_127.wav", 70, 70, 70, 1, 127)
+end
+do  -- group V2RR3
+  local g = newGroup("V2RR3")
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR3/Drums_V2RR3_036_036_036_001_127.wav", 36, 36, 36, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR3/Drums_V2RR3_037_037_037_001_127.wav", 37, 37, 37, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR3/Drums_V2RR3_038_038_038_001_127.wav", 38, 38, 38, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR3/Drums_V2RR3_039_039_039_001_127.wav", 39, 39, 39, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR3/Drums_V2RR3_040_040_040_001_127.wav", 40, 40, 40, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR3/Drums_V2RR3_041_041_041_001_127.wav", 41, 41, 41, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR3/Drums_V2RR3_042_042_042_001_127.wav", 42, 42, 42, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR3/Drums_V2RR3_043_043_043_001_127.wav", 43, 43, 43, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR3/Drums_V2RR3_044_044_044_001_127.wav", 44, 44, 44, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR3/Drums_V2RR3_045_045_045_001_127.wav", 45, 45, 45, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR3/Drums_V2RR3_046_046_046_001_127.wav", 46, 46, 46, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR3/Drums_V2RR3_047_047_047_001_127.wav", 47, 47, 47, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR3/Drums_V2RR3_048_048_048_001_127.wav", 48, 48, 48, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR3/Drums_V2RR3_049_049_049_001_127.wav", 49, 49, 49, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR3/Drums_V2RR3_050_050_050_001_127.wav", 50, 50, 50, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR3/Drums_V2RR3_051_051_051_001_127.wav", 51, 51, 51, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR3/Drums_V2RR3_053_053_053_001_127.wav", 53, 53, 53, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR3/Drums_V2RR3_054_054_054_001_127.wav", 54, 54, 54, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR3/Drums_V2RR3_057_057_057_001_127.wav", 57, 57, 57, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V2RR3/Drums_V2RR3_070_070_070_001_127.wav", 70, 70, 70, 1, 127)
+end
+do  -- group V3RR1
+  local g = newGroup("V3RR1")
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR1/Drums_V3RR1_036_036_036_001_127.wav", 36, 36, 36, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR1/Drums_V3RR1_037_037_037_001_127.wav", 37, 37, 37, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR1/Drums_V3RR1_038_038_038_001_127.wav", 38, 38, 38, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR1/Drums_V3RR1_039_039_039_001_127.wav", 39, 39, 39, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR1/Drums_V3RR1_040_040_040_001_127.wav", 40, 40, 40, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR1/Drums_V3RR1_041_041_041_001_127.wav", 41, 41, 41, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR1/Drums_V3RR1_042_042_042_001_127.wav", 42, 42, 42, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR1/Drums_V3RR1_043_043_043_001_127.wav", 43, 43, 43, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR1/Drums_V3RR1_044_044_044_001_127.wav", 44, 44, 44, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR1/Drums_V3RR1_045_045_045_001_127.wav", 45, 45, 45, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR1/Drums_V3RR1_046_046_046_001_127.wav", 46, 46, 46, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR1/Drums_V3RR1_047_047_047_001_127.wav", 47, 47, 47, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR1/Drums_V3RR1_048_048_048_001_127.wav", 48, 48, 48, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR1/Drums_V3RR1_049_049_049_001_127.wav", 49, 49, 49, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR1/Drums_V3RR1_050_050_050_001_127.wav", 50, 50, 50, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR1/Drums_V3RR1_051_051_051_001_127.wav", 51, 51, 51, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR1/Drums_V3RR1_053_053_053_001_127.wav", 53, 53, 53, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR1/Drums_V3RR1_054_054_054_001_127.wav", 54, 54, 54, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR1/Drums_V3RR1_057_057_057_001_127.wav", 57, 57, 57, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR1/Drums_V3RR1_070_070_070_001_127.wav", 70, 70, 70, 1, 127)
+end
+do  -- group V3RR2
+  local g = newGroup("V3RR2")
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR2/Drums_V3RR2_036_036_036_001_127.wav", 36, 36, 36, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR2/Drums_V3RR2_037_037_037_001_127.wav", 37, 37, 37, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR2/Drums_V3RR2_038_038_038_001_127.wav", 38, 38, 38, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR2/Drums_V3RR2_039_039_039_001_127.wav", 39, 39, 39, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR2/Drums_V3RR2_040_040_040_001_127.wav", 40, 40, 40, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR2/Drums_V3RR2_041_041_041_001_127.wav", 41, 41, 41, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR2/Drums_V3RR2_042_042_042_001_127.wav", 42, 42, 42, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR2/Drums_V3RR2_043_043_043_001_127.wav", 43, 43, 43, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR2/Drums_V3RR2_044_044_044_001_127.wav", 44, 44, 44, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR2/Drums_V3RR2_045_045_045_001_127.wav", 45, 45, 45, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR2/Drums_V3RR2_046_046_046_001_127.wav", 46, 46, 46, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR2/Drums_V3RR2_047_047_047_001_127.wav", 47, 47, 47, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR2/Drums_V3RR2_048_048_048_001_127.wav", 48, 48, 48, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR2/Drums_V3RR2_049_049_049_001_127.wav", 49, 49, 49, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR2/Drums_V3RR2_050_050_050_001_127.wav", 50, 50, 50, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR2/Drums_V3RR2_051_051_051_001_127.wav", 51, 51, 51, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR2/Drums_V3RR2_053_053_053_001_127.wav", 53, 53, 53, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR2/Drums_V3RR2_054_054_054_001_127.wav", 54, 54, 54, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR2/Drums_V3RR2_057_057_057_001_127.wav", 57, 57, 57, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR2/Drums_V3RR2_070_070_070_001_127.wav", 70, 70, 70, 1, 127)
+end
+do  -- group V3RR3
+  local g = newGroup("V3RR3")
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR3/Drums_V3RR3_036_036_036_001_127.wav", 36, 36, 36, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR3/Drums_V3RR3_037_037_037_001_127.wav", 37, 37, 37, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR3/Drums_V3RR3_038_038_038_001_127.wav", 38, 38, 38, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR3/Drums_V3RR3_039_039_039_001_127.wav", 39, 39, 39, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR3/Drums_V3RR3_040_040_040_001_127.wav", 40, 40, 40, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR3/Drums_V3RR3_041_041_041_001_127.wav", 41, 41, 41, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR3/Drums_V3RR3_042_042_042_001_127.wav", 42, 42, 42, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR3/Drums_V3RR3_043_043_043_001_127.wav", 43, 43, 43, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR3/Drums_V3RR3_044_044_044_001_127.wav", 44, 44, 44, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR3/Drums_V3RR3_045_045_045_001_127.wav", 45, 45, 45, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR3/Drums_V3RR3_046_046_046_001_127.wav", 46, 46, 46, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR3/Drums_V3RR3_047_047_047_001_127.wav", 47, 47, 47, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR3/Drums_V3RR3_048_048_048_001_127.wav", 48, 48, 48, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR3/Drums_V3RR3_049_049_049_001_127.wav", 49, 49, 49, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR3/Drums_V3RR3_050_050_050_001_127.wav", 50, 50, 50, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR3/Drums_V3RR3_051_051_051_001_127.wav", 51, 51, 51, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR3/Drums_V3RR3_053_053_053_001_127.wav", 53, 53, 53, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR3/Drums_V3RR3_054_054_054_001_127.wav", 54, 54, 54, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR3/Drums_V3RR3_057_057_057_001_127.wav", 57, 57, 57, 1, 127)
+  addZone(g, "Samples/03 Band and Keys/Studio Drum Kit/V3RR3/Drums_V3RR3_070_070_070_001_127.wav", 70, 70, 70, 1, 127)
 end
 
 local KSP_SOURCE = [==[
@@ -189,13 +304,18 @@ on init
   set_ui_height_px(330)
   set_listener($NI_SIGNAL_TIMER_BEAT, 24)
   { ---- groups (looked up by name, so the order in the instrument does not matter) ---- }
-  declare const $NUM_GRP := 4
-  declare %grp[4]
-  declare !grp_name[4]
+  declare const $NUM_GRP := 9
+  declare %grp[9]
+  declare !grp_name[9]
   !grp_name[0] := "V1RR1"
   !grp_name[1] := "V1RR2"
-  !grp_name[2] := "V2RR1"
-  !grp_name[3] := "V2RR2"
+  !grp_name[2] := "V1RR3"
+  !grp_name[3] := "V2RR1"
+  !grp_name[4] := "V2RR2"
+  !grp_name[5] := "V2RR3"
+  !grp_name[6] := "V3RR1"
+  !grp_name[7] := "V3RR2"
+  !grp_name[8] := "V3RR3"
   declare $gi
   $gi := 0
   while ($gi < $NUM_GRP)
@@ -305,655 +425,668 @@ on init
   declare $ud_s
   declare $ud_i
   declare $ud_j
+  declare $dh_note
+  declare $dh_vel
+  declare %rep_vel[128]
+  declare %rep_next[128]
+  declare $rep_n
+  declare $rp_k
+  declare %rep_ticks[6] := (0, 12, 8, 6, 4, 3)
   %key_pc[36] := 0
   %pz_bus[0] := 0
   %pz_cg[0] := 0
   %pz_cut[0] := 0
   %pz_hold[0] := 0
   %pz_pan[0] := 0
-  %pz_nl[0] := 2
-  %pz_rrn[0] := 2
-  %pz_split[0] := 90
+  %pz_nl[0] := 3
+  %pz_rrn[0] := 3
+  %pz_split[0] := 60
   %pz_g[0] := 0
   %pz_g[1] := 1
-  %pz_g[2] := 0
+  %pz_g[2] := 2
   %pz_g[3] := 0
-  %pz_rrn[1] := 2
-  %pz_split[1] := 127
-  %pz_g[4] := 2
-  %pz_g[5] := 3
-  %pz_g[6] := 2
-  %pz_g[7] := 2
-  %pz_rrn[2] := 2
+  %pz_rrn[1] := 3
+  %pz_split[1] := 100
+  %pz_g[4] := 3
+  %pz_g[5] := 4
+  %pz_g[6] := 5
+  %pz_g[7] := 3
+  %pz_rrn[2] := 3
   %pz_split[2] := 127
-  %pz_g[8] := 2
-  %pz_g[9] := 3
-  %pz_g[10] := 2
-  %pz_g[11] := 2
-  %pz_rrn[3] := 2
+  %pz_g[8] := 6
+  %pz_g[9] := 7
+  %pz_g[10] := 8
+  %pz_g[11] := 6
+  %pz_rrn[3] := 3
   %pz_split[3] := 127
-  %pz_g[12] := 2
-  %pz_g[13] := 3
-  %pz_g[14] := 2
-  %pz_g[15] := 2
+  %pz_g[12] := 6
+  %pz_g[13] := 7
+  %pz_g[14] := 8
+  %pz_g[15] := 6
   %key_pc[37] := 1
   %pz_bus[1] := 1
   %pz_cg[1] := 0
   %pz_cut[1] := 0
   %pz_hold[1] := 0
   %pz_pan[1] := -50
-  %pz_nl[1] := 2
-  %pz_rrn[4] := 2
-  %pz_split[4] := 90
+  %pz_nl[1] := 3
+  %pz_rrn[4] := 3
+  %pz_split[4] := 60
   %pz_g[16] := 0
   %pz_g[17] := 1
-  %pz_g[18] := 0
+  %pz_g[18] := 2
   %pz_g[19] := 0
-  %pz_rrn[5] := 2
-  %pz_split[5] := 127
-  %pz_g[20] := 2
-  %pz_g[21] := 3
-  %pz_g[22] := 2
-  %pz_g[23] := 2
-  %pz_rrn[6] := 2
+  %pz_rrn[5] := 3
+  %pz_split[5] := 100
+  %pz_g[20] := 3
+  %pz_g[21] := 4
+  %pz_g[22] := 5
+  %pz_g[23] := 3
+  %pz_rrn[6] := 3
   %pz_split[6] := 127
-  %pz_g[24] := 2
-  %pz_g[25] := 3
-  %pz_g[26] := 2
-  %pz_g[27] := 2
-  %pz_rrn[7] := 2
+  %pz_g[24] := 6
+  %pz_g[25] := 7
+  %pz_g[26] := 8
+  %pz_g[27] := 6
+  %pz_rrn[7] := 3
   %pz_split[7] := 127
-  %pz_g[28] := 2
-  %pz_g[29] := 3
-  %pz_g[30] := 2
-  %pz_g[31] := 2
+  %pz_g[28] := 6
+  %pz_g[29] := 7
+  %pz_g[30] := 8
+  %pz_g[31] := 6
   %key_pc[38] := 2
   %pz_bus[2] := 1
   %pz_cg[2] := 0
   %pz_cut[2] := 0
   %pz_hold[2] := 0
   %pz_pan[2] := -80
-  %pz_nl[2] := 2
-  %pz_rrn[8] := 2
-  %pz_split[8] := 90
+  %pz_nl[2] := 3
+  %pz_rrn[8] := 3
+  %pz_split[8] := 60
   %pz_g[32] := 0
   %pz_g[33] := 1
-  %pz_g[34] := 0
+  %pz_g[34] := 2
   %pz_g[35] := 0
-  %pz_rrn[9] := 2
-  %pz_split[9] := 127
-  %pz_g[36] := 2
-  %pz_g[37] := 3
-  %pz_g[38] := 2
-  %pz_g[39] := 2
-  %pz_rrn[10] := 2
+  %pz_rrn[9] := 3
+  %pz_split[9] := 100
+  %pz_g[36] := 3
+  %pz_g[37] := 4
+  %pz_g[38] := 5
+  %pz_g[39] := 3
+  %pz_rrn[10] := 3
   %pz_split[10] := 127
-  %pz_g[40] := 2
-  %pz_g[41] := 3
-  %pz_g[42] := 2
-  %pz_g[43] := 2
-  %pz_rrn[11] := 2
+  %pz_g[40] := 6
+  %pz_g[41] := 7
+  %pz_g[42] := 8
+  %pz_g[43] := 6
+  %pz_rrn[11] := 3
   %pz_split[11] := 127
-  %pz_g[44] := 2
-  %pz_g[45] := 3
-  %pz_g[46] := 2
-  %pz_g[47] := 2
+  %pz_g[44] := 6
+  %pz_g[45] := 7
+  %pz_g[46] := 8
+  %pz_g[47] := 6
   %key_pc[39] := 3
   %pz_bus[3] := 5
   %pz_cg[3] := 0
   %pz_cut[3] := 0
   %pz_hold[3] := 0
   %pz_pan[3] := 100
-  %pz_nl[3] := 2
-  %pz_rrn[12] := 2
-  %pz_split[12] := 90
+  %pz_nl[3] := 3
+  %pz_rrn[12] := 3
+  %pz_split[12] := 60
   %pz_g[48] := 0
   %pz_g[49] := 1
-  %pz_g[50] := 0
+  %pz_g[50] := 2
   %pz_g[51] := 0
-  %pz_rrn[13] := 2
-  %pz_split[13] := 127
-  %pz_g[52] := 2
-  %pz_g[53] := 3
-  %pz_g[54] := 2
-  %pz_g[55] := 2
-  %pz_rrn[14] := 2
+  %pz_rrn[13] := 3
+  %pz_split[13] := 100
+  %pz_g[52] := 3
+  %pz_g[53] := 4
+  %pz_g[54] := 5
+  %pz_g[55] := 3
+  %pz_rrn[14] := 3
   %pz_split[14] := 127
-  %pz_g[56] := 2
-  %pz_g[57] := 3
-  %pz_g[58] := 2
-  %pz_g[59] := 2
-  %pz_rrn[15] := 2
+  %pz_g[56] := 6
+  %pz_g[57] := 7
+  %pz_g[58] := 8
+  %pz_g[59] := 6
+  %pz_rrn[15] := 3
   %pz_split[15] := 127
-  %pz_g[60] := 2
-  %pz_g[61] := 3
-  %pz_g[62] := 2
-  %pz_g[63] := 2
+  %pz_g[60] := 6
+  %pz_g[61] := 7
+  %pz_g[62] := 8
+  %pz_g[63] := 6
   %key_pc[40] := 4
   %pz_bus[4] := 1
   %pz_cg[4] := 0
   %pz_cut[4] := 0
   %pz_hold[4] := 0
   %pz_pan[4] := -80
-  %pz_nl[4] := 2
-  %pz_rrn[16] := 2
-  %pz_split[16] := 90
+  %pz_nl[4] := 3
+  %pz_rrn[16] := 3
+  %pz_split[16] := 60
   %pz_g[64] := 0
   %pz_g[65] := 1
-  %pz_g[66] := 0
+  %pz_g[66] := 2
   %pz_g[67] := 0
-  %pz_rrn[17] := 2
-  %pz_split[17] := 127
-  %pz_g[68] := 2
-  %pz_g[69] := 3
-  %pz_g[70] := 2
-  %pz_g[71] := 2
-  %pz_rrn[18] := 2
+  %pz_rrn[17] := 3
+  %pz_split[17] := 100
+  %pz_g[68] := 3
+  %pz_g[69] := 4
+  %pz_g[70] := 5
+  %pz_g[71] := 3
+  %pz_rrn[18] := 3
   %pz_split[18] := 127
-  %pz_g[72] := 2
-  %pz_g[73] := 3
-  %pz_g[74] := 2
-  %pz_g[75] := 2
-  %pz_rrn[19] := 2
+  %pz_g[72] := 6
+  %pz_g[73] := 7
+  %pz_g[74] := 8
+  %pz_g[75] := 6
+  %pz_rrn[19] := 3
   %pz_split[19] := 127
-  %pz_g[76] := 2
-  %pz_g[77] := 3
-  %pz_g[78] := 2
-  %pz_g[79] := 2
+  %pz_g[76] := 6
+  %pz_g[77] := 7
+  %pz_g[78] := 8
+  %pz_g[79] := 6
   %key_pc[41] := 5
   %pz_bus[5] := 2
   %pz_cg[5] := 0
   %pz_cut[5] := 0
   %pz_hold[5] := 0
   %pz_pan[5] := 450
-  %pz_nl[5] := 2
-  %pz_rrn[20] := 2
-  %pz_split[20] := 90
+  %pz_nl[5] := 3
+  %pz_rrn[20] := 3
+  %pz_split[20] := 60
   %pz_g[80] := 0
   %pz_g[81] := 1
-  %pz_g[82] := 0
+  %pz_g[82] := 2
   %pz_g[83] := 0
-  %pz_rrn[21] := 2
-  %pz_split[21] := 127
-  %pz_g[84] := 2
-  %pz_g[85] := 3
-  %pz_g[86] := 2
-  %pz_g[87] := 2
-  %pz_rrn[22] := 2
+  %pz_rrn[21] := 3
+  %pz_split[21] := 100
+  %pz_g[84] := 3
+  %pz_g[85] := 4
+  %pz_g[86] := 5
+  %pz_g[87] := 3
+  %pz_rrn[22] := 3
   %pz_split[22] := 127
-  %pz_g[88] := 2
-  %pz_g[89] := 3
-  %pz_g[90] := 2
-  %pz_g[91] := 2
-  %pz_rrn[23] := 2
+  %pz_g[88] := 6
+  %pz_g[89] := 7
+  %pz_g[90] := 8
+  %pz_g[91] := 6
+  %pz_rrn[23] := 3
   %pz_split[23] := 127
-  %pz_g[92] := 2
-  %pz_g[93] := 3
-  %pz_g[94] := 2
-  %pz_g[95] := 2
+  %pz_g[92] := 6
+  %pz_g[93] := 7
+  %pz_g[94] := 8
+  %pz_g[95] := 6
   %key_pc[42] := 6
   %pz_bus[6] := 3
   %pz_cg[6] := 0
   %pz_cut[6] := 1
   %pz_hold[6] := 0
   %pz_pan[6] := -350
-  %pz_nl[6] := 2
-  %pz_rrn[24] := 2
-  %pz_split[24] := 90
+  %pz_nl[6] := 3
+  %pz_rrn[24] := 3
+  %pz_split[24] := 60
   %pz_g[96] := 0
   %pz_g[97] := 1
-  %pz_g[98] := 0
+  %pz_g[98] := 2
   %pz_g[99] := 0
-  %pz_rrn[25] := 2
-  %pz_split[25] := 127
-  %pz_g[100] := 2
-  %pz_g[101] := 3
-  %pz_g[102] := 2
-  %pz_g[103] := 2
-  %pz_rrn[26] := 2
+  %pz_rrn[25] := 3
+  %pz_split[25] := 100
+  %pz_g[100] := 3
+  %pz_g[101] := 4
+  %pz_g[102] := 5
+  %pz_g[103] := 3
+  %pz_rrn[26] := 3
   %pz_split[26] := 127
-  %pz_g[104] := 2
-  %pz_g[105] := 3
-  %pz_g[106] := 2
-  %pz_g[107] := 2
-  %pz_rrn[27] := 2
+  %pz_g[104] := 6
+  %pz_g[105] := 7
+  %pz_g[106] := 8
+  %pz_g[107] := 6
+  %pz_rrn[27] := 3
   %pz_split[27] := 127
-  %pz_g[108] := 2
-  %pz_g[109] := 3
-  %pz_g[110] := 2
-  %pz_g[111] := 2
+  %pz_g[108] := 6
+  %pz_g[109] := 7
+  %pz_g[110] := 8
+  %pz_g[111] := 6
   %key_pc[43] := 7
   %pz_bus[7] := 2
   %pz_cg[7] := 0
   %pz_cut[7] := 0
   %pz_hold[7] := 0
   %pz_pan[7] := 350
-  %pz_nl[7] := 2
-  %pz_rrn[28] := 2
-  %pz_split[28] := 90
+  %pz_nl[7] := 3
+  %pz_rrn[28] := 3
+  %pz_split[28] := 60
   %pz_g[112] := 0
   %pz_g[113] := 1
-  %pz_g[114] := 0
+  %pz_g[114] := 2
   %pz_g[115] := 0
-  %pz_rrn[29] := 2
-  %pz_split[29] := 127
-  %pz_g[116] := 2
-  %pz_g[117] := 3
-  %pz_g[118] := 2
-  %pz_g[119] := 2
-  %pz_rrn[30] := 2
+  %pz_rrn[29] := 3
+  %pz_split[29] := 100
+  %pz_g[116] := 3
+  %pz_g[117] := 4
+  %pz_g[118] := 5
+  %pz_g[119] := 3
+  %pz_rrn[30] := 3
   %pz_split[30] := 127
-  %pz_g[120] := 2
-  %pz_g[121] := 3
-  %pz_g[122] := 2
-  %pz_g[123] := 2
-  %pz_rrn[31] := 2
+  %pz_g[120] := 6
+  %pz_g[121] := 7
+  %pz_g[122] := 8
+  %pz_g[123] := 6
+  %pz_rrn[31] := 3
   %pz_split[31] := 127
-  %pz_g[124] := 2
-  %pz_g[125] := 3
-  %pz_g[126] := 2
-  %pz_g[127] := 2
+  %pz_g[124] := 6
+  %pz_g[125] := 7
+  %pz_g[126] := 8
+  %pz_g[127] := 6
   %key_pc[44] := 8
   %pz_bus[8] := 3
   %pz_cg[8] := 0
   %pz_cut[8] := 1
   %pz_hold[8] := 0
   %pz_pan[8] := -350
-  %pz_nl[8] := 2
-  %pz_rrn[32] := 2
-  %pz_split[32] := 90
+  %pz_nl[8] := 3
+  %pz_rrn[32] := 3
+  %pz_split[32] := 60
   %pz_g[128] := 0
   %pz_g[129] := 1
-  %pz_g[130] := 0
+  %pz_g[130] := 2
   %pz_g[131] := 0
-  %pz_rrn[33] := 2
-  %pz_split[33] := 127
-  %pz_g[132] := 2
-  %pz_g[133] := 3
-  %pz_g[134] := 2
-  %pz_g[135] := 2
-  %pz_rrn[34] := 2
+  %pz_rrn[33] := 3
+  %pz_split[33] := 100
+  %pz_g[132] := 3
+  %pz_g[133] := 4
+  %pz_g[134] := 5
+  %pz_g[135] := 3
+  %pz_rrn[34] := 3
   %pz_split[34] := 127
-  %pz_g[136] := 2
-  %pz_g[137] := 3
-  %pz_g[138] := 2
-  %pz_g[139] := 2
-  %pz_rrn[35] := 2
+  %pz_g[136] := 6
+  %pz_g[137] := 7
+  %pz_g[138] := 8
+  %pz_g[139] := 6
+  %pz_rrn[35] := 3
   %pz_split[35] := 127
-  %pz_g[140] := 2
-  %pz_g[141] := 3
-  %pz_g[142] := 2
-  %pz_g[143] := 2
+  %pz_g[140] := 6
+  %pz_g[141] := 7
+  %pz_g[142] := 8
+  %pz_g[143] := 6
   %key_pc[45] := 9
   %pz_bus[9] := 2
   %pz_cg[9] := 0
   %pz_cut[9] := 0
   %pz_hold[9] := 0
   %pz_pan[9] := 200
-  %pz_nl[9] := 2
-  %pz_rrn[36] := 2
-  %pz_split[36] := 90
+  %pz_nl[9] := 3
+  %pz_rrn[36] := 3
+  %pz_split[36] := 60
   %pz_g[144] := 0
   %pz_g[145] := 1
-  %pz_g[146] := 0
+  %pz_g[146] := 2
   %pz_g[147] := 0
-  %pz_rrn[37] := 2
-  %pz_split[37] := 127
-  %pz_g[148] := 2
-  %pz_g[149] := 3
-  %pz_g[150] := 2
-  %pz_g[151] := 2
-  %pz_rrn[38] := 2
+  %pz_rrn[37] := 3
+  %pz_split[37] := 100
+  %pz_g[148] := 3
+  %pz_g[149] := 4
+  %pz_g[150] := 5
+  %pz_g[151] := 3
+  %pz_rrn[38] := 3
   %pz_split[38] := 127
-  %pz_g[152] := 2
-  %pz_g[153] := 3
-  %pz_g[154] := 2
-  %pz_g[155] := 2
-  %pz_rrn[39] := 2
+  %pz_g[152] := 6
+  %pz_g[153] := 7
+  %pz_g[154] := 8
+  %pz_g[155] := 6
+  %pz_rrn[39] := 3
   %pz_split[39] := 127
-  %pz_g[156] := 2
-  %pz_g[157] := 3
-  %pz_g[158] := 2
-  %pz_g[159] := 2
+  %pz_g[156] := 6
+  %pz_g[157] := 7
+  %pz_g[158] := 8
+  %pz_g[159] := 6
   %key_pc[46] := 10
   %pz_bus[10] := 3
   %pz_cg[10] := 1
   %pz_cut[10] := 0
   %pz_hold[10] := 0
   %pz_pan[10] := -350
-  %pz_nl[10] := 2
-  %pz_rrn[40] := 2
-  %pz_split[40] := 90
+  %pz_nl[10] := 3
+  %pz_rrn[40] := 3
+  %pz_split[40] := 60
   %pz_g[160] := 0
   %pz_g[161] := 1
-  %pz_g[162] := 0
+  %pz_g[162] := 2
   %pz_g[163] := 0
-  %pz_rrn[41] := 2
-  %pz_split[41] := 127
-  %pz_g[164] := 2
-  %pz_g[165] := 3
-  %pz_g[166] := 2
-  %pz_g[167] := 2
-  %pz_rrn[42] := 2
+  %pz_rrn[41] := 3
+  %pz_split[41] := 100
+  %pz_g[164] := 3
+  %pz_g[165] := 4
+  %pz_g[166] := 5
+  %pz_g[167] := 3
+  %pz_rrn[42] := 3
   %pz_split[42] := 127
-  %pz_g[168] := 2
-  %pz_g[169] := 3
-  %pz_g[170] := 2
-  %pz_g[171] := 2
-  %pz_rrn[43] := 2
+  %pz_g[168] := 6
+  %pz_g[169] := 7
+  %pz_g[170] := 8
+  %pz_g[171] := 6
+  %pz_rrn[43] := 3
   %pz_split[43] := 127
-  %pz_g[172] := 2
-  %pz_g[173] := 3
-  %pz_g[174] := 2
-  %pz_g[175] := 2
+  %pz_g[172] := 6
+  %pz_g[173] := 7
+  %pz_g[174] := 8
+  %pz_g[175] := 6
   %key_pc[47] := 11
   %pz_bus[11] := 2
   %pz_cg[11] := 0
   %pz_cut[11] := 0
   %pz_hold[11] := 0
   %pz_pan[11] := 50
-  %pz_nl[11] := 2
-  %pz_rrn[44] := 2
-  %pz_split[44] := 90
+  %pz_nl[11] := 3
+  %pz_rrn[44] := 3
+  %pz_split[44] := 60
   %pz_g[176] := 0
   %pz_g[177] := 1
-  %pz_g[178] := 0
+  %pz_g[178] := 2
   %pz_g[179] := 0
-  %pz_rrn[45] := 2
-  %pz_split[45] := 127
-  %pz_g[180] := 2
-  %pz_g[181] := 3
-  %pz_g[182] := 2
-  %pz_g[183] := 2
-  %pz_rrn[46] := 2
+  %pz_rrn[45] := 3
+  %pz_split[45] := 100
+  %pz_g[180] := 3
+  %pz_g[181] := 4
+  %pz_g[182] := 5
+  %pz_g[183] := 3
+  %pz_rrn[46] := 3
   %pz_split[46] := 127
-  %pz_g[184] := 2
-  %pz_g[185] := 3
-  %pz_g[186] := 2
-  %pz_g[187] := 2
-  %pz_rrn[47] := 2
+  %pz_g[184] := 6
+  %pz_g[185] := 7
+  %pz_g[186] := 8
+  %pz_g[187] := 6
+  %pz_rrn[47] := 3
   %pz_split[47] := 127
-  %pz_g[188] := 2
-  %pz_g[189] := 3
-  %pz_g[190] := 2
-  %pz_g[191] := 2
+  %pz_g[188] := 6
+  %pz_g[189] := 7
+  %pz_g[190] := 8
+  %pz_g[191] := 6
   %key_pc[48] := 12
   %pz_bus[12] := 2
   %pz_cg[12] := 0
   %pz_cut[12] := 0
   %pz_hold[12] := 0
   %pz_pan[12] := -100
-  %pz_nl[12] := 2
-  %pz_rrn[48] := 2
-  %pz_split[48] := 90
+  %pz_nl[12] := 3
+  %pz_rrn[48] := 3
+  %pz_split[48] := 60
   %pz_g[192] := 0
   %pz_g[193] := 1
-  %pz_g[194] := 0
+  %pz_g[194] := 2
   %pz_g[195] := 0
-  %pz_rrn[49] := 2
-  %pz_split[49] := 127
-  %pz_g[196] := 2
-  %pz_g[197] := 3
-  %pz_g[198] := 2
-  %pz_g[199] := 2
-  %pz_rrn[50] := 2
+  %pz_rrn[49] := 3
+  %pz_split[49] := 100
+  %pz_g[196] := 3
+  %pz_g[197] := 4
+  %pz_g[198] := 5
+  %pz_g[199] := 3
+  %pz_rrn[50] := 3
   %pz_split[50] := 127
-  %pz_g[200] := 2
-  %pz_g[201] := 3
-  %pz_g[202] := 2
-  %pz_g[203] := 2
-  %pz_rrn[51] := 2
+  %pz_g[200] := 6
+  %pz_g[201] := 7
+  %pz_g[202] := 8
+  %pz_g[203] := 6
+  %pz_rrn[51] := 3
   %pz_split[51] := 127
-  %pz_g[204] := 2
-  %pz_g[205] := 3
-  %pz_g[206] := 2
-  %pz_g[207] := 2
+  %pz_g[204] := 6
+  %pz_g[205] := 7
+  %pz_g[206] := 8
+  %pz_g[207] := 6
   %key_pc[49] := 13
   %pz_bus[13] := 4
   %pz_cg[13] := 0
   %pz_cut[13] := 0
   %pz_hold[13] := 0
   %pz_pan[13] := -500
-  %pz_nl[13] := 2
-  %pz_rrn[52] := 2
-  %pz_split[52] := 90
+  %pz_nl[13] := 3
+  %pz_rrn[52] := 3
+  %pz_split[52] := 60
   %pz_g[208] := 0
   %pz_g[209] := 1
-  %pz_g[210] := 0
+  %pz_g[210] := 2
   %pz_g[211] := 0
-  %pz_rrn[53] := 2
-  %pz_split[53] := 127
-  %pz_g[212] := 2
-  %pz_g[213] := 3
-  %pz_g[214] := 2
-  %pz_g[215] := 2
-  %pz_rrn[54] := 2
+  %pz_rrn[53] := 3
+  %pz_split[53] := 100
+  %pz_g[212] := 3
+  %pz_g[213] := 4
+  %pz_g[214] := 5
+  %pz_g[215] := 3
+  %pz_rrn[54] := 3
   %pz_split[54] := 127
-  %pz_g[216] := 2
-  %pz_g[217] := 3
-  %pz_g[218] := 2
-  %pz_g[219] := 2
-  %pz_rrn[55] := 2
+  %pz_g[216] := 6
+  %pz_g[217] := 7
+  %pz_g[218] := 8
+  %pz_g[219] := 6
+  %pz_rrn[55] := 3
   %pz_split[55] := 127
-  %pz_g[220] := 2
-  %pz_g[221] := 3
-  %pz_g[222] := 2
-  %pz_g[223] := 2
+  %pz_g[220] := 6
+  %pz_g[221] := 7
+  %pz_g[222] := 8
+  %pz_g[223] := 6
   %key_pc[50] := 14
   %pz_bus[14] := 2
   %pz_cg[14] := 0
   %pz_cut[14] := 0
   %pz_hold[14] := 0
   %pz_pan[14] := -200
-  %pz_nl[14] := 2
-  %pz_rrn[56] := 2
-  %pz_split[56] := 90
+  %pz_nl[14] := 3
+  %pz_rrn[56] := 3
+  %pz_split[56] := 60
   %pz_g[224] := 0
   %pz_g[225] := 1
-  %pz_g[226] := 0
+  %pz_g[226] := 2
   %pz_g[227] := 0
-  %pz_rrn[57] := 2
-  %pz_split[57] := 127
-  %pz_g[228] := 2
-  %pz_g[229] := 3
-  %pz_g[230] := 2
-  %pz_g[231] := 2
-  %pz_rrn[58] := 2
+  %pz_rrn[57] := 3
+  %pz_split[57] := 100
+  %pz_g[228] := 3
+  %pz_g[229] := 4
+  %pz_g[230] := 5
+  %pz_g[231] := 3
+  %pz_rrn[58] := 3
   %pz_split[58] := 127
-  %pz_g[232] := 2
-  %pz_g[233] := 3
-  %pz_g[234] := 2
-  %pz_g[235] := 2
-  %pz_rrn[59] := 2
+  %pz_g[232] := 6
+  %pz_g[233] := 7
+  %pz_g[234] := 8
+  %pz_g[235] := 6
+  %pz_rrn[59] := 3
   %pz_split[59] := 127
-  %pz_g[236] := 2
-  %pz_g[237] := 3
-  %pz_g[238] := 2
-  %pz_g[239] := 2
+  %pz_g[236] := 6
+  %pz_g[237] := 7
+  %pz_g[238] := 8
+  %pz_g[239] := 6
   %key_pc[51] := 15
   %pz_bus[15] := 4
   %pz_cg[15] := 0
   %pz_cut[15] := 0
   %pz_hold[15] := 0
   %pz_pan[15] := 500
-  %pz_nl[15] := 2
-  %pz_rrn[60] := 2
-  %pz_split[60] := 90
+  %pz_nl[15] := 3
+  %pz_rrn[60] := 3
+  %pz_split[60] := 60
   %pz_g[240] := 0
   %pz_g[241] := 1
-  %pz_g[242] := 0
+  %pz_g[242] := 2
   %pz_g[243] := 0
-  %pz_rrn[61] := 2
-  %pz_split[61] := 127
-  %pz_g[244] := 2
-  %pz_g[245] := 3
-  %pz_g[246] := 2
-  %pz_g[247] := 2
-  %pz_rrn[62] := 2
+  %pz_rrn[61] := 3
+  %pz_split[61] := 100
+  %pz_g[244] := 3
+  %pz_g[245] := 4
+  %pz_g[246] := 5
+  %pz_g[247] := 3
+  %pz_rrn[62] := 3
   %pz_split[62] := 127
-  %pz_g[248] := 2
-  %pz_g[249] := 3
-  %pz_g[250] := 2
-  %pz_g[251] := 2
-  %pz_rrn[63] := 2
+  %pz_g[248] := 6
+  %pz_g[249] := 7
+  %pz_g[250] := 8
+  %pz_g[251] := 6
+  %pz_rrn[63] := 3
   %pz_split[63] := 127
-  %pz_g[252] := 2
-  %pz_g[253] := 3
-  %pz_g[254] := 2
-  %pz_g[255] := 2
+  %pz_g[252] := 6
+  %pz_g[253] := 7
+  %pz_g[254] := 8
+  %pz_g[255] := 6
   %key_pc[53] := 16
   %pz_bus[16] := 4
   %pz_cg[16] := 0
   %pz_cut[16] := 0
   %pz_hold[16] := 0
   %pz_pan[16] := 500
-  %pz_nl[16] := 2
-  %pz_rrn[64] := 2
-  %pz_split[64] := 90
+  %pz_nl[16] := 3
+  %pz_rrn[64] := 3
+  %pz_split[64] := 60
   %pz_g[256] := 0
   %pz_g[257] := 1
-  %pz_g[258] := 0
+  %pz_g[258] := 2
   %pz_g[259] := 0
-  %pz_rrn[65] := 2
-  %pz_split[65] := 127
-  %pz_g[260] := 2
-  %pz_g[261] := 3
-  %pz_g[262] := 2
-  %pz_g[263] := 2
-  %pz_rrn[66] := 2
+  %pz_rrn[65] := 3
+  %pz_split[65] := 100
+  %pz_g[260] := 3
+  %pz_g[261] := 4
+  %pz_g[262] := 5
+  %pz_g[263] := 3
+  %pz_rrn[66] := 3
   %pz_split[66] := 127
-  %pz_g[264] := 2
-  %pz_g[265] := 3
-  %pz_g[266] := 2
-  %pz_g[267] := 2
-  %pz_rrn[67] := 2
+  %pz_g[264] := 6
+  %pz_g[265] := 7
+  %pz_g[266] := 8
+  %pz_g[267] := 6
+  %pz_rrn[67] := 3
   %pz_split[67] := 127
-  %pz_g[268] := 2
-  %pz_g[269] := 3
-  %pz_g[270] := 2
-  %pz_g[271] := 2
+  %pz_g[268] := 6
+  %pz_g[269] := 7
+  %pz_g[270] := 8
+  %pz_g[271] := 6
   %key_pc[54] := 17
   %pz_bus[17] := 5
   %pz_cg[17] := 0
   %pz_cut[17] := 0
   %pz_hold[17] := 0
   %pz_pan[17] := 300
-  %pz_nl[17] := 2
-  %pz_rrn[68] := 2
-  %pz_split[68] := 90
+  %pz_nl[17] := 3
+  %pz_rrn[68] := 3
+  %pz_split[68] := 60
   %pz_g[272] := 0
   %pz_g[273] := 1
-  %pz_g[274] := 0
+  %pz_g[274] := 2
   %pz_g[275] := 0
-  %pz_rrn[69] := 2
-  %pz_split[69] := 127
-  %pz_g[276] := 2
-  %pz_g[277] := 3
-  %pz_g[278] := 2
-  %pz_g[279] := 2
-  %pz_rrn[70] := 2
+  %pz_rrn[69] := 3
+  %pz_split[69] := 100
+  %pz_g[276] := 3
+  %pz_g[277] := 4
+  %pz_g[278] := 5
+  %pz_g[279] := 3
+  %pz_rrn[70] := 3
   %pz_split[70] := 127
-  %pz_g[280] := 2
-  %pz_g[281] := 3
-  %pz_g[282] := 2
-  %pz_g[283] := 2
-  %pz_rrn[71] := 2
+  %pz_g[280] := 6
+  %pz_g[281] := 7
+  %pz_g[282] := 8
+  %pz_g[283] := 6
+  %pz_rrn[71] := 3
   %pz_split[71] := 127
-  %pz_g[284] := 2
-  %pz_g[285] := 3
-  %pz_g[286] := 2
-  %pz_g[287] := 2
+  %pz_g[284] := 6
+  %pz_g[285] := 7
+  %pz_g[286] := 8
+  %pz_g[287] := 6
   %key_pc[57] := 18
   %pz_bus[18] := 4
   %pz_cg[18] := 0
   %pz_cut[18] := 0
   %pz_hold[18] := 0
   %pz_pan[18] := 550
-  %pz_nl[18] := 2
-  %pz_rrn[72] := 2
-  %pz_split[72] := 90
+  %pz_nl[18] := 3
+  %pz_rrn[72] := 3
+  %pz_split[72] := 60
   %pz_g[288] := 0
   %pz_g[289] := 1
-  %pz_g[290] := 0
+  %pz_g[290] := 2
   %pz_g[291] := 0
-  %pz_rrn[73] := 2
-  %pz_split[73] := 127
-  %pz_g[292] := 2
-  %pz_g[293] := 3
-  %pz_g[294] := 2
-  %pz_g[295] := 2
-  %pz_rrn[74] := 2
+  %pz_rrn[73] := 3
+  %pz_split[73] := 100
+  %pz_g[292] := 3
+  %pz_g[293] := 4
+  %pz_g[294] := 5
+  %pz_g[295] := 3
+  %pz_rrn[74] := 3
   %pz_split[74] := 127
-  %pz_g[296] := 2
-  %pz_g[297] := 3
-  %pz_g[298] := 2
-  %pz_g[299] := 2
-  %pz_rrn[75] := 2
+  %pz_g[296] := 6
+  %pz_g[297] := 7
+  %pz_g[298] := 8
+  %pz_g[299] := 6
+  %pz_rrn[75] := 3
   %pz_split[75] := 127
-  %pz_g[300] := 2
-  %pz_g[301] := 3
-  %pz_g[302] := 2
-  %pz_g[303] := 2
+  %pz_g[300] := 6
+  %pz_g[301] := 7
+  %pz_g[302] := 8
+  %pz_g[303] := 6
   %key_pc[70] := 19
   %pz_bus[19] := 5
   %pz_cg[19] := 0
   %pz_cut[19] := 0
   %pz_hold[19] := 0
   %pz_pan[19] := 250
-  %pz_nl[19] := 2
-  %pz_rrn[76] := 2
-  %pz_split[76] := 90
+  %pz_nl[19] := 3
+  %pz_rrn[76] := 3
+  %pz_split[76] := 60
   %pz_g[304] := 0
   %pz_g[305] := 1
-  %pz_g[306] := 0
+  %pz_g[306] := 2
   %pz_g[307] := 0
-  %pz_rrn[77] := 2
-  %pz_split[77] := 127
-  %pz_g[308] := 2
-  %pz_g[309] := 3
-  %pz_g[310] := 2
-  %pz_g[311] := 2
-  %pz_rrn[78] := 2
+  %pz_rrn[77] := 3
+  %pz_split[77] := 100
+  %pz_g[308] := 3
+  %pz_g[309] := 4
+  %pz_g[310] := 5
+  %pz_g[311] := 3
+  %pz_rrn[78] := 3
   %pz_split[78] := 127
-  %pz_g[312] := 2
-  %pz_g[313] := 3
-  %pz_g[314] := 2
-  %pz_g[315] := 2
-  %pz_rrn[79] := 2
+  %pz_g[312] := 6
+  %pz_g[313] := 7
+  %pz_g[314] := 8
+  %pz_g[315] := 6
+  %pz_rrn[79] := 3
   %pz_split[79] := 127
-  %pz_g[316] := 2
-  %pz_g[317] := 3
-  %pz_g[318] := 2
-  %pz_g[319] := 2
+  %pz_g[316] := 6
+  %pz_g[317] := 7
+  %pz_g[318] := 8
+  %pz_g[319] := 6
   declare $vc_in
   declare $vc_db
   declare $vc_curved
   declare ~vc_r
-  declare const $NUM_UI := 24
-  declare %ui_id[24]
-  declare %ui_page[24]
+  declare const $NUM_UI := 27
+  declare %ui_id[27]
+  declare %ui_page[27]
   declare ui_label $info (1, 1)
-  set_text($info, "Studio Drum Kit  |  General MIDI layout, open hat choked by closed/pedal hat")
-  set_control_par(get_ui_id($info), $CONTROL_PAR_WIDTH, 500)
-  move_control_px($info, 290, 6)
+  set_text($info, "Studio Drum Kit  |  GM layout, 3 velocity layers x 3 round robins, Note Repeat")
+  set_control_par(get_ui_id($info), $CONTROL_PAR_WIDTH, 360)
+  move_control_px($info, 284, 6)
   %ui_id[0] := get_ui_id($info)
   %ui_page[0] := -1
+  declare ui_label $lbl_repeat (1, 1)
+  set_text($lbl_repeat, "Note Repeat")
+  set_control_par(get_ui_id($lbl_repeat), $CONTROL_PAR_WIDTH, 96)
+  move_control_px($lbl_repeat, 696, 140)
+  %ui_id[1] := get_ui_id($lbl_repeat)
+  %ui_page[1] := 0
   declare ui_switch $tab_play
   set_text($tab_play, "PLAY")
   set_control_par(get_ui_id($tab_play), $CONTROL_PAR_WIDTH, 86)
   $tab_play := 1
   set_control_help($tab_play, "Main playing controls.")
   move_control_px($tab_play, 8, 6)
-  %ui_id[1] := get_ui_id($tab_play)
-  %ui_page[1] := -1
+  %ui_id[2] := get_ui_id($tab_play)
+  %ui_page[2] := -1
   declare ui_switch $tab_sound
   set_text($tab_sound, "SOUND")
   set_control_par(get_ui_id($tab_sound), $CONTROL_PAR_WIDTH, 86)
   $tab_sound := 0
   set_control_help($tab_sound, "Tone, width, chorus, delay and reverb.")
   move_control_px($tab_sound, 98, 6)
-  %ui_id[2] := get_ui_id($tab_sound)
-  %ui_page[2] := -1
+  %ui_id[3] := get_ui_id($tab_sound)
+  %ui_page[3] := -1
   declare ui_knob $tone (0, 1000, 10)
   set_text($tone, "Tone")
   set_knob_unit($tone, $KNOB_UNIT_PERCENT)
@@ -962,8 +1095,8 @@ on init
   set_control_help($tone, "Low-pass filter on the whole instrument. 100% = fully open.")
   move_control_px($tone, 10, 44)
   make_persistent($tone)
-  %ui_id[3] := get_ui_id($tone)
-  %ui_page[3] := 1
+  %ui_id[4] := get_ui_id($tone)
+  %ui_page[4] := 1
   declare ui_knob $drive (0, 1000, 10)
   set_text($drive, "Drive")
   set_knob_unit($drive, $KNOB_UNIT_PERCENT)
@@ -972,8 +1105,8 @@ on init
   set_control_help($drive, "Saturation (Supercharger GT).")
   move_control_px($drive, 108, 44)
   make_persistent($drive)
-  %ui_id[4] := get_ui_id($drive)
-  %ui_page[4] := 1
+  %ui_id[5] := get_ui_id($drive)
+  %ui_page[5] := 1
   declare ui_knob $comp (0, 1000, 10)
   set_text($comp, "Glue Comp")
   set_knob_unit($comp, $KNOB_UNIT_PERCENT)
@@ -982,8 +1115,8 @@ on init
   set_control_help($comp, "Bus compressor amount.")
   move_control_px($comp, 206, 44)
   make_persistent($comp)
-  %ui_id[5] := get_ui_id($comp)
-  %ui_page[5] := 1
+  %ui_id[6] := get_ui_id($comp)
+  %ui_page[6] := 1
   declare ui_knob $width (0, 1000, 5)
   set_text($width, "Width")
   set_knob_unit($width, $KNOB_UNIT_PERCENT)
@@ -992,8 +1125,8 @@ on init
   set_control_help($width, "Stereo width. 100% = as recorded, 0% = mono, 200% = extra wide.")
   move_control_px($width, 304, 44)
   make_persistent($width)
-  %ui_id[6] := get_ui_id($width)
-  %ui_page[6] := 1
+  %ui_id[7] := get_ui_id($width)
+  %ui_page[7] := 1
   declare ui_knob $rev_mix (0, 1000, 10)
   set_text($rev_mix, "Reverb")
   set_knob_unit($rev_mix, $KNOB_UNIT_PERCENT)
@@ -1002,8 +1135,8 @@ on init
   set_control_help($rev_mix, "Reverb level (Raum).")
   move_control_px($rev_mix, 402, 44)
   make_persistent($rev_mix)
-  %ui_id[7] := get_ui_id($rev_mix)
-  %ui_page[7] := 1
+  %ui_id[8] := get_ui_id($rev_mix)
+  %ui_page[8] := 1
   declare ui_knob $rev_size (0, 1000, 10)
   set_text($rev_size, "Size")
   set_knob_unit($rev_size, $KNOB_UNIT_PERCENT)
@@ -1012,8 +1145,8 @@ on init
   set_control_help($rev_size, "Room size.")
   move_control_px($rev_size, 500, 44)
   make_persistent($rev_size)
-  %ui_id[8] := get_ui_id($rev_size)
-  %ui_page[8] := 1
+  %ui_id[9] := get_ui_id($rev_size)
+  %ui_page[9] := 1
   declare ui_knob $rev_decay (0, 1000, 10)
   set_text($rev_decay, "Decay")
   set_knob_defval($rev_decay, 400)
@@ -1021,8 +1154,8 @@ on init
   set_control_help($rev_decay, "Reverb decay time.")
   move_control_px($rev_decay, 598, 44)
   make_persistent($rev_decay)
-  %ui_id[9] := get_ui_id($rev_decay)
-  %ui_page[9] := 1
+  %ui_id[10] := get_ui_id($rev_decay)
+  %ui_page[10] := 1
   declare ui_switch $use_pedal
   set_text($use_pedal, "Sustain Pedal")
   set_control_par(get_ui_id($use_pedal), $CONTROL_PAR_WIDTH, 88)
@@ -1030,8 +1163,8 @@ on init
   set_control_help($use_pedal, "Follow the sustain pedal (CC64).")
   move_control_px($use_pedal, 108, 234)
   make_persistent($use_pedal)
-  %ui_id[10] := get_ui_id($use_pedal)
-  %ui_page[10] := 1
+  %ui_id[11] := get_ui_id($use_pedal)
+  %ui_page[11] := 1
   declare ui_knob $bus0 (-400, 60, 10)
   set_text($bus0, "Kick")
   set_knob_unit($bus0, $KNOB_UNIT_DB)
@@ -1040,8 +1173,8 @@ on init
   set_control_help($bus0, "Level of the Kick pieces.")
   move_control_px($bus0, 10, 44)
   make_persistent($bus0)
-  %ui_id[11] := get_ui_id($bus0)
-  %ui_page[11] := 0
+  %ui_id[12] := get_ui_id($bus0)
+  %ui_page[12] := 0
   declare ui_knob $bus1 (-400, 60, 10)
   set_text($bus1, "Snare")
   set_knob_unit($bus1, $KNOB_UNIT_DB)
@@ -1050,8 +1183,8 @@ on init
   set_control_help($bus1, "Level of the Snare pieces.")
   move_control_px($bus1, 108, 44)
   make_persistent($bus1)
-  %ui_id[12] := get_ui_id($bus1)
-  %ui_page[12] := 0
+  %ui_id[13] := get_ui_id($bus1)
+  %ui_page[13] := 0
   declare ui_knob $bus2 (-400, 60, 10)
   set_text($bus2, "Toms")
   set_knob_unit($bus2, $KNOB_UNIT_DB)
@@ -1060,8 +1193,8 @@ on init
   set_control_help($bus2, "Level of the Toms pieces.")
   move_control_px($bus2, 206, 44)
   make_persistent($bus2)
-  %ui_id[13] := get_ui_id($bus2)
-  %ui_page[13] := 0
+  %ui_id[14] := get_ui_id($bus2)
+  %ui_page[14] := 0
   declare ui_knob $bus3 (-400, 60, 10)
   set_text($bus3, "Hats")
   set_knob_unit($bus3, $KNOB_UNIT_DB)
@@ -1070,8 +1203,8 @@ on init
   set_control_help($bus3, "Level of the Hats pieces.")
   move_control_px($bus3, 304, 44)
   make_persistent($bus3)
-  %ui_id[14] := get_ui_id($bus3)
-  %ui_page[14] := 0
+  %ui_id[15] := get_ui_id($bus3)
+  %ui_page[15] := 0
   declare ui_knob $bus4 (-400, 60, 10)
   set_text($bus4, "Cymbals")
   set_knob_unit($bus4, $KNOB_UNIT_DB)
@@ -1080,8 +1213,8 @@ on init
   set_control_help($bus4, "Level of the Cymbals pieces.")
   move_control_px($bus4, 402, 44)
   make_persistent($bus4)
-  %ui_id[15] := get_ui_id($bus4)
-  %ui_page[15] := 0
+  %ui_id[16] := get_ui_id($bus4)
+  %ui_page[16] := 0
   declare ui_knob $bus5 (-400, 60, 10)
   set_text($bus5, "Perc")
   set_knob_unit($bus5, $KNOB_UNIT_DB)
@@ -1090,8 +1223,8 @@ on init
   set_control_help($bus5, "Level of the Perc pieces.")
   move_control_px($bus5, 500, 44)
   make_persistent($bus5)
-  %ui_id[16] := get_ui_id($bus5)
-  %ui_page[16] := 0
+  %ui_id[17] := get_ui_id($bus5)
+  %ui_page[17] := 0
   declare ui_knob $tune (-1200, 1200, 100)
   set_text($tune, "Tune")
   set_knob_unit($tune, $KNOB_UNIT_ST)
@@ -1100,8 +1233,8 @@ on init
   set_control_help($tune, "Tune all pieces (semitones).")
   move_control_px($tune, 10, 134)
   make_persistent($tune)
-  %ui_id[17] := get_ui_id($tune)
-  %ui_page[17] := 0
+  %ui_id[18] := get_ui_id($tune)
+  %ui_page[18] := 0
   declare ui_knob $vrange (0, 48, 1)
   set_text($vrange, "Vel Range")
   set_knob_unit($vrange, $KNOB_UNIT_DB)
@@ -1110,8 +1243,8 @@ on init
   set_control_help($vrange, "Velocity to volume range.")
   move_control_px($vrange, 108, 134)
   make_persistent($vrange)
-  %ui_id[18] := get_ui_id($vrange)
-  %ui_page[18] := 0
+  %ui_id[19] := get_ui_id($vrange)
+  %ui_page[19] := 0
   declare ui_knob $vcurve (-100, 100, 1)
   set_text($vcurve, "Vel Curve")
   set_knob_defval($vcurve, 0)
@@ -1119,8 +1252,8 @@ on init
   set_control_help($vcurve, "Velocity curve: negative = softer response, positive = harder.")
   move_control_px($vcurve, 206, 134)
   make_persistent($vcurve)
-  %ui_id[19] := get_ui_id($vcurve)
-  %ui_page[19] := 0
+  %ui_id[20] := get_ui_id($vcurve)
+  %ui_page[20] := 0
   declare ui_knob $hum (0, 100, 1)
   set_text($hum, "Humanize")
   set_knob_unit($hum, $KNOB_UNIT_PERCENT)
@@ -1129,8 +1262,8 @@ on init
   set_control_help($hum, "Small random level and pitch variation per hit.")
   move_control_px($hum, 304, 134)
   make_persistent($hum)
-  %ui_id[20] := get_ui_id($hum)
-  %ui_page[20] := 0
+  %ui_id[21] := get_ui_id($hum)
+  %ui_page[21] := 0
   declare ui_knob $spread (0, 100, 1)
   set_text($spread, "Kit Spread")
   set_knob_unit($spread, $KNOB_UNIT_PERCENT)
@@ -1139,8 +1272,8 @@ on init
   set_control_help($spread, "Stereo placement of the pieces (drummer perspective).")
   move_control_px($spread, 402, 134)
   make_persistent($spread)
-  %ui_id[21] := get_ui_id($spread)
-  %ui_page[21] := 0
+  %ui_id[22] := get_ui_id($spread)
+  %ui_page[22] := 0
   declare ui_knob $release (5, 3000, 1)
   set_text($release, "Roll Release")
   set_knob_unit($release, $KNOB_UNIT_MS)
@@ -1149,8 +1282,8 @@ on init
   set_control_help($release, "Fade time when a held roll / loop is released.")
   move_control_px($release, 500, 134)
   make_persistent($release)
-  %ui_id[22] := get_ui_id($release)
-  %ui_page[22] := 0
+  %ui_id[23] := get_ui_id($release)
+  %ui_page[23] := 0
   declare ui_knob $dyn_knob (0, 127, 1)
   set_text($dyn_knob, "Roll Dyn")
   set_knob_defval($dyn_knob, 100)
@@ -1158,8 +1291,35 @@ on init
   set_control_help($dyn_knob, "Level of held rolls (follows the mod wheel CC1).")
   move_control_px($dyn_knob, 598, 134)
   make_persistent($dyn_knob)
-  %ui_id[23] := get_ui_id($dyn_knob)
-  %ui_page[23] := 0
+  %ui_id[24] := get_ui_id($dyn_knob)
+  %ui_page[24] := 0
+  declare ui_menu $repeat
+  add_menu_item($repeat, "Off", 0)
+  add_menu_item($repeat, "1/8", 1)
+  add_menu_item($repeat, "1/8 T", 2)
+  add_menu_item($repeat, "1/16", 3)
+  add_menu_item($repeat, "1/16 T", 4)
+  add_menu_item($repeat, "1/32", 5)
+  set_control_par(get_ui_id($repeat), $CONTROL_PAR_WIDTH, 96)
+  $repeat := 0
+  set_control_help($repeat, "Note Repeat: held keys retrigger in time with the host tempo (hi-hat rolls, drum fills).")
+  move_control_px($repeat, 696, 158)
+  make_persistent($repeat)
+  %ui_id[25] := get_ui_id($repeat)
+  %ui_page[25] := 0
+  declare ui_menu $preset
+  add_menu_item($preset, "Presets...", 0)
+  add_menu_item($preset, "Default", 1)
+  add_menu_item($preset, "Studio Dry", 2)
+  add_menu_item($preset, "Big Room", 3)
+  add_menu_item($preset, "Crushed", 4)
+  set_control_par(get_ui_id($preset), $CONTROL_PAR_WIDTH, 140)
+  $preset := 0
+  set_control_help($preset, "Factory presets for this instrument. 'Default' resets every control.")
+  move_control_px($preset, 650, 6)
+  make_persistent($preset)
+  %ui_id[26] := get_ui_id($preset)
+  %ui_page[26] := -1
 end on
 
 function show_page
@@ -1328,6 +1488,63 @@ function update_dyn
     end if
     inc($ud_s)
   end while
+end function
+
+function drum_hit
+  $d_pc := %key_pc[$dh_note]
+  if ($d_pc < 0)
+    exit
+  end if
+  if (%pz_cut[$d_pc] > 0)
+    $d_i := 0
+    while ($d_i < $NUM_PC)
+      if (%pz_cg[$d_i] = %pz_cut[$d_pc] and $d_i # $d_pc)
+        $d_j := 0
+        while ($d_j < 8)
+          if (%pv_ring[$d_i * 8 + $d_j] # 0)
+            fade_out(%pv_ring[$d_i * 8 + $d_j], 45000, 1)
+            %pv_ring[$d_i * 8 + $d_j] := 0
+          end if
+          inc($d_j)
+        end while
+      end if
+      inc($d_i)
+    end while
+  end if
+  $vc_in := $dh_vel
+  call vel_curve
+  $d_l := 0
+  while ($d_l < %pz_nl[$d_pc] - 1 and $vc_curved > %pz_split[$d_pc * 4 + $d_l])
+    inc($d_l)
+  end while
+  $d_r := %pz_rr[$d_pc * 4 + $d_l]
+  if (%pz_rrn[$d_pc * 4 + $d_l] > 1)
+    %pz_rr[$d_pc * 4 + $d_l] := ($d_r + 1 + random(0, %pz_rrn[$d_pc * 4 + $d_l] - 2)) mod %pz_rrn[$d_pc * 4 + $d_l]
+  end if
+  $d_g := %grp[%pz_g[($d_pc * 4 + $d_l) * 4 + $d_r]]
+  if ($d_g = $NI_NOT_FOUND)
+    exit
+  end if
+  $nv_n := 0
+  $pv_note := $dh_note
+  $pv_grp := $d_g
+  $pv_vol := $vc_db + %bus_db[%pz_bus[$d_pc]] + random(0 - $hum * 15, $hum * 15)
+  $pv_tune := $tune * 1000 + random(0 - $hum * 40, $hum * 40)
+  $pv_pan := (%pz_pan[$d_pc] * $spread) / 100
+  $pv_off := 0
+  $pv_fade := 0
+  $pv_role := 3
+  if (%pz_hold[$d_pc] = 1)
+    $pv_vol := $pv_vol + $dyn_db
+  end if
+  call play_voice
+  %pv_ring[$d_pc * 8 + %pv_pos[$d_pc]] := $pv_id
+  %pv_pos[$d_pc] := (%pv_pos[$d_pc] + 1) mod 8
+  if (%pz_hold[$d_pc] = 1)
+    %nv_b[0] := $pv_vol - $dyn_db
+    $rs_src := $dh_note
+    call reg_new
+  end if
 end function
 
 function color_keys
@@ -1513,6 +1730,206 @@ function upd_dyn_knob
   call update_dyn
 end function
 
+function upd_repeat
+  if ($repeat = 0)
+    $rp_k := 0
+    while ($rp_k < 128)
+      %rep_vel[$rp_k] := 0
+      inc($rp_k)
+    end while
+    $rep_n := 0
+  end if
+end function
+
+function upd_preset
+  { no side effects }
+end function
+
+function apply_preset
+  select ($preset)
+    case 1
+      $tone := 1000
+      call upd_tone
+      $drive := 150
+      call upd_drive
+      $comp := 300
+      call upd_comp
+      $width := 500
+      call upd_width
+      $rev_mix := 180
+      call upd_rev_mix
+      $rev_size := 450
+      call upd_rev_size
+      $rev_decay := 400
+      call upd_rev_decay
+      $use_pedal := 0
+      call upd_use_pedal
+      $bus0 := 0
+      call upd_bus0
+      $bus1 := 0
+      call upd_bus1
+      $bus2 := 0
+      call upd_bus2
+      $bus3 := 0
+      call upd_bus3
+      $bus4 := 0
+      call upd_bus4
+      $bus5 := 0
+      call upd_bus5
+      $tune := 0
+      call upd_tune
+      $vrange := 30
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $hum := 25
+      call upd_hum
+      $spread := 70
+      call upd_spread
+      $release := 250
+      call upd_release
+      $dyn_knob := 100
+      call upd_dyn_knob
+      $repeat := 0
+      call upd_repeat
+    case 2
+      $tone := 1000
+      call upd_tone
+      $drive := 100
+      call upd_drive
+      $comp := 200
+      call upd_comp
+      $width := 500
+      call upd_width
+      $rev_mix := 80
+      call upd_rev_mix
+      $rev_size := 450
+      call upd_rev_size
+      $rev_decay := 400
+      call upd_rev_decay
+      $use_pedal := 0
+      call upd_use_pedal
+      $bus0 := 0
+      call upd_bus0
+      $bus1 := 0
+      call upd_bus1
+      $bus2 := 0
+      call upd_bus2
+      $bus3 := 0
+      call upd_bus3
+      $bus4 := 0
+      call upd_bus4
+      $bus5 := 0
+      call upd_bus5
+      $tune := 0
+      call upd_tune
+      $vrange := 30
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $hum := 25
+      call upd_hum
+      $spread := 70
+      call upd_spread
+      $release := 250
+      call upd_release
+      $dyn_knob := 100
+      call upd_dyn_knob
+      $repeat := 0
+      call upd_repeat
+    case 3
+      $tone := 1000
+      call upd_tone
+      $drive := 150
+      call upd_drive
+      $comp := 300
+      call upd_comp
+      $width := 500
+      call upd_width
+      $rev_mix := 420
+      call upd_rev_mix
+      $rev_size := 850
+      call upd_rev_size
+      $rev_decay := 650
+      call upd_rev_decay
+      $use_pedal := 0
+      call upd_use_pedal
+      $bus0 := 0
+      call upd_bus0
+      $bus1 := 0
+      call upd_bus1
+      $bus2 := 0
+      call upd_bus2
+      $bus3 := 0
+      call upd_bus3
+      $bus4 := 0
+      call upd_bus4
+      $bus5 := 0
+      call upd_bus5
+      $tune := 0
+      call upd_tune
+      $vrange := 30
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $hum := 25
+      call upd_hum
+      $spread := 70
+      call upd_spread
+      $release := 250
+      call upd_release
+      $dyn_knob := 100
+      call upd_dyn_knob
+      $repeat := 0
+      call upd_repeat
+    case 4
+      $tone := 850
+      call upd_tone
+      $drive := 700
+      call upd_drive
+      $comp := 800
+      call upd_comp
+      $width := 500
+      call upd_width
+      $rev_mix := 180
+      call upd_rev_mix
+      $rev_size := 450
+      call upd_rev_size
+      $rev_decay := 400
+      call upd_rev_decay
+      $use_pedal := 0
+      call upd_use_pedal
+      $bus0 := 0
+      call upd_bus0
+      $bus1 := 0
+      call upd_bus1
+      $bus2 := 0
+      call upd_bus2
+      $bus3 := 0
+      call upd_bus3
+      $bus4 := 0
+      call upd_bus4
+      $bus5 := 0
+      call upd_bus5
+      $tune := 0
+      call upd_tune
+      $vrange := 30
+      call upd_vrange
+      $vcurve := 0
+      call upd_vcurve
+      $hum := 25
+      call upd_hum
+      $spread := 70
+      call upd_spread
+      $release := 250
+      call upd_release
+      $dyn_knob := 100
+      call upd_dyn_knob
+      $repeat := 0
+      call upd_repeat
+  end select
+end function
+
 on persistence_changed
   call upd_tab_play
   call upd_tab_sound
@@ -1537,72 +1954,37 @@ on persistence_changed
   call upd_spread
   call upd_release
   call upd_dyn_knob
+  call upd_repeat
+  call upd_preset
   call show_page
   call color_keys
 end on
 
 on note
   ignore_event($EVENT_ID)
-  $d_pc := %key_pc[$EVENT_NOTE]
-  if ($d_pc < 0)
+  if (%key_pc[$EVENT_NOTE] < 0)
     exit
   end if
   inc($keys_down)
   %src_held[$EVENT_NOTE] := 1
-  if (%pz_cut[$d_pc] > 0)
-    $d_i := 0
-    while ($d_i < $NUM_PC)
-      if (%pz_cg[$d_i] = %pz_cut[$d_pc] and $d_i # $d_pc)
-        $d_j := 0
-        while ($d_j < 8)
-          if (%pv_ring[$d_i * 8 + $d_j] # 0)
-            fade_out(%pv_ring[$d_i * 8 + $d_j], 45000, 1)
-            %pv_ring[$d_i * 8 + $d_j] := 0
-          end if
-          inc($d_j)
-        end while
-      end if
-      inc($d_i)
-    end while
-  end if
-  $vc_in := $EVENT_VELOCITY
-  call vel_curve
-  $d_l := 0
-  while ($d_l < %pz_nl[$d_pc] - 1 and $vc_curved > %pz_split[$d_pc * 4 + $d_l])
-    inc($d_l)
-  end while
-  $d_r := %pz_rr[$d_pc * 4 + $d_l]
-  if (%pz_rrn[$d_pc * 4 + $d_l] > 1)
-    %pz_rr[$d_pc * 4 + $d_l] := ($d_r + 1 + random(0, %pz_rrn[$d_pc * 4 + $d_l] - 2)) mod %pz_rrn[$d_pc * 4 + $d_l]
-  end if
-  $d_g := %grp[%pz_g[($d_pc * 4 + $d_l) * 4 + $d_r]]
-  if ($d_g = $NI_NOT_FOUND)
-    exit
-  end if
-  $nv_n := 0
-  $pv_note := $EVENT_NOTE
-  $pv_grp := $d_g
-  $pv_vol := $vc_db + %bus_db[%pz_bus[$d_pc]] + random(0 - $hum * 15, $hum * 15)
-  $pv_tune := $tune * 1000 + random(0 - $hum * 40, $hum * 40)
-  $pv_pan := (%pz_pan[$d_pc] * $spread) / 100
-  $pv_off := 0
-  $pv_fade := 0
-  $pv_role := 3
-  if (%pz_hold[$d_pc] = 1)
-    $pv_vol := $pv_vol + $dyn_db
-  end if
-  call play_voice
-  %pv_ring[$d_pc * 8 + %pv_pos[$d_pc]] := $pv_id
-  %pv_pos[$d_pc] := (%pv_pos[$d_pc] + 1) mod 8
-  if (%pz_hold[$d_pc] = 1)
-    %nv_b[0] := $pv_vol - $dyn_db
-    $rs_src := $EVENT_NOTE
-    call reg_new
+  $dh_note := $EVENT_NOTE
+  $dh_vel := $EVENT_VELOCITY
+  call drum_hit
+  if ($repeat > 0 and %pz_hold[%key_pc[$EVENT_NOTE]] = 0)
+    if (%rep_vel[$EVENT_NOTE] = 0)
+      inc($rep_n)
+    end if
+    %rep_vel[$EVENT_NOTE] := $EVENT_VELOCITY
+    %rep_next[$EVENT_NOTE] := $tick + %rep_ticks[$repeat]
   end if
 end on
 
 on release
   if (%key_pc[$EVENT_NOTE] >= 0)
+    if (%rep_vel[$EVENT_NOTE] > 0)
+      %rep_vel[$EVENT_NOTE] := 0
+      dec($rep_n)
+    end if
     dec($keys_down)
     if ($keys_down < 0)
       $keys_down := 0
@@ -1644,6 +2026,18 @@ on listener
     inc($tick)
     if ($pq_n > 0)
       call process_pending
+    end if
+    if ($repeat > 0 and $rep_n > 0)
+      $rp_k := 0
+      while ($rp_k < 128)
+        if (%rep_vel[$rp_k] > 0 and $tick >= %rep_next[$rp_k])
+          $dh_note := $rp_k
+          $dh_vel := %rep_vel[$rp_k]
+          call drum_hit
+          %rep_next[$rp_k] := $tick + %rep_ticks[$repeat]
+        end if
+        inc($rp_k)
+      end while
     end if
   end if
 end on
@@ -1738,6 +2132,15 @@ end on
 
 on ui_control ($dyn_knob)
   call upd_dyn_knob
+end on
+
+on ui_control ($repeat)
+  call upd_repeat
+end on
+
+on ui_control ($preset)
+  call upd_preset
+  call apply_preset
 end on
 ]==]
 

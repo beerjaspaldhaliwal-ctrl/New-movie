@@ -26,6 +26,17 @@ FM glass bells with an octave shimmer, chorus and a long hall.
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
 - **Tip:** FM bell attack into a shimmering sustain
 
+### Wavetable Pad
+
+Slowly morphing wavetable pad plus a wavefolded digital layer.
+
+- **File:** `Instruments/01 Synths and Pads/Wavetable Pad.nki` (build with `Creator Tools/Build Wavetable Pad.lua`)
+- **Engine:** Synth engine - two blendable layers, attack/release, filter with tempo-synced Movement, octave layering, mono/glide.
+- **Playable range:** C0 - C7 (MIDI 24-108)
+- **Samples:** 22 zones in 2 groups (Morph, Digital), stereo, 24-bit / 44.1 kHz, 13.1 MB
+- **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Tip:** Morphing additive tables (Morph) and wavefolded Digital layer
+
 ### Supersaw Stack
 
 Seven detuned saws, trance/trailer style. Poly, or mono with glide.
@@ -36,6 +47,17 @@ Seven detuned saws, trance/trailer style. Poly, or mono with glide.
 - **Samples:** 11 zones in 1 groups (Saw), stereo, 24-bit / 44.1 kHz, 4.9 MB
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
 - **Tip:** Mono / Glide for leads, Octave Layer for anthems
+
+### Analog Brass Synth
+
+Classic polysynth brass: detuned saws with a swelling filter envelope.
+
+- **File:** `Instruments/01 Synths and Pads/Analog Brass Synth.nki` (build with `Creator Tools/Build Analog Brass Synth.lua`)
+- **Engine:** Synth engine - two blendable layers, attack/release, filter with tempo-synced Movement, octave layering, mono/glide.
+- **Playable range:** C0 - C7 (MIDI 24-108)
+- **Samples:** 11 zones in 1 groups (Brass), stereo, 24-bit / 44.1 kHz, 5.4 MB
+- **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Tip:** 80s poly brass with a filter-envelope 'bwaa'
 
 ### Analog Mono Bass
 
@@ -48,14 +70,37 @@ Pure sub and a resonant, driven growl layer. Mono legato with glide.
 - **Effects chain (built by the script):** Filter > Supercharger GT > Stereo Modeller > Choral > Replika Delay > Raum Reverb
 - **Tip:** Blend: clean sub to growl. Mono/Glide on by default
 
+### 808 Bass
+
+Long trap 808 with pitch punch; clean and distorted layers, mono slide.
+
+- **File:** `Instruments/01 Synths and Pads/808 Bass.nki` (build with `Creator Tools/Build 808 Bass.lua`)
+- **Engine:** Synth engine - two blendable layers, attack/release, filter with tempo-synced Movement, octave layering, mono/glide.
+- **Playable range:** C-1 - C4 (MIDI 12-72)
+- **Samples:** 14 zones in 2 groups (Clean, Dist), mono, 24-bit / 44.1 kHz, 5.2 MB
+- **Effects chain (built by the script):** Filter > Supercharger GT > Stereo Modeller > Raum Reverb
+- **Tip:** Mono glide slides like trap 808s. Layer B adds distortion
+
+### Tape Keys
+
+Tape-replay keyboard: flute, strings and choir with wow, flutter and hiss.
+
+- **File:** `Instruments/01 Synths and Pads/Tape Keys.nki` (build with `Creator Tools/Build Tape Keys.lua`)
+- **Engine:** Keys engine - velocity layers, round robins, velocity curve, sustain pedal, layering.
+- **Playable range:** C1 - C6 (MIDI 36-96)
+- **Samples:** 27 zones in 3 groups (TapeFlute, TapeStrings, TapeChoir), mono, 24-bit / 44.1 kHz, 6.9 MB
+- **Instruments (menu + layer):** Tape Flute, Tape Strings, Tape Choir
+- **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Tip:** Vintage tape-replay flutes, strings and choir with wow and flutter
+
 ### Pluck Synth
 
-Snappy filter-envelope pluck with round robins.
+Snappy filter-envelope pluck with three round robins.
 
 - **File:** `Instruments/01 Synths and Pads/Pluck Synth.nki` (build with `Creator Tools/Build Pluck Synth.lua`)
 - **Engine:** Keys engine - velocity layers, round robins, velocity curve, sustain pedal, layering.
 - **Playable range:** C0 - C7 (MIDI 24-108)
-- **Samples:** 22 zones in 2 groups (RR1, RR2), stereo, 24-bit / 44.1 kHz, 7.0 MB
+- **Samples:** 33 zones in 3 groups (RR1, RR2, RR3), stereo, 24-bit / 44.1 kHz, 10.5 MB
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
 - **Tip:** Try PERFORM > Arpeggiator
 
@@ -66,9 +111,20 @@ The Pluck Synth preset as a ready-to-go tempo-synced arpeggiator.
 - **File:** `Instruments/01 Synths and Pads/Pulse Arp.nki` (build with `Creator Tools/Build Pulse Arp.lua`)
 - **Engine:** Keys engine - velocity layers, round robins, velocity curve, sustain pedal, layering.
 - **Playable range:** C0 - C7 (MIDI 24-108)
-- **Samples:** 22 zones in 2 groups (RR1, RR2), stereo, 24-bit / 44.1 kHz, 7.0 MB (shared with Pluck)
+- **Samples:** 33 zones in 3 groups (RR1, RR2, RR3), stereo, 24-bit / 44.1 kHz, 10.5 MB (shared with Pluck)
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
 - **Tip:** Hold a chord: 1/16 arpeggio synced to tempo
+
+### Sequencer Bass
+
+Punchy resonant sequence bass, arpeggiator on by default.
+
+- **File:** `Instruments/01 Synths and Pads/Sequencer Bass.nki` (build with `Creator Tools/Build Sequencer Bass.lua`)
+- **Engine:** Keys engine - velocity layers, round robins, velocity curve, sustain pedal, layering.
+- **Playable range:** C-1 - C5 (MIDI 12-84)
+- **Samples:** 9 zones in 1 groups (Seq), mono, 24-bit / 44.1 kHz, 0.9 MB
+- **Effects chain (built by the script):** Filter > Supercharger GT > Stereo Modeller > Replika Delay > Raum Reverb
+- **Tip:** Hold notes for a pulsing 1/16 bass line (arp on)
 
 ### Ethereal Choir
 
@@ -81,74 +137,178 @@ Formant-synthesised mixed choir, Aah and Ooh vowels, morphable.
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
 - **Tip:** Blend morphs the vowel from Aah to Ooh
 
-## 02 Orchestral and Band
+## 02 Orchestral
 
 ### Ensemble Strings
 
-Eight-player bowed ensemble: sustain (2 dynamics), tremolo, staccato, pizzicato, swell.
+Eight-player bowed ensemble: sustain (2 dynamics, 2 mics), tremolo, staccato, pizzicato, swell.
 
-- **File:** `Instruments/02 Orchestral and Band/Ensemble Strings.nki` (build with `Creator Tools/Build Ensemble Strings.lua`)
+- **File:** `Instruments/02 Orchestral/Ensemble Strings.nki` (build with `Creator Tools/Build Ensemble Strings.lua`)
 - **Engine:** Articulation engine - keyswitches, mod-wheel dynamics crossfade, legato with portamento, round-robin shorts.
 - **Playable range:** G0 - G6 (MIDI 31-103)
-- **Samples:** 84 zones in 7 groups (SusP, SusF, Trem, StacRR1, StacRR2, PizzRR1, PizzRR2), stereo, 24-bit / 44.1 kHz, 30.7 MB
+- **Samples:** 168 zones in 14 groups (SusP, SusF, Trem, StacRR1, StacRR2, StacRR3, StacRR4, PizzRR1, PizzRR2, PizzRR3, PizzRR4, SusPHall, SusFHall, TremHall), stereo, 24-bit / 44.1 kHz, 61.4 MB
 - **Articulations / keyswitches:**
   - `C0` **Sustain** - sustain, CC1 dynamics (SusP / SusF)
   - `C#0` **Tremolo** - sustain, CC1 dynamics (Trem)
-  - `D0` **Staccato** - short, round robin, velocity (StacRR1 / StacRR2)
-  - `D#0` **Pizzicato** - short, round robin, velocity (PizzRR1 / PizzRR2)
+  - `D0` **Staccato** - short, round robin, velocity (StacRR1 / StacRR2 / StacRR3 / StacRR4)
+  - `D#0` **Pizzicato** - short, round robin, velocity (PizzRR1 / PizzRR2 / PizzRR3 / PizzRR4)
   - `E0` **Swell** - auto-swell, CC1 dynamics (SusP / SusF)
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
-- **Tip:** CC1 = dynamics, keyswitches C0-E0
+- **Tip:** CC1 = dynamics, keyswitches C0-E0, Close/Hall mics
+
+### Solo Violin
+
+Expressive single violin with legato, staccato and pizzicato.
+
+- **File:** `Instruments/02 Orchestral/Solo Violin.nki` (build with `Creator Tools/Build Solo Violin.lua`)
+- **Engine:** Articulation engine - keyswitches, mod-wheel dynamics crossfade, legato with portamento, round-robin shorts.
+- **Playable range:** G2 - E6 (MIDI 55-100)
+- **Samples:** 42 zones in 6 groups (SusP, SusF, StacRR1, StacRR2, PizzRR1, PizzRR2), mono, 24-bit / 44.1 kHz, 7.0 MB
+- **Articulations / keyswitches:**
+  - `C0` **Sustain** - sustain, CC1 dynamics (SusP / SusF)
+  - `C#0` **Staccato** - short, round robin, velocity (StacRR1 / StacRR2)
+  - `D0` **Pizzicato** - short, round robin, velocity (PizzRR1 / PizzRR2)
+  - `D#0` **Swell** - auto-swell, CC1 dynamics (SusP / SusF)
+- **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Tip:** Legato on by default, CC1 = dynamics
+
+### Solo Cello
+
+Warm single cello with legato, staccato and pizzicato.
+
+- **File:** `Instruments/02 Orchestral/Solo Cello.nki` (build with `Creator Tools/Build Solo Cello.lua`)
+- **Engine:** Articulation engine - keyswitches, mod-wheel dynamics crossfade, legato with portamento, round-robin shorts.
+- **Playable range:** C1 - G4 (MIDI 36-79)
+- **Samples:** 42 zones in 6 groups (SusP, SusF, StacRR1, StacRR2, PizzRR1, PizzRR2), mono, 24-bit / 44.1 kHz, 7.0 MB
+- **Articulations / keyswitches:**
+  - `C0` **Sustain** - sustain, CC1 dynamics (SusP / SusF)
+  - `C#0` **Staccato** - short, round robin, velocity (StacRR1 / StacRR2)
+  - `D0` **Pizzicato** - short, round robin, velocity (PizzRR1 / PizzRR2)
+  - `D#0` **Swell** - auto-swell, CC1 dynamics (SusP / SusF)
+- **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Tip:** Legato on by default, CC1 = dynamics
 
 ### Brass Ensemble
 
 Horn/trombone section with loudness-driven brightness, swells and shorts.
 
-- **File:** `Instruments/02 Orchestral and Band/Brass Ensemble.nki` (build with `Creator Tools/Build Brass Ensemble.lua`)
+- **File:** `Instruments/02 Orchestral/Brass Ensemble.nki` (build with `Creator Tools/Build Brass Ensemble.lua`)
 - **Engine:** Articulation engine - keyswitches, mod-wheel dynamics crossfade, legato with portamento, round-robin shorts.
 - **Playable range:** F0 - F#5 (MIDI 29-90)
-- **Samples:** 36 zones in 4 groups (SusP, SusF, StacRR1, StacRR2), stereo, 24-bit / 44.1 kHz, 13.1 MB
+- **Samples:** 72 zones in 8 groups (SusP, SusF, StacRR1, StacRR2, StacRR3, StacRR4, SusPHall, SusFHall), stereo, 24-bit / 44.1 kHz, 26.3 MB
+- **Articulations / keyswitches:**
+  - `C0` **Sustain** - sustain, CC1 dynamics (SusP / SusF)
+  - `C#0` **Swell** - auto-swell, CC1 dynamics (SusP / SusF)
+  - `D0` **Staccato** - short, round robin, velocity (StacRR1 / StacRR2 / StacRR3 / StacRR4)
+- **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Tip:** CC1 = dynamics (soft to blaring), keyswitches C0-D0, Close/Hall mics
+
+### French Horns
+
+Four-horn section, mellow to heroic, with swells and shorts.
+
+- **File:** `Instruments/02 Orchestral/French Horns.nki` (build with `Creator Tools/Build French Horns.lua`)
+- **Engine:** Articulation engine - keyswitches, mod-wheel dynamics crossfade, legato with portamento, round-robin shorts.
+- **Playable range:** G0 - A4 (MIDI 31-81)
+- **Samples:** 32 zones in 4 groups (SusP, SusF, StacRR1, StacRR2), mono, 24-bit / 44.1 kHz, 5.9 MB
 - **Articulations / keyswitches:**
   - `C0` **Sustain** - sustain, CC1 dynamics (SusP / SusF)
   - `C#0` **Swell** - auto-swell, CC1 dynamics (SusP / SusF)
   - `D0` **Staccato** - short, round robin, velocity (StacRR1 / StacRR2)
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
-- **Tip:** CC1 = dynamics (soft to blaring), keyswitches C0-D0
+- **Tip:** Warm, heroic horn section. CC1 = dynamics
 
 ### Woodwind Ensemble
 
 Breathy flute pair, clarinet pair and a woodwind staccato.
 
-- **File:** `Instruments/02 Orchestral and Band/Woodwind Ensemble.nki` (build with `Creator Tools/Build Woodwind Ensemble.lua`)
+- **File:** `Instruments/02 Orchestral/Woodwind Ensemble.nki` (build with `Creator Tools/Build Woodwind Ensemble.lua`)
 - **Engine:** Articulation engine - keyswitches, mod-wheel dynamics crossfade, legato with portamento, round-robin shorts.
 - **Playable range:** E1 - E6 (MIDI 40-100)
-- **Samples:** 36 zones in 4 groups (Flute, Clarinet, StacRR1, StacRR2), mono, 24-bit / 44.1 kHz, 6.4 MB
+- **Samples:** 54 zones in 6 groups (Flute, Clarinet, StacRR1, StacRR2, StacRR3, StacRR4), mono, 24-bit / 44.1 kHz, 7.6 MB
 - **Articulations / keyswitches:**
   - `C0` **Flute Sustain** - sustain, CC1 dynamics (Flute)
   - `C#0` **Clarinet Sustain** - sustain, CC1 dynamics (Clarinet)
-  - `D0` **Staccato** - short, round robin, velocity (StacRR1 / StacRR2)
+  - `D0` **Staccato** - short, round robin, velocity (StacRR1 / StacRR2 / StacRR3 / StacRR4)
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
 - **Tip:** Flutes, clarinets and staccato, keyswitches C0-D0
 
+### Concert Harp
+
+Plucked concert harp, 2 velocity layers x 2 round robins, rings out naturally.
+
+- **File:** `Instruments/02 Orchestral/Concert Harp.nki` (build with `Creator Tools/Build Concert Harp.lua`)
+- **Engine:** Keys engine - velocity layers, round robins, velocity curve, sustain pedal, layering.
+- **Playable range:** B-1 - G#6 (MIDI 23-104)
+- **Samples:** 56 zones in 4 groups (V1RR1, V1RR2, V2RR1, V2RR2), mono, 24-bit / 44.1 kHz, 15.6 MB
+- **Harp velocity layers:** 2 (splits at velocity 85), 2 round robin(s) each
+- **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Tip:** For glissandi: PERFORM > Scale Lock + Arp Up 1/32
+
 ### Cinematic Timpani
 
-Pitched timpani hits with round robins and looped rolls with crescendo control.
+Pitched timpani hits with 4 round robins and looped rolls with crescendo control.
 
-- **File:** `Instruments/02 Orchestral and Band/Cinematic Timpani.nki` (build with `Creator Tools/Build Cinematic Timpani.lua`)
+- **File:** `Instruments/02 Orchestral/Cinematic Timpani.nki` (build with `Creator Tools/Build Cinematic Timpani.lua`)
 - **Engine:** Articulation engine - keyswitches, mod-wheel dynamics crossfade, legato with portamento, round-robin shorts.
 - **Playable range:** C1 - A2 (MIDI 36-57)
-- **Samples:** 16 zones in 4 groups (HitRR1, HitRR2, RollP, RollF), mono, 24-bit / 44.1 kHz, 5.2 MB
+- **Samples:** 24 zones in 6 groups (HitRR1, HitRR2, HitRR3, HitRR4, RollP, RollF), mono, 24-bit / 44.1 kHz, 7.9 MB
 - **Articulations / keyswitches:**
-  - `C0` **Hits** - short, round robin, velocity (HitRR1 / HitRR2)
+  - `C0` **Hits** - short, round robin, velocity (HitRR1 / HitRR2 / HitRR3 / HitRR4)
   - `C#0` **Roll** - sustain, CC1 dynamics (RollP / RollF)
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
 - **Tip:** C0 hits, C#0 rolls (CC1 = roll dynamics)
+
+### Orchestral Percussion
+
+Gran cassa, taiko, snare, cymbals, tam-tam and metals with 3 round robins and rolls.
+
+- **File:** `Instruments/02 Orchestral/Orchestral Percussion.nki` (build with `Creator Tools/Build Orchestral Percussion.lua`)
+- **Engine:** Drum engine - one piece per key, velocity layers, round robins, choke groups, per-bus mixer.
+- **Samples:** 48 zones in 3 groups (RR1, RR2, RR3), mono, 24-bit / 44.1 kHz, 15.4 MB
+- **Key map:**
+
+  | Key | MIDI | Piece | Bus |
+  |---|---|---|---|
+  | C1 | 36 | Gran Cassa | Drums |
+  | C#1 | 37 | Gran Cassa Roll (hold = roll) | Drums |
+  | D1 | 38 | Taiko | Taiko |
+  | D#1 | 39 | Taiko Ensemble | Taiko |
+  | E1 | 40 | Taiko Rim | Taiko |
+  | F1 | 41 | Boom Drum | Drums |
+  | F#1 | 42 | Orch Snare | Snare |
+  | G1 | 43 | Snare Roll (hold = roll) | Snare |
+  | A1 | 45 | Piatti | Cymbals |
+  | A#1 | 46 | Cymbal Swell | Cymbals |
+  | B1 | 47 | Sus Cymbal | Cymbals |
+  | C2 | 48 | Tam-tam | Metals |
+  | D2 | 50 | Triangle | Metals |
+  | E2 | 52 | Anvil | Metals |
+  | F2 | 53 | Woodblock | Metals |
+  | F#2 | 54 | Tambourine | Snare |
+
+- **Effects chain (built by the script):** Filter > Bus Compressor > Stereo Modeller > Raum Reverb
+- **Tip:** Hold C#2 / G2 for rolls, CC1 = roll level
+
+## 03 Band and Keys
+
+### Felt Piano
+
+Physically modelled felt piano: hammer, 1-3 strings per note and a soundboard.
+
+- **File:** `Instruments/03 Band and Keys/Felt Piano.nki` (build with `Creator Tools/Build Felt Piano.lua`)
+- **Engine:** Keys engine - velocity layers, round robins, velocity curve, sustain pedal, layering.
+- **Playable range:** A-1 - C7 (MIDI 21-108)
+- **Samples:** 45 zones in 3 groups (V1, V2, V3), mono, 24-bit / 44.1 kHz, 18.5 MB
+- **Felt Piano velocity layers:** 3 (splits at velocity 50, 98), 1 round robin(s) each
+- **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Tip:** Soft hammered-string piano, 3 velocity layers
 
 ### Electric Piano
 
 FM tine electric piano with velocity-dependent bark, tremolo preamp.
 
-- **File:** `Instruments/02 Orchestral and Band/Electric Piano.nki` (build with `Creator Tools/Build Electric Piano.lua`)
+- **File:** `Instruments/03 Band and Keys/Electric Piano.nki` (build with `Creator Tools/Build Electric Piano.lua`)
 - **Engine:** Keys engine - velocity layers, round robins, velocity curve, sustain pedal, layering.
 - **Playable range:** A-1 - C7 (MIDI 21-108)
 - **Samples:** 39 zones in 3 groups (V1, V2, V3), mono, 24-bit / 44.1 kHz, 13.2 MB
@@ -156,37 +316,62 @@ FM tine electric piano with velocity-dependent bark, tremolo preamp.
 - **Effects chain (built by the script):** Filter > EP Preamp > Stereo Modeller > Choral > Replika Delay > Raum Reverb
 - **Tip:** 3 velocity layers, tremolo and drive on the SOUND page
 
+### Drawbar Organ
+
+Tonewheel-style additive organ with key click, rotary speaker and drive.
+
+- **File:** `Instruments/03 Band and Keys/Drawbar Organ.nki` (build with `Creator Tools/Build Drawbar Organ.lua`)
+- **Engine:** Keys engine - velocity layers, round robins, velocity curve, sustain pedal, layering.
+- **Playable range:** C0 - C7 (MIDI 24-108)
+- **Samples:** 22 zones in 2 groups (Full, Soft), mono, 24-bit / 44.1 kHz, 4.6 MB
+- **Instruments (menu + layer):** Full Drawbars, Soft Flutes
+- **Effects chain (built by the script):** Filter > Rotator > Supercharger GT > Replika Delay > Raum Reverb
+- **Tip:** Mod wheel up = fast rotary
+
 ### Nylon Guitar
 
-Physically modelled nylon-string guitar with body resonance, 2 layers x 2 round robins.
+Physically modelled nylon-string guitar with body resonance, 3 layers x 2 round robins.
 
-- **File:** `Instruments/02 Orchestral and Band/Nylon Guitar.nki` (build with `Creator Tools/Build Nylon Guitar.lua`)
+- **File:** `Instruments/03 Band and Keys/Nylon Guitar.nki` (build with `Creator Tools/Build Nylon Guitar.lua`)
 - **Engine:** Keys engine - velocity layers, round robins, velocity curve, sustain pedal, layering.
 - **Playable range:** D1 - C5 (MIDI 38-84)
-- **Samples:** 28 zones in 4 groups (V1RR1, V1RR2, V2RR1, V2RR2), mono, 24-bit / 44.1 kHz, 8.9 MB
-- **Nylon velocity layers:** 2 (splits at velocity 88), 2 round robin(s) each
+- **Samples:** 42 zones in 6 groups (V1RR1, V1RR2, V2RR1, V2RR2, V3RR1, V3RR2), mono, 24-bit / 44.1 kHz, 13.3 MB
+- **Nylon velocity layers:** 3 (splits at velocity 60, 100), 2 round robin(s) each
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
 - **Tip:** Use PERFORM > Chord + Strum for strummed chords
+
+### Electric Guitar
+
+Electric guitar model with pickup, amp and cabinet: clean, overdrive and palm mutes.
+
+- **File:** `Instruments/03 Band and Keys/Electric Guitar.nki` (build with `Creator Tools/Build Electric Guitar.lua`)
+- **Engine:** Keys engine - velocity layers, round robins, velocity curve, sustain pedal, layering.
+- **Playable range:** D1 - D5 (MIDI 38-86)
+- **Samples:** 56 zones in 8 groups (V1RR1, V1RR2, V2RR1, V2RR2, DriveRR1, DriveRR2, MuteRR1, MuteRR2), mono, 24-bit / 44.1 kHz, 14.7 MB
+- **Instruments (menu + layer):** Clean, Drive, Palm Mute
+- **Clean velocity layers:** 2 (splits at velocity 90), 2 round robin(s) each
+- **Effects chain (built by the script):** Filter > Supercharger GT > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Tip:** Clean, Drive and Palm Mute. Power chords: PERFORM > Chord > Power
 
 ### Finger Bass
 
 Fingered electric bass model with pickup comb filtering and thump.
 
-- **File:** `Instruments/02 Orchestral and Band/Finger Bass.nki` (build with `Creator Tools/Build Finger Bass.lua`)
+- **File:** `Instruments/03 Band and Keys/Finger Bass.nki` (build with `Creator Tools/Build Finger Bass.lua`)
 - **Engine:** Keys engine - velocity layers, round robins, velocity curve, sustain pedal, layering.
 - **Playable range:** B-1 - E3 (MIDI 23-64)
-- **Samples:** 24 zones in 4 groups (V1RR1, V1RR2, V2RR1, V2RR2), mono, 24-bit / 44.1 kHz, 6.2 MB
-- **Finger velocity layers:** 2 (splits at velocity 90), 2 round robin(s) each
+- **Samples:** 36 zones in 6 groups (V1RR1, V1RR2, V2RR1, V2RR2, V3RR1, V3RR2), mono, 24-bit / 44.1 kHz, 9.3 MB
+- **Finger velocity layers:** 3 (splits at velocity 60, 100), 2 round robin(s) each
 - **Effects chain (built by the script):** Filter > Supercharger GT > Stereo Modeller > Choral > Replika Delay > Raum Reverb
-- **Tip:** 2 velocity layers x 2 round robins
+- **Tip:** 3 velocity layers x 2 round robins
 
 ### Studio Drum Kit
 
-Synthesised acoustic/hybrid kit: 20 pieces, 2 velocity layers x 2 round robins.
+Synthesised acoustic/hybrid kit: 20 pieces, 3 velocity layers x 3 round robins.
 
-- **File:** `Instruments/02 Orchestral and Band/Studio Drum Kit.nki` (build with `Creator Tools/Build Studio Drum Kit.lua`)
+- **File:** `Instruments/03 Band and Keys/Studio Drum Kit.nki` (build with `Creator Tools/Build Studio Drum Kit.lua`)
 - **Engine:** Drum engine - one piece per key, velocity layers, round robins, choke groups, per-bus mixer.
-- **Samples:** 80 zones in 4 groups (V1RR1, V1RR2, V2RR1, V2RR2), mono, 24-bit / 44.1 kHz, 12.5 MB
+- **Samples:** 180 zones in 9 groups (V1RR1, V1RR2, V1RR3, V2RR1, V2RR2, V2RR3, V3RR1, V3RR2, V3RR3), mono, 24-bit / 44.1 kHz, 28.1 MB
 - **Key map:**
 
   | Key | MIDI | Piece | Bus |
@@ -213,25 +398,74 @@ Synthesised acoustic/hybrid kit: 20 pieces, 2 velocity layers x 2 round robins.
   | A#3 | 70 | Shaker | Perc |
 
 - **Effects chain (built by the script):** Filter > Bus Compressor > Supercharger GT > Stereo Modeller > Raum Reverb
-- **Tip:** General MIDI layout, open hat choked by closed/pedal hat
+- **Tip:** GM layout, 3 velocity layers x 3 round robins, Note Repeat
 
-### Drawbar Organ
+### Synthwave Kit
 
-Tonewheel-style additive organ with key click, rotary speaker and drive.
+80s drum machine kit with gated snares, Simmons-style toms and cowbell.
 
-- **File:** `Instruments/02 Orchestral and Band/Drawbar Organ.nki` (build with `Creator Tools/Build Drawbar Organ.lua`)
-- **Engine:** Keys engine - velocity layers, round robins, velocity curve, sustain pedal, layering.
-- **Playable range:** C0 - C7 (MIDI 24-108)
-- **Samples:** 22 zones in 2 groups (Full, Soft), mono, 24-bit / 44.1 kHz, 4.6 MB
-- **Instruments (menu + layer):** Full Drawbars, Soft Flutes
-- **Effects chain (built by the script):** Filter > Rotator > Supercharger GT > Replika Delay > Raum Reverb
-- **Tip:** Mod wheel up = fast rotary
+- **File:** `Instruments/03 Band and Keys/Synthwave Kit.nki` (build with `Creator Tools/Build Synthwave Kit.lua`)
+- **Engine:** Drum engine - one piece per key, velocity layers, round robins, choke groups, per-bus mixer.
+- **Samples:** 68 zones in 4 groups (V1RR1, V1RR2, V2RR1, V2RR2), mono, 24-bit / 44.1 kHz, 7.6 MB
+- **Key map:**
+
+  | Key | MIDI | Piece | Bus |
+  |---|---|---|---|
+  | C1 | 36 | Kick | Kick |
+  | C#1 | 37 | Rim | Snare |
+  | D1 | 38 | Gated Snare | Snare |
+  | D#1 | 39 | Gated Clap | Snare |
+  | E1 | 40 | Snare 2 | Snare |
+  | F1 | 41 | Tom 1 | Toms |
+  | G1 | 43 | Tom 2 | Toms |
+  | A1 | 45 | Tom 3 | Toms |
+  | B1 | 47 | Tom 4 | Toms |
+  | C2 | 48 | Tom 5 | Toms |
+  | F#1 | 42 | Closed Hat | Hats |
+  | G#1 | 44 | Pedal Hat | Hats |
+  | A#1 | 46 | Open Hat (choked by closed/pedal hat) | Hats |
+  | C#2 | 49 | Crash | Cymbals |
+  | D#2 | 51 | Ride | Cymbals |
+  | F#2 | 54 | Tambourine | Perc |
+  | G#2 | 56 | Cowbell | Perc |
+
+- **Effects chain (built by the script):** Filter > Bus Compressor > Supercharger GT > Stereo Modeller > Raum Reverb
+- **Tip:** 80s gated snares and big synth toms
+
+### Trap Kit
+
+Modern trap kit: long 808, snares, claps, hats with Note Repeat rolls, percs and vox.
+
+- **File:** `Instruments/03 Band and Keys/Trap Kit.nki` (build with `Creator Tools/Build Trap Kit.lua`)
+- **Engine:** Drum engine - one piece per key, velocity layers, round robins, choke groups, per-bus mixer.
+- **Samples:** 56 zones in 4 groups (V1RR1, V1RR2, V2RR1, V2RR2), mono, 24-bit / 44.1 kHz, 5.7 MB
+- **Key map:**
+
+  | Key | MIDI | Piece | Bus |
+  |---|---|---|---|
+  | C1 | 36 | 808 Kick | Kick |
+  | B0 | 35 | Punch Kick | Kick |
+  | D1 | 38 | Trap Snare | Snare |
+  | D#1 | 39 | Clap | Snare |
+  | E1 | 40 | Snare + Clap | Snare |
+  | C#1 | 37 | Rim | Snare |
+  | F#1 | 42 | Hat | Hats |
+  | G#1 | 44 | Hat Tight | Hats |
+  | A#1 | 46 | Open Hat (choked by closed/pedal hat) | Hats |
+  | C#2 | 49 | Crash | Perc |
+  | D#2 | 51 | Perc Bell | Perc |
+  | E2 | 52 | Snap | Perc |
+  | F2 | 53 | Shaker | Perc |
+  | G2 | 55 | Vox Chop | Perc |
+
+- **Effects chain (built by the script):** Filter > Bus Compressor > Supercharger GT > Stereo Modeller > Raum Reverb
+- **Tip:** Note Repeat (PLAY page) for hi-hat rolls
 
 ### Cinematic Mallets
 
 Modal-synthesis marimba, vibraphone, celesta and glockenspiel.
 
-- **File:** `Instruments/02 Orchestral and Band/Cinematic Mallets.nki` (build with `Creator Tools/Build Cinematic Mallets.lua`)
+- **File:** `Instruments/03 Band and Keys/Cinematic Mallets.nki` (build with `Creator Tools/Build Cinematic Mallets.lua`)
 - **Engine:** Keys engine - velocity layers, round robins, velocity curve, sustain pedal, layering.
 - **Playable range:** A0 - E7 (MIDI 33-112)
 - **Samples:** 34 zones in 4 groups (Marimba, Vibes, Celesta, Glock), mono, 24-bit / 44.1 kHz, 8.6 MB
@@ -239,44 +473,13 @@ Modal-synthesis marimba, vibraphone, celesta and glockenspiel.
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
 - **Tip:** Pick an instrument, layer a second one on top
 
-### Orchestral Percussion
-
-Gran cassa, taiko, snare, cymbals, tam-tam and metals with round robins and rolls.
-
-- **File:** `Instruments/02 Orchestral and Band/Orchestral Percussion.nki` (build with `Creator Tools/Build Orchestral Percussion.lua`)
-- **Engine:** Drum engine - one piece per key, velocity layers, round robins, choke groups, per-bus mixer.
-- **Samples:** 32 zones in 2 groups (RR1, RR2), mono, 24-bit / 44.1 kHz, 10.3 MB
-- **Key map:**
-
-  | Key | MIDI | Piece | Bus |
-  |---|---|---|---|
-  | C1 | 36 | Gran Cassa | Drums |
-  | C#1 | 37 | Gran Cassa Roll (hold = roll) | Drums |
-  | D1 | 38 | Taiko | Taiko |
-  | D#1 | 39 | Taiko Ensemble | Taiko |
-  | E1 | 40 | Taiko Rim | Taiko |
-  | F1 | 41 | Boom Drum | Drums |
-  | F#1 | 42 | Orch Snare | Snare |
-  | G1 | 43 | Snare Roll (hold = roll) | Snare |
-  | A1 | 45 | Piatti | Cymbals |
-  | A#1 | 46 | Cymbal Swell | Cymbals |
-  | B1 | 47 | Sus Cymbal | Cymbals |
-  | C2 | 48 | Tam-tam | Metals |
-  | D2 | 50 | Triangle | Metals |
-  | E2 | 52 | Anvil | Metals |
-  | F2 | 53 | Woodblock | Metals |
-  | F#2 | 54 | Tambourine | Snare |
-
-- **Effects chain (built by the script):** Filter > Bus Compressor > Stereo Modeller > Raum Reverb
-- **Tip:** Hold C#2 / G2 for rolls, CC1 = roll level
-
-## 03 Cinematic
+## 04 Cinematic
 
 ### Braams and Hits
 
 Trailer braams: brass-like saw walls and a ring-modulated, folded 'Blaster'.
 
-- **File:** `Instruments/03 Cinematic/Braams and Hits.nki` (build with `Creator Tools/Build Braams and Hits.lua`)
+- **File:** `Instruments/04 Cinematic/Braams and Hits.nki` (build with `Creator Tools/Build Braams and Hits.lua`)
 - **Engine:** Keys engine - velocity layers, round robins, velocity curve, sustain pedal, layering.
 - **Playable range:** A-1 - C3 (MIDI 21-60)
 - **Samples:** 10 zones in 2 groups (Braam, Blaster), stereo, 24-bit / 44.1 kHz, 11.6 MB
@@ -288,18 +491,41 @@ Trailer braams: brass-like saw walls and a ring-modulated, folded 'Blaster'.
 
 Eight evolving underscore beds: strings, air, choir, metal, rumble, ghost, tension, heartbeat.
 
-- **File:** `Instruments/03 Cinematic/Drones and Textures.nki` (build with `Creator Tools/Build Drones and Textures.lua`)
+- **File:** `Instruments/04 Cinematic/Drones and Textures.nki` (build with `Creator Tools/Build Drones and Textures.lua`)
 - **Engine:** Synth engine - two blendable layers, attack/release, filter with tempo-synced Movement, octave layering, mono/glide.
 - **Playable range:** C0 - C6 (MIDI 24-96)
 - **Samples:** 8 zones in 8 groups (DarkStrings, GlassAir, ChoirDrone, MetalShimmer, SubRumble, GhostPad, TensionCluster, Heartbeat), stereo, 24-bit / 44.1 kHz, 9.9 MB
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
 - **Tip:** Pick two textures and blend them
 
+### Dark Atmospheres
+
+Eight dark beds: abyss, wind, bowed metal, haunted choir, machine hum, deep space, pulse, shimmer.
+
+- **File:** `Instruments/04 Cinematic/Dark Atmospheres.nki` (build with `Creator Tools/Build Dark Atmospheres.lua`)
+- **Engine:** Synth engine - two blendable layers, attack/release, filter with tempo-synced Movement, octave layering, mono/glide.
+- **Playable range:** C0 - C6 (MIDI 24-96)
+- **Samples:** 8 zones in 8 groups (Abyss, Wind, BowedMetal, HauntedChoir, MachineHum, DeepSpace, Pulse, Shimmer), stereo, 24-bit / 44.1 kHz, 10.0 MB
+- **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Tip:** Horror and thriller beds. Blend any two
+
+### Reverse Swells
+
+Chromatic reversed piano, strings and pad swells for transitions.
+
+- **File:** `Instruments/04 Cinematic/Reverse Swells.nki` (build with `Creator Tools/Build Reverse Swells.lua`)
+- **Engine:** Keys engine - velocity layers, round robins, velocity curve, sustain pedal, layering.
+- **Playable range:** C0 - C6 (MIDI 24-96)
+- **Samples:** 15 zones in 3 groups (RevPiano, RevStrings, RevPad), stereo, 24-bit / 44.1 kHz, 10.3 MB
+- **Instruments (menu + layer):** Reverse Piano, Reverse Strings, Reverse Pad
+- **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Tip:** Pitched reverse swells: play them just before the beat
+
 ### Cinematic FX
 
 Twenty trailer-style one-shots: impacts, risers, whooshes, downers and stingers.
 
-- **File:** `Instruments/03 Cinematic/Cinematic FX.nki` (build with `Creator Tools/Build Cinematic FX.lua`)
+- **File:** `Instruments/04 Cinematic/Cinematic FX.nki` (build with `Creator Tools/Build Cinematic FX.lua`)
 - **Engine:** Drum engine - one piece per key, velocity layers, round robins, choke groups, per-bus mixer.
 - **Samples:** 20 zones in 1 groups (FX), stereo, 24-bit / 44.1 kHz, 17.3 MB
 - **Key map:**
@@ -329,6 +555,170 @@ Twenty trailer-style one-shots: impacts, risers, whooshes, downers and stingers.
 
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Replika Delay > Raum Reverb
 - **Tip:** C2-G3: impacts, risers, whooshes, downers, stingers
+
+### Hybrid Trailer Percussion
+
+Hybrid trailer percussion: booms, slams, distorted toms, chains and glitch hits.
+
+- **File:** `Instruments/04 Cinematic/Hybrid Trailer Percussion.nki` (build with `Creator Tools/Build Hybrid Trailer Percussion.lua`)
+- **Engine:** Drum engine - one piece per key, velocity layers, round robins, choke groups, per-bus mixer.
+- **Samples:** 32 zones in 2 groups (RR1, RR2), mono, 24-bit / 44.1 kHz, 7.9 MB
+- **Key map:**
+
+  | Key | MIDI | Piece | Bus |
+  |---|---|---|---|
+  | C1 | 36 | Epic Boom | Booms |
+  | C#1 | 37 | Distorted Kick | Booms |
+  | D1 | 38 | Hybrid Hit | Hits |
+  | D#1 | 39 | Metal Slam | Metal |
+  | E1 | 40 | Taiko Stack | Hits |
+  | F1 | 41 | Dist Tom Low | Toms |
+  | G1 | 43 | Dist Tom Mid | Toms |
+  | A1 | 45 | Dist Tom High | Toms |
+  | F#1 | 42 | Clap Stack | Hits |
+  | G#1 | 44 | Snap Snare | Hits |
+  | A#1 | 46 | Chain Slam | Metal |
+  | B1 | 47 | Sub Hit | Booms |
+  | C2 | 48 | Gong Hit | Metal |
+  | C#2 | 49 | Whip Crack | Hits |
+  | D2 | 50 | Glitch Hit | Hits |
+  | D#2 | 51 | Rumble Hit | Booms |
+
+- **Effects chain (built by the script):** Filter > Bus Compressor > Supercharger GT > Stereo Modeller > Raum Reverb
+- **Tip:** Distorted booms, slams and toms. Try Note Repeat
+
+### Sci-Fi FX
+
+Eighteen sci-fi effects: lasers, alarms, robots, data, teleports, ships and warps.
+
+- **File:** `Instruments/04 Cinematic/Sci-Fi FX.nki` (build with `Creator Tools/Build Sci-Fi FX.lua`)
+- **Engine:** Drum engine - one piece per key, velocity layers, round robins, choke groups, per-bus mixer.
+- **Samples:** 18 zones in 1 groups (FX), stereo, 24-bit / 44.1 kHz, 10.1 MB
+- **Key map:**
+
+  | Key | MIDI | Piece | Bus |
+  |---|---|---|---|
+  | C1 | 36 | Laser Zap | SciFi |
+  | C#1 | 37 | Laser Burst | SciFi |
+  | D1 | 38 | Phaser Blast | SciFi |
+  | D#1 | 39 | Alarm | SciFi |
+  | E1 | 40 | Robot Beeps | SciFi |
+  | F1 | 41 | Data Stream | SciFi |
+  | F#1 | 42 | Teleport | SciFi |
+  | G1 | 43 | Power Up | SciFi |
+  | G#1 | 44 | Shutdown | SciFi |
+  | A1 | 45 | Force Field | SciFi |
+  | A#1 | 46 | Servo | SciFi |
+  | B1 | 47 | Ship Pass | SciFi |
+  | C2 | 48 | Sonar Ping | SciFi |
+  | C#2 | 49 | Radio Static | SciFi |
+  | D2 | 50 | Energy Charge | SciFi |
+  | D#2 | 51 | Zap Hit | SciFi |
+  | E2 | 52 | Alien Voice | SciFi |
+  | F2 | 53 | Warp | SciFi |
+
+- **Effects chain (built by the script):** Filter > Stereo Modeller > Replika Delay > Raum Reverb
+- **Tip:** C2 upwards: lasers, alarms, robots, teleports, ships
+
+### Tension Toolkit
+
+Suspense tools: clock, heartbeat and pulse loops, scrapes, clusters, stingers, breaths.
+
+- **File:** `Instruments/04 Cinematic/Tension Toolkit.nki` (build with `Creator Tools/Build Tension Toolkit.lua`)
+- **Engine:** Drum engine - one piece per key, velocity layers, round robins, choke groups, per-bus mixer.
+- **Samples:** 12 zones in 1 groups (FX), stereo, 24-bit / 44.1 kHz, 8.3 MB
+- **Key map:**
+
+  | Key | MIDI | Piece | Bus |
+  |---|---|---|---|
+  | C1 | 36 | Clock Loop (hold = roll) | Loops |
+  | C#1 | 37 | Heartbeat Loop (hold = roll) | Loops |
+  | D1 | 38 | Sub Pulse Loop (hold = roll) | Loops |
+  | D#1 | 39 | Ticking Bomb (hold = roll) | Loops |
+  | E1 | 40 | String Scrape | Hits |
+  | F1 | 41 | Col Legno | Hits |
+  | F#1 | 42 | Bowed Cymbal | Textures |
+  | G1 | 43 | Piano Cluster | Hits |
+  | G#1 | 44 | Stinger High | Hits |
+  | A1 | 45 | Stinger Low | Hits |
+  | A#1 | 46 | Breath | Textures |
+  | B1 | 47 | Metal Creak | Textures |
+
+- **Effects chain (built by the script):** Filter > Stereo Modeller > Replika Delay > Raum Reverb
+- **Tip:** C2-D#2 are loops: hold the key
+
+## 05 World
+
+### Hang Drum
+
+Hand-played steel hang drum with soft, singing overtones.
+
+- **File:** `Instruments/05 World/Hang Drum.nki` (build with `Creator Tools/Build Hang Drum.lua`)
+- **Engine:** Keys engine - velocity layers, round robins, velocity curve, sustain pedal, layering.
+- **Playable range:** A1 - G#5 (MIDI 45-92)
+- **Samples:** 14 zones in 2 groups (RR1, RR2), mono, 24-bit / 44.1 kHz, 5.6 MB
+- **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Tip:** 2 round robins, rings out naturally
+
+### Steel Pan
+
+Caribbean steel pan, bright and percussive.
+
+- **File:** `Instruments/05 World/Steel Pan.nki` (build with `Creator Tools/Build Steel Pan.lua`)
+- **Engine:** Keys engine - velocity layers, round robins, velocity curve, sustain pedal, layering.
+- **Playable range:** D2 - C6 (MIDI 50-96)
+- **Samples:** 14 zones in 2 groups (RR1, RR2), mono, 24-bit / 44.1 kHz, 2.9 MB
+- **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Tip:** 2 round robins, rings out naturally
+
+### Kalimba
+
+Thumb piano tines on a wooden resonator box.
+
+- **File:** `Instruments/05 World/Kalimba.nki` (build with `Creator Tools/Build Kalimba.lua`)
+- **Engine:** Keys engine - velocity layers, round robins, velocity curve, sustain pedal, layering.
+- **Playable range:** D2 - C6 (MIDI 50-96)
+- **Samples:** 14 zones in 2 groups (RR1, RR2), mono, 24-bit / 44.1 kHz, 3.6 MB
+- **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Tip:** 2 round robins, rings out naturally
+
+### Gamelan Bells
+
+Balinese-style metallophone with shimmering beating pairs.
+
+- **File:** `Instruments/05 World/Gamelan Bells.nki` (build with `Creator Tools/Build Gamelan Bells.lua`)
+- **Engine:** Keys engine - velocity layers, round robins, velocity curve, sustain pedal, layering.
+- **Playable range:** G1 - E6 (MIDI 43-100)
+- **Samples:** 18 zones in 2 groups (RR1, RR2), stereo, 24-bit / 44.1 kHz, 13.8 MB
+- **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Tip:** 2 round robins, rings out naturally
+
+### Sitar and Tanpura
+
+Sitar with buzzing jawari bridge and sympathetic strings, plus a looping tanpura drone.
+
+- **File:** `Instruments/05 World/Sitar and Tanpura.nki` (build with `Creator Tools/Build Sitar and Tanpura.lua`)
+- **Engine:** Keys engine - velocity layers, round robins, velocity curve, sustain pedal, layering.
+- **Playable range:** C0 - C6 (MIDI 24-96)
+- **Samples:** 15 zones in 3 groups (RR1, RR2, Tanpura), mono, 24-bit / 44.1 kHz, 5.3 MB
+- **Instruments (menu + layer):** Sitar, Tanpura Drone
+- **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Tip:** Layer the Tanpura drone under the sitar
+
+### Duduk
+
+Mournful double-reed flute in the duduk style, with legato slides.
+
+- **File:** `Instruments/05 World/Duduk.nki` (build with `Creator Tools/Build Duduk.lua`)
+- **Engine:** Articulation engine - keyswitches, mod-wheel dynamics crossfade, legato with portamento, round-robin shorts.
+- **Playable range:** C2 - A5 (MIDI 48-93)
+- **Samples:** 21 zones in 3 groups (Sus, StacRR1, StacRR2), mono, 24-bit / 44.1 kHz, 3.1 MB
+- **Articulations / keyswitches:**
+  - `C0` **Sustain** - sustain, CC1 dynamics (Sus)
+  - `C#0` **Staccato** - short, round robin, velocity (StacRR1 / StacRR2)
+  - `D0` **Swell** - auto-swell, CC1 dynamics (Sus)
+- **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Tip:** Mournful double-reed lead, legato on
 
 ## Performer (PERFORM page, all melodic instruments)
 

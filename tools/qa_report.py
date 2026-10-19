@@ -20,7 +20,9 @@ from nml.wav import read_wav24  # noqa: E402
 from nml.library import LIB_NAME  # noqa: E402
 
 LIB = os.path.join(os.path.dirname(HERE), LIB_NAME)
-UNPITCHED = {"Drums", "OrchPerc", "FX", "Timpani", "Drones", "Braams"}
+UNPITCHED = {"Drums", "OrchPerc", "FX", "Timpani", "Drones", "Braams", "SynthwaveKit", "TrapKit", "TrailerPerc",
+             "SciFi", "TensionKit", "DarkAtmos", "ElecGuitar", "Gamelan"}
+REVERSED = {"ReverseSwells"}  # end on purpose at the peak of the swell
 
 
 def f0_error_cents(x, root, sr):
@@ -67,7 +69,7 @@ def main():
                 if z["loop"]:
                     assert tuple(info["loop"]) == tuple(z["loop"]), (z["file"], info.get("loop"), z["loop"])
                     worst_seam = max(worst_seam, loop_seam(x, z["loop"]))
-                else:
+                elif inst["key"] not in REVERSED:
                     tail = float(np.max(np.abs(x[-int(0.005 * sr):])))
                     if tail > 0.01:
                         print(f"  ! {z['file']}: tail not silent ({tail:.3f})")
