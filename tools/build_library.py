@@ -204,6 +204,9 @@ def main():
     write_manifest(CATALOG)
     write_extras()
     write_docs(CATALOG)
+    from nml import plugin_gen
+    n, p, size = plugin_gen.export(CATALOG, os.path.join(ROOT, "plugin", "src", "generated"))
+    print(f"plugin catalog: {n} instruments, {p} host parameters, {size / 1024:.0f} KB")
     print("scripts, build scripts, manifest and extras written")
 
 

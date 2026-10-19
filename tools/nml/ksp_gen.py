@@ -1840,7 +1840,8 @@ def presets_module(s):
               help="Factory presets for this instrument. 'Default' resets every control."))
 
 
-def generate(inst):
+def build_script(inst):
+    """Build the Script model (controls, functions, callbacks) without rendering."""
     s = Script(inst)
     melodic = inst.engine != "drums"
     s.cfg.setdefault("melodic", melodic)
@@ -1859,7 +1860,11 @@ def generate(inst):
         s.d("declare $cut_base", "declare $cut_mod", "declare $cut_lfo")
         s.fn("apply_cutoff", "{ no filter in this instrument }")
     _order_functions(s)
-    return s.render()
+    return s
+
+
+def generate(inst):
+    return build_script(inst).render()
 
 
 def _order_functions(s):
