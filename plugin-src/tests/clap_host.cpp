@@ -384,6 +384,15 @@ int main(int argc, char** argv) {
         }
         running = false;
         audio.join();
+        if (params) {  // report parameters the session changed (knob drags, presets)
+            for (uint32_t i = 0; i < params->count(inst.p); ++i) {
+                clap_param_info_t info;
+                double v = 0;
+                if (!params->get_info(inst.p, i, &info) || !params->get_value(inst.p, info.id, &v)) continue;
+                if (std::fabs(v - info.default_value) > 1e-6 && !(info.flags & CLAP_PARAM_IS_HIDDEN))
+                    std::printf("param %s = %g (default %g)\n", info.name, v, info.default_value);
+            }
+        }
         gui->hide(inst.p);
         gui->destroy(inst.p);
     }
