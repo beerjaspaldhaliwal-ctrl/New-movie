@@ -46,6 +46,7 @@ public:
     std::atomic<int> currentArt{0};
     std::atomic<uint8_t> keyDown[128];
     std::atomic<float> peakL{0}, peakR{0};
+    std::atomic<uint32_t> voicesStarted{0};  // running count, used by the tests
 
 private:
     struct Voice {

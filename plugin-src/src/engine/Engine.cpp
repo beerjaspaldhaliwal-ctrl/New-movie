@@ -146,6 +146,7 @@ uint32_t Engine::playVoice(int note, int group, float db, float tuneCents, float
     v->started = now_;
     updatePitch(*v);
     newIds_.push_back(v->id);
+    voicesStarted.fetch_add(1, std::memory_order_relaxed);
     return v->id;
 }
 
