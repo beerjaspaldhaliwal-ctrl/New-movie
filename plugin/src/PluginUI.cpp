@@ -446,7 +446,8 @@ private:
             dl->AddRectFilled(ImVec2(x, my), ImVec2(x + 5 * s_, my + mh), kPanel2, 2 * s_);
             const float db = 20.f * std::log10(std::max(pk, 1e-5f));
             const float t = std::min(1.f, std::max(0.f, (db + 48.f) / 48.f));
-            dl->AddRectFilled(ImVec2(x, my + mh * (1 - t)), ImVec2(x + 5 * s_, my + mh), pk > 0.89f ? kRed : kGold, 2 * s_);
+            if (t > 0.02f)
+                dl->AddRectFilled(ImVec2(x, my + mh * (1 - t)), ImVec2(x + 5 * s_, my + mh), pk > 0.89f ? kRed : kGold, 2 * s_);
         };
         bar(mx, pl);
         bar(mx + 7 * s_, pr);

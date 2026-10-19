@@ -42,7 +42,19 @@ def _ctl_json(c, labels=()):
     return d
 
 
+LEVELS_FILE = os.path.join(os.path.dirname(__file__), "plugin_levels.json")
+
+
+def _levels():
+    """Per-instrument output trims (dB) measured by tools/measure_plugin_levels.py."""
+    if not os.path.exists(LEVELS_FILE):
+        return {}
+    with open(LEVELS_FILE) as f:
+        return json.load(f)
+
+
 def export(catalog, out_dir):
+    levels = _levels()
     instruments = []
     params = {}
     order = []
@@ -60,6 +72,7 @@ def export(catalog, out_dir):
                        z.loop[0] if z.loop else -1, z.loop[1] if z.loop else -1] for z in inst.zones],
             "fx": cfg.get("fx", []),
             "ladder": "LDR" in cfg.get("filter_type", ""),
+            "gain": levels.get(inst.key, 0.0),
             "range": list(cfg.get("range", (0, 127))),
             "controls": [_ctl_json(c, s.labels) for c in ctls],
             "presets": [{"name": n, "values": v} for n, v in ksp_gen.preset_snapshots(s)],

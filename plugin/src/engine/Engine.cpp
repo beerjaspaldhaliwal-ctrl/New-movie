@@ -320,7 +320,7 @@ void Engine::process(float* outL, float* outR, uint32_t frames, const MidiMsg* e
         std::memset(outR, 0, sizeof(float) * frames);
     }
     // master volume and a soft safety limiter
-    master_.target = dbToLin(p(I.volume, 0.f));
+    master_.target = dbToLin(p(I.volume, 0.f) + def_->gainDb);
     float pl = 0, pr = 0;
     for (uint32_t i = 0; i < frames; ++i) {
         const float g = master_.next();

@@ -3,3 +3,8 @@
 *.txt text eol=lf
 *.lua text eol=lf
 *.md text eol=lf
+*.bat text eol=crlf
+*.clap binary
+*.vst3 binary
+*.so binary
+*.mid binary

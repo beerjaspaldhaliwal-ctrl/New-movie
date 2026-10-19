@@ -43,6 +43,7 @@ struct InstrumentDef {
     std::vector<ZoneDef> zones;
     std::vector<Fx> fx;
     bool ladder = false;
+    float gainDb = 0;                  // output trim that evens out loudness between instruments
     int rangeLo = 0, rangeHi = 127;
     std::vector<ControlDef> controls;
     std::vector<PresetDef> presets;

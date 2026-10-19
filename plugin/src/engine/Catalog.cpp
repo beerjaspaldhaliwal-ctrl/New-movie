@@ -69,6 +69,7 @@ Catalog::Catalog() {
         }
         for (auto& f : ji["fx"].arr) d.fx.push_back(fxFromName(f.s()));
         d.ladder = ji["ladder"].b;
+        d.gainDb = (float)ji["gain"].d(0);
         d.rangeLo = ji["range"][0].i();
         d.rangeHi = ji["range"][1].i();
         for (auto& c : ji["controls"].arr) {

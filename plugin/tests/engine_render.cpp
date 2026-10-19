@@ -62,6 +62,8 @@ int main(int argc, char** argv) {
         std::vector<float> params(cat.params.size());
         for (size_t p = 0; p < params.size(); ++p) params[p] = cat.params[p].def;
         for (auto& c : d.controls) if (c.param >= 0) params[c.param] = (float)c.def;
+        const bool measure = std::getenv("NML_MEASURE") != nullptr;
+        if (measure) params[0] = 0.f;  // master volume at unity
         const char* arp = std::getenv("NML_TEST_ARP");
         if (arp && cat.param("arp_mode") >= 0 && d.control("arp_mode")) params[cat.param("arp_mode")] = (float)std::atoi(arp);
         Engine eng;
@@ -106,7 +108,10 @@ int main(int argc, char** argv) {
         const double peakDb = 20 * std::log10(peak + 1e-12);
         const bool bad = nan || peakDb < -40 || li->missing > 0;
         if (bad) ++failures;
-        std::printf("%-15s %-6s zones %4zu missing %d  peak %6.1f dB  rms %6.1f dB  voices %3d %s\n", d.key.c_str(),
+        if (measure)  // levels without the catalog trim, for tools/measure_plugin_levels.py
+            std::printf("LEVEL %s %.2f %.2f\n", d.key.c_str(), peakDb - d.gainDb, rmsDb - d.gainDb);
+        else
+            std::printf("%-15s %-6s zones %4zu missing %d  peak %6.1f dB  rms %6.1f dB  voices %3d %s\n", d.key.c_str(),
                     d.engine == EngineType::Synth ? "synth" : d.engine == EngineType::Artic ? "artic"
                     : d.engine == EngineType::Keys ? "keys" : "drums",
                     d.zones.size(), li->missing, peakDb, rmsDb, maxVoices, bad ? "  <-- PROBLEM" : "");
