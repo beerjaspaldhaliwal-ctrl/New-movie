@@ -883,7 +883,13 @@ def poly_release_path(s, let_ring_expr=None):
         "else",
     ]
     if let_ring_expr:
-        lines += [f"if ({let_ring_expr})", "%src_n[$EVENT_NOTE] := 0", "else",
+        # one-shot voices ring out; looping voices (role >= 100, e.g. a drone layer) still stop
+        lines += [f"if ({let_ring_expr})",
+                  "$rl_i := 0", "while ($rl_i < %src_n[$EVENT_NOTE])",
+                  "if (%src_r[$EVENT_NOTE * $MAXV + $rl_i] >= 100)",
+                  "fade_out(%src_v[$EVENT_NOTE * $MAXV + $rl_i], $rel_us, 1)", "end if",
+                  "inc($rl_i)", "end while",
+                  "%src_n[$EVENT_NOTE] := 0", "else",
                   "$rs_src := $EVENT_NOTE", "$rs_time := $rel_us", "call release_src", "end if"]
     else:
         lines += ["$rs_src := $EVENT_NOTE", "$rs_time := $rel_us", "call release_src"]
@@ -983,7 +989,8 @@ def engine_synth(s):
               help="Level of the added octave voices."))
     s.ctl(Ctl("mono", "switch", P, 250, ROW2 + 24, "Mono / Glide", default=cfg.get("mono", 0),
               help="Monophonic mode with legato glide (leads and bass). Chords and arp are bypassed.",
-              upd=["$rs_time := 20000", "call release_all", "$mono_n := 0", "$stk_n := 0"]))
+              upd=["$rs_time := 20000", "call release_all", "$mt_i := 0", "while ($mt_i < $mono_n)", "fade_out(%mono_v[$mt_i], 20000, 1)", "inc($mt_i)", "end while", "inc($gl_token)",
+                   "$mono_n := 0", "$stk_n := 0"]))
     s.ctl(Ctl("glide", "knob", P, 348, ROW2, "Glide", 0, 1000, cfg.get("glide", 80), 1, "MS",
               help="Portamento time in Mono mode."))
     s.label("lbl_mrate", P, 446, ROW2 + 6, "Move Rate")
@@ -1240,7 +1247,8 @@ def engine_artic(s):
               help="Fade-in time of the Swell articulation."))
     s.ctl(Ctl("legato", "switch", P, 10, ROW2 + 24, "Legato", default=cfg.get("legato", 0),
               help="Monophonic legato for sustained articulations: overlapping notes crossfade smoothly.",
-              upd=["$rs_time := 30000", "call release_all", "$mono_n := 0", "$stk_n := 0"]))
+              upd=["$rs_time := 30000", "call release_all", "$mt_i := 0", "while ($mt_i < $mono_n)", "fade_out(%mono_v[$mt_i], 30000, 1)", "inc($mt_i)", "end while", "inc($gl_token)",
+                   "$mono_n := 0", "$stk_n := 0"]))
     s.ctl(Ctl("leg_time", "knob", P, 108, ROW2, "Leg. Speed", 20, 400, 110, 1, "MS",
               help="Legato transition time."))
     s.ctl(Ctl("porta", "knob", P, 206, ROW2, "Portamento", 0, 100, 25, 1, "PERCENT",
@@ -1585,6 +1593,7 @@ $kg := %grp[%pl_g[($kp * 4 + $kl) * 4 + $kr]]
 if ($kg # $NI_NOT_FOUND)
 $pv_grp := $kg
 $pv_vol := $k_db
+$pv_role := 3 + 100 * %p_loop[$kp]
 call play_voice
 end if
 """)

@@ -33,6 +33,17 @@ inline float lin2db(float g) { return 20.f * std::log10(std::max(g, 1e-4f)); }
 
 Engine::Engine() {
     for (auto& k : keyDown) k.store(0);
+    actions_.reserve(256);
+    due_.reserve(256);
+    pending_.reserve(512);
+    newIds_.reserve(64);
+    monoIds_.reserve(64);
+    stack_.reserve(32);
+    arp_.reserve(64);
+    arpSorted_.reserve(64);
+    for (auto& s : src_) s.ids.reserve(32);
+    for (auto& c : chord_) c.reserve(8);
+    for (auto& r : pieceVoices_) r.reserve(9);
     resolveParams();
     setSampleRate(44100.0);
 }
@@ -100,6 +111,7 @@ LoadedInstrument* Engine::setInstrument(LoadedInstrument* li) {
     art_ = 0;
     lastArtParam_ = -1;
     for (auto& d : lastDynSig_) d = -1e9f;
+    for (auto& m : lastModes_) m = -1;
     std::memset(has_, 0, sizeof(has_));
     has_[0] = true;  // master volume
     if (def_)
@@ -240,8 +252,44 @@ void Engine::releaseAll(float sec) {
     actions_.clear();
 }
 
+void Engine::pedalUp() {
+    pedal_ = false;
+    for (int s = 0; s < 128; ++s)
+        if (src_[s].sus && !src_[s].held) releaseSrc(s, p(I.release, 300) / 1000.f);
+}
+
+void Engine::checkModes() {
+    const int modes[5] = {(int)p(I.mono, 0), (int)p(I.legato, 0), p(I.arp_mode, 0) > 0.5f ? 1 : 0,
+                          (int)p(I.arp_mode, 0), (int)p(I.arp_latch, 0)};
+    if (lastModes_[0] < 0) { std::memcpy(lastModes_, modes, sizeof(modes)); return; }  // new instrument
+    // switching mono, legato or the arpeggiator re-routes note-offs: release what is sounding
+    // first, so no note can be left without its note-off (the scripts do the same)
+    if (modes[0] != lastModes_[0] || modes[1] != lastModes_[1] || modes[3] != lastModes_[3]) {
+        releaseAll(0.03f);
+        arp_.clear();
+        arpSorted_.clear();
+        stack_.clear();
+        monoCur_ = -1;
+    }
+    if (modes[4] == 0 && lastModes_[4] == 1 && keysDown_ == 0) { arp_.clear(); arpSorted_.clear(); }
+    std::memcpy(lastModes_, modes, sizeof(modes));
+    if (pedal_ && p(I.use_pedal, 1) < 0.5f) pedalUp();  // pedal switched off while held down
+}
+
+void Engine::rebaseTicks(uint64_t newTick) {
+    auto shift = [&](uint64_t v) {
+        const int64_t r = (int64_t)v - (int64_t)tick_ + (int64_t)newTick;
+        return r < 0 ? (uint64_t)0 : (uint64_t)r;
+    };
+    arpNext_ = shift(arpNext_);
+    for (auto& r : repNext_) r = shift(r);
+    for (auto& pd : pending_) pd.tick = shift(pd.tick);
+    tick_ = newTick;
+}
+
 void Engine::allNotesOff() {
     releaseAll(0.02f);
+    pedal_ = false;
     arp_.clear();
     stack_.clear();
     monoCur_ = -1;
@@ -271,6 +319,7 @@ void Engine::process(float* outL, float* outR, uint32_t frames, const MidiMsg* e
         calcDyn();
         updateDyn();
     }
+    checkModes();
     // tempo / tick alignment
     bpm_ = ti.bpm > 20 ? ti.bpm : 120.0;
     const double spt = sr_ * 60.0 / (bpm_ * 24.0);  // samples per tick
@@ -278,7 +327,20 @@ void Engine::process(float* outL, float* outR, uint32_t frames, const MidiMsg* e
         const double tpos = ti.ppq * 24.0;
         double frac = std::ceil(tpos) - tpos;
         if (frac < 1e-9) frac = 0.0;
-        if (!wasPlaying_ || std::fabs(samplesToTick_ - frac * spt) > spt * 0.5) samplesToTick_ = frac * spt;
+        const double want = frac * spt;
+        if (!wasPlaying_) {
+            // transport started: align the tick phase and count with the song position,
+            // so arpeggiator accents and Note Repeat land on the host's beats
+            samplesToTick_ = want;
+            const double nextTick = std::ceil(tpos - 1e-9);
+            rebaseTicks(nextTick >= 1.0 ? (uint64_t)nextTick - 1 : 0);
+        } else {
+            // keep the phase locked; the difference is wrapped to one tick, because a tick that
+            // fell exactly on the block boundary has already fired at the end of the last block
+            double d = samplesToTick_ - want;
+            d -= spt * std::round(d / spt);
+            if (std::fabs(d) > 0.25 * spt) samplesToTick_ -= d;
+        }
     }
     wasPlaying_ = ti.playing;
     if (samplesToTick_ > spt) samplesToTick_ = spt;
@@ -303,12 +365,12 @@ void Engine::process(float* outL, float* outR, uint32_t frames, const MidiMsg* e
             tickEvent();
         }
         if (!actions_.empty()) {
-            std::vector<Action> due;
-            for (auto it = actions_.begin(); it != actions_.end();) {
-                if (it->time <= now_) { due.push_back(*it); it = actions_.erase(it); }
-                else ++it;
+            due_.clear();
+            for (size_t i = 0; i < actions_.size();) {
+                if (actions_[i].time <= now_) { due_.push_back(actions_[i]); actions_[i] = actions_.back(); actions_.pop_back(); }
+                else ++i;
             }
-            for (auto& a : due) runAction(a);
+            for (auto& a : due_) runAction(a);
         }
     }
     applyFx(outL, outR, (int)frames);
@@ -353,11 +415,7 @@ void Engine::handleMidi(const uint8_t* d) {
 void Engine::controller(int cc, int val) {
     if (cc == 64 && p(I.use_pedal, 1) > 0.5f) {
         if (val >= 64) pedal_ = true;
-        else if (pedal_) {
-            pedal_ = false;
-            for (int s = 0; s < 128; ++s)
-                if (src_[s].sus && !src_[s].held) releaseSrc(s, p(I.release, 300) / 1000.f);
-        }
+        else if (pedal_) pedalUp();
     }
     if (cc == 120 || cc == 123) allNotesOff();
     if (cc == 1) {
@@ -544,7 +602,12 @@ void Engine::polyNoteOff(int note, bool letRing) {
         return;
     }
     if (pedal_) { src_[note].sus = true; return; }
-    if (letRing) { src_[note].ids.clear(); return; }
+    if (letRing) {  // one-shot voices ring out; a looping layer (e.g. a drone) still stops
+        for (uint32_t id : src_[note].ids)
+            if (Voice* v = find(id)) if (v->s->loopStart >= 0) fadeOut(id, p(I.release, 300) / 1000.f);
+        src_[note].ids.clear();
+        return;
+    }
     releaseSrc(note, p(I.release, 300) / 1000.f);
 }
 

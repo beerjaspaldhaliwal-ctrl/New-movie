@@ -1045,6 +1045,7 @@ function play_patch
   if ($kg # $NI_NOT_FOUND)
     $pv_grp := $kg
     $pv_vol := $k_db
+    $pv_role := 3 + 100 * %p_loop[$kp]
     call play_voice
   end if
 end function

@@ -241,6 +241,14 @@ LoadedInstrument* loadInstrument(int index, const std::string& libraryDir, std::
         }
         if (s.loopEnd > s.frames) s.loopEnd = s.frames;
         if (s.loopStart >= 0 && s.loopEnd - s.loopStart < 16) s.loopStart = s.loopEnd = -1;
+        if (s.loopStart >= 0) {
+            // The interpolator reads up to two samples past the loop end: make them the loop start,
+            // so the seam is continuous. A looping voice never plays the audio after loopEnd.
+            for (int k = 0; k < 3; ++k) {
+                s.l[s.loopEnd + k] = s.l[s.loopStart + k];
+                if (ch > 1) s.r[s.loopEnd + k] = s.r[s.loopStart + k];
+            }
+        }
         progress.store((float)(zi + 1) / (float)d.zones.size());
     }
     progress.store(1.f);

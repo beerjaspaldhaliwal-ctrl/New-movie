@@ -162,6 +162,69 @@ int main(int argc, char** argv) {
         r.cc(123, 0); r.run(0.5);
         check(r.active() == 0, "CC123 all notes off", fmt("%.0f active", r.active()));
     }
+    {   // loop seams: the two samples after every loop end continue the loop start (no click)
+        const Catalog& cat = Catalog::get();
+        int loops = 0, bad = 0;
+        for (size_t i = 0; i < cat.instruments.size(); ++i) {
+            std::atomic<float> prog{0};
+            LoadedInstrument* li = loadInstrument((int)i, lib, prog);
+            for (auto& sm : li->samples) {
+                if (sm.loopStart < 0) continue;
+                ++loops;
+                for (int k = 0; k < 2; ++k)
+                    if (sm.l[sm.loopEnd + k] != sm.l[sm.loopStart + k]) { ++bad; break; }
+            }
+            delete li;
+        }
+        check(loops > 300 && bad == 0, "loop seams continuous", fmt("%.0f loops, %.0f bad", loops, bad));
+    }
+    {   // Let Ring with a looping layer (Sitar preset Raga Drone): the drone still stops
+        Rig r(lib, "Sitar");
+        r.set("let_ring", 1); r.set("patch", 0); r.set("patch2", 2);
+        r.on(50); r.run(0.5); r.off(50); r.run(8.0);
+        check(r.active() == 0, "let ring + looping layer stops", fmt("%.0f active after 8 s", r.active()));
+    }
+    {   // switching the arpeggiator on while a pad note is held must not strand it
+        Rig r(lib, "WarmPad");
+        r.on(60); r.run(0.3);
+        r.set("arp_mode", 1); r.run(0.1); r.off(60); r.run(0.2);
+        r.set("arp_mode", 0); r.run(4.0);
+        check(r.active() == 0, "arp switched on during a held note", fmt("%.0f active", r.active()));
+    }
+    {   // poly -> mono with a note held, then mono -> poly
+        Rig r(lib, "Supersaw");
+        r.on(60); r.run(0.3); r.set("mono", 1); r.run(0.1); r.off(60); r.run(0.2);
+        r.on(62); r.run(0.3); r.set("mono", 0); r.run(0.1); r.off(62); r.run(4.0);
+        check(r.active() == 0, "mono switched while notes held", fmt("%.0f active", r.active()));
+    }
+    {   // legato switched off while a legato note sounds
+        Rig r(lib, "SoloCello");
+        r.set("legato", 1); r.on(48); r.run(0.3); r.set("legato", 0); r.run(0.1); r.off(48); r.run(3.0);
+        check(r.active() == 0, "legato switched off during a note", fmt("%.0f active", r.active()));
+    }
+    {   // ghost arpeggio: latch, release, latch off -> nothing left to play
+        Rig r(lib, "Pluck");
+        r.set("arp_mode", 1); r.set("arp_latch", 1);
+        r.on(60); r.run(0.3); r.off(60); r.run(0.3);
+        r.set("arp_latch", 0); r.run(0.2);
+        const uint32_t n = r.started();
+        r.run(1.0);
+        check(r.started() == n, "latch off clears the latched arp", fmt("%.0f extra notes", r.started() - n));
+    }
+    {   // tick clock: 1/32 arp for 10 s at 120 BPM (1000 samples per tick at 48 kHz) = 160 notes
+        Rig r(lib, "Pluck");
+        r.set("arp_mode", 1); r.set("arp_rate", 5); r.set("arp_gate", 20);
+        r.on(60);
+        r.run(10.0);
+        check(r.started() >= 159 && r.started() <= 162, "tick clock locked to the host (10 s)",
+              fmt("%.0f notes (expect 160-161)", r.started()));
+    }
+    {   // sustain switch turned off while the pedal is down releases the held notes
+        Rig r(lib, "EPiano");
+        r.cc(64, 127); r.on(60); r.run(0.2); r.off(60); r.run(0.2);
+        r.set("use_pedal", 0); r.run(3.0);
+        check(r.active() == 0, "Sustain Pedal switched off while held", fmt("%.0f active", r.active()));
+    }
     // no stuck voices on any instrument: play, release, wait
     const Catalog& cat = Catalog::get();
     int stuck = 0;

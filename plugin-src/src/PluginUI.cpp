@@ -78,8 +78,11 @@ public:
         status_ = sharedStatusFromPlugin(getPluginInstancePointer());
         params_.resize(cat.params.size(), 0.f);
         current_ = std::max(0, cat.instrument("Strings"));
-        if (status_ && status_->loadedIndex.load() >= 0) current_ = status_->loadedIndex.load();
-        if (status_ && status_->loadingIndex.load() >= 0) current_ = status_->loadingIndex.load();
+        if (status_) {
+            const int loaded = status_->loadedIndex.load(), loading = status_->loadingIndex.load();
+            if (loaded >= 0) current_ = loaded;
+            if (loading >= 0) current_ = loading;
+        }
         for (size_t i = 0; i < params_.size(); ++i) params_[i] = cat.params[i].def;
         for (auto& c : cat.instruments[current_].controls) params_[c.param] = (float)c.def;
         openCategory_ = cat.instruments[current_].category;

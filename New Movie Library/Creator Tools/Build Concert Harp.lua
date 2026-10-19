@@ -1012,6 +1012,7 @@ function play_patch
   if ($kg # $NI_NOT_FOUND)
     $pv_grp := $kg
     $pv_vol := $k_db
+    $pv_role := 3 + 100 * %p_loop[$kp]
     call play_voice
   end if
 end function
@@ -1754,6 +1755,13 @@ on release
     %src_sus[$EVENT_NOTE] := 1
   else
     if ($let_ring = 1 and %p_loop[0] = 0)
+      $rl_i := 0
+      while ($rl_i < %src_n[$EVENT_NOTE])
+        if (%src_r[$EVENT_NOTE * $MAXV + $rl_i] >= 100)
+          fade_out(%src_v[$EVENT_NOTE * $MAXV + $rl_i], $rel_us, 1)
+        end if
+        inc($rl_i)
+      end while
       %src_n[$EVENT_NOTE] := 0
     else
       $rs_src := $EVENT_NOTE

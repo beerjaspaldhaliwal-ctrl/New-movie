@@ -1382,6 +1382,12 @@ end function
 function upd_mono
   $rs_time := 20000
   call release_all
+  $mt_i := 0
+  while ($mt_i < $mono_n)
+    fade_out(%mono_v[$mt_i], 20000, 1)
+    inc($mt_i)
+  end while
+  inc($gl_token)
   $mono_n := 0
   $stk_n := 0
 end function

@@ -110,8 +110,12 @@ minimal CLAP test host (`plugin-src/tests/clap_host.cpp`, the Windows build unde
 Wine). Each one played every instrument, saved and restored its state, opened its
 window, and had its tabs, browser and keyboard clicked. The Linux VST3 was also
 loaded in a JUCE-based host (Spotify's `pedalboard`), which checked rendering and
-parameter automation. The engine has an offline test (`plugin-src/tests/engine_render.cpp`)
-that runs all 45 instruments clean under Valgrind. **Not tested:** the Windows VST3
+parameter automation. Two offline engine tests run clean under Valgrind:
+`plugin-src/tests/engine_render.cpp` plays all 45 instruments, and `engine_features.cpp`
+runs 24 behaviour checks. Those cover arpeggiator and Note Repeat timing against the host
+clock, strum, scale lock, pedal, glide, legato, keyswitches, mic faders, mode switches while
+notes are held, loop seams, and no stuck voices on any instrument. The plugin was also checked
+for correct pitch at 44.1, 48 and 96 kHz. **Not tested:** the Windows VST3
 in a real DAW, because no Windows DAW was available here. If a DAW
 misbehaves, note the DAW, its version and what happened.
 

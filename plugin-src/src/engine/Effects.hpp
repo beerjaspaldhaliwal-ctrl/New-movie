@@ -50,8 +50,14 @@ struct FilterFx {
         for (auto& c : s) for (auto& f : c) f.reset();
     }
     void set(float hz, float q) { cut.target = clampf(hz, 20.f, 0.45f * sr); res.target = q; }
+    bool bypassed = false;
     void process(float* l, float* r, int n) {
-        if (cut.target >= 0.44f * sr && cut.v >= 0.44f * sr) return;  // fully open: bypass
+        if (cut.target >= 0.44f * sr && cut.v >= 0.44f * sr) {  // fully open: bypass
+            if (!bypassed) for (auto& c : s) for (auto& f : c) f.reset();  // start clean when it comes back
+            bypassed = true;
+            return;
+        }
+        bypassed = false;
         for (int i = 0; i < n; ++i) {
             const float fc = cut.next();
             const float q = res.next();

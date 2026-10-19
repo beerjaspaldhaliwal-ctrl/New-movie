@@ -1,5 +1,6 @@
 // New Movie Library player: DPF plugin wrapper around the engine.
 #include "DistrhoPlugin.hpp"
+#include "DistrhoPluginUtils.hpp"
 
 #include <condition_variable>
 #include <cstring>
@@ -25,6 +26,7 @@ public:
         params_.resize(cat.params.size());
         for (size_t i = 0; i < params_.size(); ++i) params_[i] = defaultValue((uint32_t)i);
         engine_.setParamPointer(params_.data());
+        midi_.reserve(2048);
         engine_.setSampleRate(getSampleRate());
         status_.engine = &engine_;
         if (isDummyInstance()) return;  // hosts create one while scanning: no disk access, no threads
@@ -166,6 +168,8 @@ protected:
             ti.bpm = tp.bbt.beatsPerMinute;
             const double tpb = tp.bbt.ticksPerBeat > 0 ? tp.bbt.ticksPerBeat : 1920.0;
             ti.ppq = (tp.bbt.barStartTick + (tp.bbt.beat - 1) * tpb + tp.bbt.tick) / tpb;
+            // DPF's VST3 wrapper counts beats in time-signature units (eighths in 6/8); CLAP counts quarters
+            if (isVst3_ && tp.bbt.beatType > 0) ti.ppq *= 4.0 / tp.bbt.beatType;
         }
         engine_.process(outputs[0], outputs[1], frames, midi_.data(), (uint32_t)midi_.size(), ti);
     }
@@ -254,6 +258,7 @@ private:
     SharedStatus status_;
     std::vector<float> params_;
     std::vector<MidiMsg> midi_;
+    const bool isVst3_ = std::strcmp(getPluginFormatName(), "VST3") == 0;
     std::string instrumentKey_, libraryDir_;
 
     std::thread worker_;

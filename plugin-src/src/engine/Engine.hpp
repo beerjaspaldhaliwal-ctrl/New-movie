@@ -92,6 +92,9 @@ private:
     void renderVoices(float* l, float* r, int n);
     void releaseSrc(int src, float sec);
     void releaseAll(float sec);
+    void checkModes();               // the scripts' ui_control side effects of mode switches
+    void pedalUp();
+    void rebaseTicks(uint64_t newTick);
     void registerNew(int src);
     void pendNew(uint64_t releaseTick);
 
@@ -148,7 +151,7 @@ private:
     uint64_t now_ = 0;  // absolute sample clock
     Source src_[kNumSources];
     std::vector<uint32_t> newIds_;
-    std::vector<Action> actions_;
+    std::vector<Action> actions_, due_;
     std::vector<Pending> pending_;
     uint32_t generation_[128] = {0};
 
@@ -221,6 +224,7 @@ private:
     } I{};
     int lastArtParam_ = -1;
     float lastDynSig_[4] = {-1e9f, -1e9f, -1e9f, -1e9f};
+    int lastModes_[5] = {-1, -1, -1, -1, -1};  // mono, legato, arp on, arp mode, latch
     bool has_[256] = {false};
     bool fastRotary_ = false;
 };
