@@ -23,7 +23,8 @@ categories, **1,527 samples** (24-bit / 44.1 kHz, about 464 MB), and four ways t
 
 1. On GitHub choose **Code > Download ZIP**, then unzip it. Keep the `New Movie Library` and
    `Plugin` folders side by side.
-2. Double-click `Plugin\Windows\Install.bat` and allow the administrator prompt.
+2. Double-click `Plugin\Windows\New Movie Library Setup.exe` and follow the wizard (allow the
+   administrator prompt; pick where the samples go).
 3. In your DAW, rescan plugins and load **New Movie Library** on an instrument track.
 4. Pick an instrument in the browser on the left and play.
 

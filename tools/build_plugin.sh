@@ -30,7 +30,13 @@ for t in $TARGETS; do
     case $t in
         linux) build Linux ;;
         windows) build Windows WINDOWS=true CC=x86_64-w64-mingw32-gcc-posix CXX=x86_64-w64-mingw32-g++-posix \
-                     AR=x86_64-w64-mingw32-ar ;;
+                     AR=x86_64-w64-mingw32-ar
+                 # the setup wizard (needs NSIS: apt install nsis)
+                 if command -v makensis >/dev/null; then
+                     makensis -V2 "$ROOT/plugin-src/installer/NewMovieLibrary.nsi" && echo "   -> Plugin/Windows/New Movie Library Setup.exe"
+                 else
+                     echo "   (makensis not found: setup wizard not rebuilt)"
+                 fi ;;
         *) echo "unknown target $t"; exit 2 ;;
     esac
 done

@@ -7,28 +7,33 @@ the same way as in the Kontakt version.
 
 | Folder | Contents |
 |---|---|
-| `Windows/` | `NewMovieLibrary.vst3`, `NewMovieLibrary.clap`, `Install.bat`, `Uninstall.bat` (64-bit Windows 10/11) |
+| `Windows/` | `New Movie Library Setup.exe` (setup wizard), `NewMovieLibrary.vst3`, `NewMovieLibrary.clap`, `Install.bat`, `Uninstall.bat` (64-bit Windows 10/11) |
 | `Linux/` | `NewMovieLibrary.vst3`, `NewMovieLibrary.clap` (x86-64) |
 
 ## Install on Windows
 
 1. Download the whole repository (**Code > Download ZIP** on GitHub) and unzip it.
    Keep the `New Movie Library` and `Plugin` folders side by side.
-2. Open `Plugin\Windows` and double-click **`Install.bat`**. Allow the
-   administrator prompt: the plugin folders are system folders.
-   - The VST3 plugin is copied to `C:\Program Files\Common Files\VST3\`.
-   - The CLAP plugin is copied to `C:\Program Files\Common Files\CLAP\`.
-   - You can then leave the samples where they are, or copy them to
-     `Documents\New Movie Library`. The plugin remembers the location.
-3. In your DAW, rescan plugins and add **New Movie Library** as an instrument.
-   It is listed under the maker "New Movie Library".
+2. Open `Plugin\Windows` and double-click **`New Movie Library Setup.exe`**.
+   Allow the administrator prompt, because the plugin folders are system folders.
+3. Follow the wizard:
+   - **Components:** the VST3 plugin, the CLAP plugin, and *Copy the samples*.
+   - **Sample folder:** where the 470 MB of samples go. The default is
+     `Documents\New Movie Library`, but any drive works. If you untick *Copy the samples*,
+     the plugin uses them straight from the download folder.
+   - The VST3 goes to `C:\Program Files\Common Files\VST3\` and the CLAP to
+     `C:\Program Files\Common Files\CLAP\`.
+   - The plugin remembers where the samples are.
+4. In your DAW, rescan plugins and add **New Movie Library** as an instrument.
 
-If Windows shows *"Windows protected your PC"* for `Install.bat`, choose
-**More info > Run anyway**. Windows shows this for any downloaded script. If the
-script is blocked entirely, right-click it, choose **Properties**, tick **Unblock**, then
-run it again.
+If Windows shows *"Windows protected your PC"*, choose **More info > Run anyway**. The setup
+isn't code-signed, so Windows warns about any downloaded program like this.
+To remove everything, use **Settings > Apps > New Movie Library > Uninstall**. It asks
+before deleting the samples.
 
-### Manual install (instead of Install.bat)
+`Install.bat` / `Uninstall.bat` do the same job as a plain script, if you prefer that.
+
+### Manual install (instead of the setup)
 
 - Copy the folder `NewMovieLibrary.vst3` into `C:\Program Files\Common Files\VST3\`.
 - Copy `NewMovieLibrary.clap` into `C:\Program Files\Common Files\CLAP\` if your DAW

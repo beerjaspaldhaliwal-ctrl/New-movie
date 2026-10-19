@@ -128,8 +128,20 @@ std::string loadSavedLibrary() {
     std::vector<uint8_t> data;
     const std::string sf = settingsFile();
     if (sf.empty() || !readFile(sf, data)) return std::string();
-    std::string s(data.begin(), data.end());
-    while (!s.empty() && (s.back() == '\n' || s.back() == '\r' || s.back() == ' ')) s.pop_back();
+    std::string s;
+    if (data.size() >= 2 && data[0] == 0xFF && data[1] == 0xFE) {  // UTF-16LE (written by the Windows installer)
+        std::wstring w;
+        for (size_t i = 2; i + 1 < data.size(); i += 2) w += (wchar_t)(data[i] | (data[i + 1] << 8));
+#ifdef _WIN32
+        s = narrow(w.c_str());
+#else
+        for (wchar_t c : w) s += c < 0x80 ? (char)c : '?';
+#endif
+    } else {
+        size_t start = (data.size() >= 3 && data[0] == 0xEF && data[1] == 0xBB && data[2] == 0xBF) ? 3 : 0;
+        s.assign(data.begin() + start, data.end());
+    }
+    while (!s.empty() && (s.back() == '\n' || s.back() == '\r' || s.back() == ' ' || s.back() == 0)) s.pop_back();
     return s;
 }
 
