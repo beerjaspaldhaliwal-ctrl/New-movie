@@ -1,6 +1,6 @@
 """Exports the catalog for the VST3/CLAP player plugin.
 
-Writes plugin/src/generated/catalog_data.cpp: one JSON document (embedded as a
+Writes plugin-src/src/generated/catalog_data.cpp: one JSON document (embedded as a
 C++ string) describing every instrument - zones and loops, engine settings,
 the controls (shared with the Kontakt scripts, same names, ranges and units)
 and the presets - plus the global host-parameter list.

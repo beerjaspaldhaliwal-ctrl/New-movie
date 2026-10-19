@@ -6,7 +6,7 @@
 #   sh tools/build_plugin.sh windows    # Windows only (needs the mingw-w64 "posix" compilers)
 #   sh tools/build_plugin.sh linux      # Linux only (needs libgl1-mesa-dev, libx11-dev, libxcursor-dev, libxrandr-dev, libdbus-1-dev)
 #
-# Each target builds in its own temporary copy of plugin/, so the two never share objects.
+# Each target builds in its own temporary copy of plugin-src/, so the two never share objects.
 set -e
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
 TARGETS=${1:-linux windows}
@@ -15,7 +15,7 @@ JOBS=$(nproc 2>/dev/null || echo 4)
 build() {
     target=$1; shift
     tmp=$(mktemp -d)
-    (cd "$ROOT/plugin" && tar cf - --exclude=./build --exclude=./bin --exclude=./dpf/build .) | (cd "$tmp" && tar xf -)
+    (cd "$ROOT/plugin-src" && tar cf - --exclude=./build --exclude=./bin --exclude=./dpf/build .) | (cd "$tmp" && tar xf -)
     echo "== building $target in $tmp"
     make -C "$tmp" -j"$JOBS" "$@" >"$tmp/build.log" 2>&1 || { tail -40 "$tmp/build.log"; exit 1; }
     out="$ROOT/Plugin/$target"

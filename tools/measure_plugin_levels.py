@@ -3,7 +3,7 @@
 
     python3 tools/measure_plugin_levels.py
 
-Builds plugin/tests/engine_render.cpp, plays the same short test phrase on every
+Builds plugin-src/tests/engine_render.cpp, plays the same short test phrase on every
 instrument at default settings, and writes tools/nml/plugin_levels.json: one gain
 (dB) per instrument that brings the phrase to a common loudness without pushing
 its peaks into the limiter. Then regenerates the plugin catalog so the trims are
@@ -17,7 +17,7 @@ import tempfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-PLUGIN = os.path.join(ROOT, "plugin")
+PLUGIN = os.path.join(ROOT, "plugin-src")
 LIBRARY = os.path.join(ROOT, "New Movie Library")
 OUT = os.path.join(HERE, "nml", "plugin_levels.json")
 

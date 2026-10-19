@@ -92,7 +92,7 @@ background, shown as a progress bar in the browser and "Loading..." at the top o
 
 ## Building it yourself
 
-The source is in [`plugin/`](../plugin). It is built with
+The source is in [`plugin-src/`](../plugin-src). It is built with
 [DPF](https://github.com/DISTRHO/DPF) and [Dear ImGui](https://github.com/ocornut/imgui).
 
 ```bash
@@ -102,15 +102,15 @@ sh tools/build_plugin.sh            # Linux + Windows (cross-compiled with mingw
 - **Linux:** needs `g++`, `make`, `libgl1-mesa-dev`, `libx11-dev`, `libxcursor-dev`,
   `libxrandr-dev` and `libdbus-1-dev`.
 - **Windows:** cross-compiled with the `x86_64-w64-mingw32-g*-posix` compilers.
-- **macOS:** run `make` in `plugin/` on a Mac with the Xcode command-line tools.
+- **macOS:** run `make` in `plugin-src/` on a Mac with the Xcode command-line tools.
   That build is untested.
 
 **What was tested:** both Linux builds and the Windows CLAP build load in a
-minimal CLAP test host (`plugin/tests/clap_host.cpp`, the Windows build under
+minimal CLAP test host (`plugin-src/tests/clap_host.cpp`, the Windows build under
 Wine). Each one played every instrument, saved and restored its state, opened its
 window, and had its tabs, browser and keyboard clicked. The Linux VST3 was also
 loaded in a JUCE-based host (Spotify's `pedalboard`), which checked rendering and
-parameter automation. The engine has an offline test (`plugin/tests/engine_render.cpp`)
+parameter automation. The engine has an offline test (`plugin-src/tests/engine_render.cpp`)
 that runs all 45 instruments clean under Valgrind. **Not tested:** the Windows VST3
 in a real DAW, because no Windows DAW was available here. If a DAW
 misbehaves, note the DAW, its version and what happened.
@@ -124,4 +124,4 @@ The plugin code is ISC-licensed. It includes:
 - dr_wav (public domain / MIT-0)
 - the DejaVu Sans font (Bitstream Vera license)
 
-Their license files are next to their sources in `plugin/`.
+Their license files are next to their sources in `plugin-src/`.
