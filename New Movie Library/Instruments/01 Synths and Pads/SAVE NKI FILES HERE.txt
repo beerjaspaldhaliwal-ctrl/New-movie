@@ -1,0 +1,9 @@
+Save the instruments for this category here (see Documentation/BUILD GUIDE):
+
+  Warm Analog Pad.nki
+  Glass Shimmer Pad.nki
+  Supersaw Stack.nki
+  Analog Mono Bass.nki
+  Pluck Synth.nki
+  Pulse Arp.nki
+  Ethereal Choir.nki

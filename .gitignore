@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.DS_Store
+# Kontakt writes these next to instruments; keep them out of the repo
+*.nkc
+*.nkx.bak

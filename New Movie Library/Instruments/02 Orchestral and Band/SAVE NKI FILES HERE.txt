@@ -1,0 +1,13 @@
+Save the instruments for this category here (see Documentation/BUILD GUIDE):
+
+  Ensemble Strings.nki
+  Brass Ensemble.nki
+  Woodwind Ensemble.nki
+  Cinematic Timpani.nki
+  Electric Piano.nki
+  Nylon Guitar.nki
+  Finger Bass.nki
+  Studio Drum Kit.nki
+  Drawbar Organ.nki
+  Cinematic Mallets.nki
+  Orchestral Percussion.nki
