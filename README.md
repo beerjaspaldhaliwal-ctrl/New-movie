@@ -3,7 +3,7 @@
 An original, Kontakt-ready sample library in the layout of a Kontakt 8 library:
 `Instruments`, `Samples` and `Resources` folders, scripted performance views,
 articulations, keyswitches, round robins, velocity layers, effects and
-performance tools. It has **21 instruments** in three categories, **571 samples**
+performance tools. It has **21 instruments** in three categories, **567 samples**
 (24-bit / 44.1 kHz, about 208 MB) and one complete Kontakt script for each instrument.
 
 > **Every sound here is original.** All samples are synthesized from scratch by
@@ -84,7 +84,7 @@ troubleshooting.
 ```
 New Movie Library/
 ├── Instruments/            save the .nki files here (one folder per category)
-├── Samples/                571 WAVs: <Category>/<Instrument>/<Group>/<file>.wav
+├── Samples/                567 WAVs:  <Category>/<Instrument>/<Group>/<file>.wav
 ├── Resources/
 │   ├── scripts/            the KSP performance script of every instrument (.txt)
 │   └── ir_samples/         4 bonus impulse responses for Kontakt's Convolution effect
