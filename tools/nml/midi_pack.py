@@ -358,7 +358,7 @@ def build():
     c.note(t, 39, Q, 127)
     c.note(t, 36, BAR, 127)
     c.note(t, 51, BAR, 110)
-    add(F, "Trailer Build 8 bars (120 BPM) - Trailer Percussion", c)
+    add(F, "Trailer Build 8 bars (120 BPM) - Hybrid Trailer Percussion", c)
 
     c = Clip("Taiko Ensemble", 90)
     pattern = [(0, 39, 120), (E, 38, 80), (Q + E, 38, 96), (2 * Q, 39, 116), (3 * Q, 38, 90), (3 * Q + E, 40, 84)]

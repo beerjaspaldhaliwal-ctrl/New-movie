@@ -1,0 +1,1 @@
+Save Kontakt multis (.nkm) here. Documentation/MULTIS AND MIDI.md lists ready-made combinations.

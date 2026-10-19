@@ -169,6 +169,9 @@ def write_formats(insts):
     counts = formats.export(insts, LIB)
     n_mid = midi_pack.export(LIB)
     n_pic = artwork.export(LIB)
+    os.makedirs(os.path.join(LIB, "Multis"), exist_ok=True)
+    with open(os.path.join(LIB, "Multis", "SAVE MULTIS HERE.txt"), "w", newline="\n") as f:
+        f.write("Save Kontakt multis (.nkm) here. Documentation/MULTIS AND MIDI.md lists ready-made combinations.\n")
     print(f"{counts['SFZ']} SFZ files, {counts['Decent Sampler']} Decent Sampler presets, {n_mid} MIDI files, "
           f"{n_pic} pictures")
 
@@ -184,6 +187,12 @@ def write_docs(insts):
     path = os.path.join(LIB, "Documentation", "INSTRUMENT GUIDE.md")
     with open(path, "w", newline="\n") as f:
         f.write(instrument_guide(insts, sizes))
+    from nml.docs_gen import build_guide, multis_and_midi
+    from nml import midi_pack
+    with open(os.path.join(LIB, "Documentation", "BUILD GUIDE.md"), "w", newline="\n") as f:
+        f.write(build_guide(insts))
+    with open(os.path.join(LIB, "Documentation", "MULTIS AND MIDI.md"), "w", newline="\n") as f:
+        f.write(multis_and_midi(insts, midi_pack.build()))
 
 
 def main():

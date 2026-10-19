@@ -13,6 +13,8 @@ Seven-voice detuned analog stack (Warm) and a breathy, tonal-noise shimmer (Air)
 - **Playable range:** C0 - C7 (MIDI 24-108)
 - **Samples:** 22 zones in 2 groups (Warm, Air), stereo, 24-bit / 44.1 kHz, 14.8 MB
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Lush and Wide, Dark and Close, Epic Octaves, Tempo Pulse
+- **Other formats:** SFZ: `Warm Analog Pad - Air.sfz`, `Warm Analog Pad - Warm.sfz`, `Warm Analog Pad.sfz`; Decent Sampler: `Warm Analog Pad - Air.dspreset`, `Warm Analog Pad - Warm.dspreset` (in `SFZ/01 Synths and Pads` and `Decent Sampler/01 Synths and Pads`)
 - **Tip:** Mod wheel opens the filter, Blend mixes Warm and Air
 
 ### Glass Shimmer Pad
@@ -24,6 +26,8 @@ FM glass bells with an octave shimmer, chorus and a long hall.
 - **Playable range:** C0 - C7 (MIDI 24-108)
 - **Samples:** 11 zones in 1 groups (Glass), stereo, 24-bit / 44.1 kHz, 7.5 MB
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Lush and Wide, Dark and Close, Epic Octaves, Tempo Pulse
+- **Other formats:** SFZ: `Glass Shimmer Pad.sfz`; Decent Sampler: `Glass Shimmer Pad.dspreset` (in `SFZ/01 Synths and Pads` and `Decent Sampler/01 Synths and Pads`)
 - **Tip:** FM bell attack into a shimmering sustain
 
 ### Wavetable Pad
@@ -35,6 +39,8 @@ Slowly morphing wavetable pad plus a wavefolded digital layer.
 - **Playable range:** C0 - C7 (MIDI 24-108)
 - **Samples:** 22 zones in 2 groups (Morph, Digital), stereo, 24-bit / 44.1 kHz, 13.1 MB
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Lush and Wide, Dark and Close, Epic Octaves, Tempo Pulse
+- **Other formats:** SFZ: `Wavetable Pad - Digital.sfz`, `Wavetable Pad - Morph.sfz`, `Wavetable Pad.sfz`; Decent Sampler: `Wavetable Pad - Digital.dspreset`, `Wavetable Pad - Morph.dspreset` (in `SFZ/01 Synths and Pads` and `Decent Sampler/01 Synths and Pads`)
 - **Tip:** Morphing additive tables (Morph) and wavefolded Digital layer
 
 ### Supersaw Stack
@@ -46,6 +52,8 @@ Seven detuned saws, trance/trailer style. Poly, or mono with glide.
 - **Playable range:** C0 - C7 (MIDI 24-108)
 - **Samples:** 11 zones in 1 groups (Saw), stereo, 24-bit / 44.1 kHz, 4.9 MB
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Lush and Wide, Dark and Close, Epic Octaves, Tempo Pulse, Mono Lead
+- **Other formats:** SFZ: `Supersaw Stack.sfz`; Decent Sampler: `Supersaw Stack.dspreset` (in `SFZ/01 Synths and Pads` and `Decent Sampler/01 Synths and Pads`)
 - **Tip:** Mono / Glide for leads, Octave Layer for anthems
 
 ### Analog Brass Synth
@@ -57,6 +65,8 @@ Classic polysynth brass: detuned saws with a swelling filter envelope.
 - **Playable range:** C0 - C7 (MIDI 24-108)
 - **Samples:** 11 zones in 1 groups (Brass), stereo, 24-bit / 44.1 kHz, 5.4 MB
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Lush and Wide, Dark and Close, Epic Octaves, Tempo Pulse
+- **Other formats:** SFZ: `Analog Brass Synth.sfz`; Decent Sampler: `Analog Brass Synth.dspreset` (in `SFZ/01 Synths and Pads` and `Decent Sampler/01 Synths and Pads`)
 - **Tip:** 80s poly brass with a filter-envelope 'bwaa'
 
 ### Analog Mono Bass
@@ -68,6 +78,8 @@ Pure sub and a resonant, driven growl layer. Mono legato with glide.
 - **Playable range:** C-1 - C4 (MIDI 12-72)
 - **Samples:** 14 zones in 2 groups (Sub, Growl), mono, 24-bit / 44.1 kHz, 2.7 MB
 - **Effects chain (built by the script):** Filter > Supercharger GT > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Lush and Wide, Dark and Close, Epic Octaves, Tempo Pulse
+- **Other formats:** SFZ: `Analog Mono Bass - Growl.sfz`, `Analog Mono Bass - Sub.sfz`, `Analog Mono Bass.sfz`; Decent Sampler: `Analog Mono Bass - Growl.dspreset`, `Analog Mono Bass - Sub.dspreset` (in `SFZ/01 Synths and Pads` and `Decent Sampler/01 Synths and Pads`)
 - **Tip:** Blend: clean sub to growl. Mono/Glide on by default
 
 ### 808 Bass
@@ -79,6 +91,8 @@ Long trap 808 with pitch punch; clean and distorted layers, mono slide.
 - **Playable range:** C-1 - C4 (MIDI 12-72)
 - **Samples:** 14 zones in 2 groups (Clean, Dist), mono, 24-bit / 44.1 kHz, 5.2 MB
 - **Effects chain (built by the script):** Filter > Supercharger GT > Stereo Modeller > Raum Reverb
+- **Presets:** Default, Lush and Wide, Dark and Close, Epic Octaves, Tempo Pulse, Distorted Slide
+- **Other formats:** SFZ: `808 Bass - Clean.sfz`, `808 Bass - Dist.sfz`; Decent Sampler: `808 Bass - Clean.dspreset`, `808 Bass - Dist.dspreset` (in `SFZ/01 Synths and Pads` and `Decent Sampler/01 Synths and Pads`)
 - **Tip:** Mono glide slides like trap 808s. Layer B adds distortion
 
 ### Tape Keys
@@ -91,6 +105,8 @@ Tape-replay keyboard: flute, strings and choir with wow, flutter and hiss.
 - **Samples:** 27 zones in 3 groups (TapeFlute, TapeStrings, TapeChoir), mono, 24-bit / 44.1 kHz, 6.9 MB
 - **Instruments (menu + layer):** Tape Flute, Tape Strings, Tape Choir
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Studio, Ambient Wash, Strummed Chords
+- **Other formats:** SFZ: `Tape Keys - Tape Choir.sfz`, `Tape Keys - Tape Flute.sfz`, `Tape Keys - Tape Strings.sfz`; Decent Sampler: `Tape Keys - Tape Choir.dspreset`, `Tape Keys - Tape Flute.dspreset`, `Tape Keys - Tape Strings.dspreset` (in `SFZ/01 Synths and Pads` and `Decent Sampler/01 Synths and Pads`)
 - **Tip:** Vintage tape-replay flutes, strings and choir with wow and flutter
 
 ### Pluck Synth
@@ -102,6 +118,8 @@ Snappy filter-envelope pluck with three round robins.
 - **Playable range:** C0 - C7 (MIDI 24-108)
 - **Samples:** 33 zones in 3 groups (RR1, RR2, RR3), stereo, 24-bit / 44.1 kHz, 10.5 MB
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Studio, Ambient Wash, Strummed Chords
+- **Other formats:** SFZ: `Pluck Synth.sfz`; Decent Sampler: `Pluck Synth.dspreset` (in `SFZ/01 Synths and Pads` and `Decent Sampler/01 Synths and Pads`)
 - **Tip:** Try PERFORM > Arpeggiator
 
 ### Pulse Arp
@@ -113,6 +131,7 @@ The Pluck Synth preset as a ready-to-go tempo-synced arpeggiator.
 - **Playable range:** C0 - C7 (MIDI 24-108)
 - **Samples:** 33 zones in 3 groups (RR1, RR2, RR3), stereo, 24-bit / 44.1 kHz, 10.5 MB (shared with Pluck)
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Studio, Ambient Wash, Strummed Chords
 - **Tip:** Hold a chord: 1/16 arpeggio synced to tempo
 
 ### Sequencer Bass
@@ -124,6 +143,8 @@ Punchy resonant sequence bass, arpeggiator on by default.
 - **Playable range:** C-1 - C5 (MIDI 12-84)
 - **Samples:** 9 zones in 1 groups (Seq), mono, 24-bit / 44.1 kHz, 0.9 MB
 - **Effects chain (built by the script):** Filter > Supercharger GT > Stereo Modeller > Replika Delay > Raum Reverb
+- **Presets:** Default, Studio, Ambient Wash, Strummed Chords
+- **Other formats:** SFZ: `Sequencer Bass.sfz`; Decent Sampler: `Sequencer Bass.dspreset` (in `SFZ/01 Synths and Pads` and `Decent Sampler/01 Synths and Pads`)
 - **Tip:** Hold notes for a pulsing 1/16 bass line (arp on)
 
 ### Ethereal Choir
@@ -135,6 +156,8 @@ Formant-synthesised mixed choir, Aah and Ooh vowels, morphable.
 - **Playable range:** A0 - C6 (MIDI 33-96)
 - **Samples:** 18 zones in 2 groups (Aah, Ooh), stereo, 24-bit / 44.1 kHz, 12.1 MB
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Lush and Wide, Dark and Close, Epic Octaves, Tempo Pulse
+- **Other formats:** SFZ: `Ethereal Choir - Aah.sfz`, `Ethereal Choir - Ooh.sfz`, `Ethereal Choir.sfz`; Decent Sampler: `Ethereal Choir - Aah.dspreset`, `Ethereal Choir - Ooh.dspreset` (in `SFZ/01 Synths and Pads` and `Decent Sampler/01 Synths and Pads`)
 - **Tip:** Blend morphs the vowel from Aah to Ooh
 
 ## 02 Orchestral
@@ -154,6 +177,9 @@ Eight-player bowed ensemble: sustain (2 dynamics, 2 mics), tremolo, staccato, pi
   - `D#0` **Pizzicato** - short, round robin, velocity (PizzRR1 / PizzRR2 / PizzRR3 / PizzRR4)
   - `E0` **Swell** - auto-swell, CC1 dynamics (SusP / SusF)
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Microphones:** Close and Hall on the sustained articulations (Close Mic / Hall Mic faders); the short articulations use the close mics
+- **Presets:** Default, Close Mics, Concert Hall, Epic Legato, Soft Underscore, Ostinato 1/16
+- **Other formats:** SFZ: `Ensemble Strings.sfz`; Decent Sampler: `Ensemble Strings - Pizzicato.dspreset`, `Ensemble Strings - Staccato.dspreset`, `Ensemble Strings - Sustain.dspreset`, `Ensemble Strings - Swell.dspreset`, `Ensemble Strings - Tremolo.dspreset` (in `SFZ/02 Orchestral` and `Decent Sampler/02 Orchestral`)
 - **Tip:** CC1 = dynamics, keyswitches C0-E0, Close/Hall mics
 
 ### Solo Violin
@@ -170,6 +196,8 @@ Expressive single violin with legato, staccato and pizzicato.
   - `D0` **Pizzicato** - short, round robin, velocity (PizzRR1 / PizzRR2)
   - `D#0` **Swell** - auto-swell, CC1 dynamics (SusP / SusF)
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Epic Legato, Soft Underscore, Ostinato 1/16
+- **Other formats:** SFZ: `Solo Violin.sfz`; Decent Sampler: `Solo Violin - Pizzicato.dspreset`, `Solo Violin - Staccato.dspreset`, `Solo Violin - Sustain.dspreset`, `Solo Violin - Swell.dspreset` (in `SFZ/02 Orchestral` and `Decent Sampler/02 Orchestral`)
 - **Tip:** Legato on by default, CC1 = dynamics
 
 ### Solo Cello
@@ -186,6 +214,8 @@ Warm single cello with legato, staccato and pizzicato.
   - `D0` **Pizzicato** - short, round robin, velocity (PizzRR1 / PizzRR2)
   - `D#0` **Swell** - auto-swell, CC1 dynamics (SusP / SusF)
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Epic Legato, Soft Underscore, Ostinato 1/16
+- **Other formats:** SFZ: `Solo Cello.sfz`; Decent Sampler: `Solo Cello - Pizzicato.dspreset`, `Solo Cello - Staccato.dspreset`, `Solo Cello - Sustain.dspreset`, `Solo Cello - Swell.dspreset` (in `SFZ/02 Orchestral` and `Decent Sampler/02 Orchestral`)
 - **Tip:** Legato on by default, CC1 = dynamics
 
 ### Brass Ensemble
@@ -201,6 +231,9 @@ Horn/trombone section with loudness-driven brightness, swells and shorts.
   - `C#0` **Swell** - auto-swell, CC1 dynamics (SusP / SusF)
   - `D0` **Staccato** - short, round robin, velocity (StacRR1 / StacRR2 / StacRR3 / StacRR4)
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Microphones:** Close and Hall on the sustained articulations (Close Mic / Hall Mic faders); the short articulations use the close mics
+- **Presets:** Default, Close Mics, Concert Hall, Epic Legato, Soft Underscore, Ostinato 1/16
+- **Other formats:** SFZ: `Brass Ensemble.sfz`; Decent Sampler: `Brass Ensemble - Staccato.dspreset`, `Brass Ensemble - Sustain.dspreset`, `Brass Ensemble - Swell.dspreset` (in `SFZ/02 Orchestral` and `Decent Sampler/02 Orchestral`)
 - **Tip:** CC1 = dynamics (soft to blaring), keyswitches C0-D0, Close/Hall mics
 
 ### French Horns
@@ -216,6 +249,8 @@ Four-horn section, mellow to heroic, with swells and shorts.
   - `C#0` **Swell** - auto-swell, CC1 dynamics (SusP / SusF)
   - `D0` **Staccato** - short, round robin, velocity (StacRR1 / StacRR2)
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Epic Legato, Soft Underscore, Ostinato 1/16
+- **Other formats:** SFZ: `French Horns.sfz`; Decent Sampler: `French Horns - Staccato.dspreset`, `French Horns - Sustain.dspreset`, `French Horns - Swell.dspreset` (in `SFZ/02 Orchestral` and `Decent Sampler/02 Orchestral`)
 - **Tip:** Warm, heroic horn section. CC1 = dynamics
 
 ### Woodwind Ensemble
@@ -231,6 +266,8 @@ Breathy flute pair, clarinet pair and a woodwind staccato.
   - `C#0` **Clarinet Sustain** - sustain, CC1 dynamics (Clarinet)
   - `D0` **Staccato** - short, round robin, velocity (StacRR1 / StacRR2 / StacRR3 / StacRR4)
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Epic Legato, Soft Underscore, Ostinato 1/16
+- **Other formats:** SFZ: `Woodwind Ensemble.sfz`; Decent Sampler: `Woodwind Ensemble - Clarinet Sustain.dspreset`, `Woodwind Ensemble - Flute Sustain.dspreset`, `Woodwind Ensemble - Staccato.dspreset` (in `SFZ/02 Orchestral` and `Decent Sampler/02 Orchestral`)
 - **Tip:** Flutes, clarinets and staccato, keyswitches C0-D0
 
 ### Concert Harp
@@ -243,6 +280,8 @@ Plucked concert harp, 2 velocity layers x 2 round robins, rings out naturally.
 - **Samples:** 56 zones in 4 groups (V1RR1, V1RR2, V2RR1, V2RR2), mono, 24-bit / 44.1 kHz, 15.6 MB
 - **Harp velocity layers:** 2 (splits at velocity 85), 2 round robin(s) each
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Studio, Ambient Wash, Strummed Chords, Glissando
+- **Other formats:** SFZ: `Concert Harp.sfz`; Decent Sampler: `Concert Harp.dspreset` (in `SFZ/02 Orchestral` and `Decent Sampler/02 Orchestral`)
 - **Tip:** For glissandi: PERFORM > Scale Lock + Arp Up 1/32
 
 ### Cinematic Timpani
@@ -257,6 +296,8 @@ Pitched timpani hits with 4 round robins and looped rolls with crescendo control
   - `C0` **Hits** - short, round robin, velocity (HitRR1 / HitRR2 / HitRR3 / HitRR4)
   - `C#0` **Roll** - sustain, CC1 dynamics (RollP / RollF)
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Epic Legato, Soft Underscore
+- **Other formats:** SFZ: `Cinematic Timpani.sfz`; Decent Sampler: `Cinematic Timpani - Hits.dspreset`, `Cinematic Timpani - Roll.dspreset` (in `SFZ/02 Orchestral` and `Decent Sampler/02 Orchestral`)
 - **Tip:** C0 hits, C#0 rolls (CC1 = roll dynamics)
 
 ### Orchestral Percussion
@@ -288,6 +329,8 @@ Gran cassa, taiko, snare, cymbals, tam-tam and metals with 3 round robins and ro
   | F#2 | 54 | Tambourine | Snare |
 
 - **Effects chain (built by the script):** Filter > Bus Compressor > Stereo Modeller > Raum Reverb
+- **Presets:** Default, Studio Dry, Big Room, Crushed
+- **Other formats:** SFZ: `Orchestral Percussion.sfz`; Decent Sampler: `Orchestral Percussion.dspreset` (in `SFZ/02 Orchestral` and `Decent Sampler/02 Orchestral`)
 - **Tip:** Hold C#2 / G2 for rolls, CC1 = roll level
 
 ## 03 Band and Keys
@@ -302,6 +345,8 @@ Physically modelled felt piano: hammer, 1-3 strings per note and a soundboard.
 - **Samples:** 45 zones in 3 groups (V1, V2, V3), mono, 24-bit / 44.1 kHz, 18.5 MB
 - **Felt Piano velocity layers:** 3 (splits at velocity 50, 98), 1 round robin(s) each
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Studio, Ambient Wash, Strummed Chords, Intimate
+- **Other formats:** SFZ: `Felt Piano.sfz`; Decent Sampler: `Felt Piano.dspreset` (in `SFZ/03 Band and Keys` and `Decent Sampler/03 Band and Keys`)
 - **Tip:** Soft hammered-string piano, 3 velocity layers
 
 ### Electric Piano
@@ -314,6 +359,8 @@ FM tine electric piano with velocity-dependent bark, tremolo preamp.
 - **Samples:** 39 zones in 3 groups (V1, V2, V3), mono, 24-bit / 44.1 kHz, 13.2 MB
 - **Tine EP velocity layers:** 3 (splits at velocity 52, 98), 1 round robin(s) each
 - **Effects chain (built by the script):** Filter > EP Preamp > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Studio, Ambient Wash, Strummed Chords
+- **Other formats:** SFZ: `Electric Piano.sfz`; Decent Sampler: `Electric Piano.dspreset` (in `SFZ/03 Band and Keys` and `Decent Sampler/03 Band and Keys`)
 - **Tip:** 3 velocity layers, tremolo and drive on the SOUND page
 
 ### Drawbar Organ
@@ -326,6 +373,8 @@ Tonewheel-style additive organ with key click, rotary speaker and drive.
 - **Samples:** 22 zones in 2 groups (Full, Soft), mono, 24-bit / 44.1 kHz, 4.6 MB
 - **Instruments (menu + layer):** Full Drawbars, Soft Flutes
 - **Effects chain (built by the script):** Filter > Rotator > Supercharger GT > Replika Delay > Raum Reverb
+- **Presets:** Default, Gospel Fast, Church Soft
+- **Other formats:** SFZ: `Drawbar Organ - Full Drawbars.sfz`, `Drawbar Organ - Soft Flutes.sfz`; Decent Sampler: `Drawbar Organ - Full Drawbars.dspreset`, `Drawbar Organ - Soft Flutes.dspreset` (in `SFZ/03 Band and Keys` and `Decent Sampler/03 Band and Keys`)
 - **Tip:** Mod wheel up = fast rotary
 
 ### Nylon Guitar
@@ -338,6 +387,8 @@ Physically modelled nylon-string guitar with body resonance, 3 layers x 2 round 
 - **Samples:** 42 zones in 6 groups (V1RR1, V1RR2, V2RR1, V2RR2, V3RR1, V3RR2), mono, 24-bit / 44.1 kHz, 13.3 MB
 - **Nylon velocity layers:** 3 (splits at velocity 60, 100), 2 round robin(s) each
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Studio, Ambient Wash, Strummed Chords
+- **Other formats:** SFZ: `Nylon Guitar.sfz`; Decent Sampler: `Nylon Guitar.dspreset` (in `SFZ/03 Band and Keys` and `Decent Sampler/03 Band and Keys`)
 - **Tip:** Use PERFORM > Chord + Strum for strummed chords
 
 ### Electric Guitar
@@ -351,6 +402,8 @@ Electric guitar model with pickup, amp and cabinet: clean, overdrive and palm mu
 - **Instruments (menu + layer):** Clean, Drive, Palm Mute
 - **Clean velocity layers:** 2 (splits at velocity 90), 2 round robin(s) each
 - **Effects chain (built by the script):** Filter > Supercharger GT > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Studio, Ambient Wash, Strummed Chords, Power Chords, Chugs
+- **Other formats:** SFZ: `Electric Guitar - Clean.sfz`, `Electric Guitar - Drive.sfz`, `Electric Guitar - Palm Mute.sfz`; Decent Sampler: `Electric Guitar - Clean.dspreset`, `Electric Guitar - Drive.dspreset`, `Electric Guitar - Palm Mute.dspreset` (in `SFZ/03 Band and Keys` and `Decent Sampler/03 Band and Keys`)
 - **Tip:** Clean, Drive and Palm Mute. Power chords: PERFORM > Chord > Power
 
 ### Finger Bass
@@ -363,6 +416,8 @@ Fingered electric bass model with pickup comb filtering and thump.
 - **Samples:** 36 zones in 6 groups (V1RR1, V1RR2, V2RR1, V2RR2, V3RR1, V3RR2), mono, 24-bit / 44.1 kHz, 9.3 MB
 - **Finger velocity layers:** 3 (splits at velocity 60, 100), 2 round robin(s) each
 - **Effects chain (built by the script):** Filter > Supercharger GT > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Studio, Ambient Wash, Strummed Chords
+- **Other formats:** SFZ: `Finger Bass.sfz`; Decent Sampler: `Finger Bass.dspreset` (in `SFZ/03 Band and Keys` and `Decent Sampler/03 Band and Keys`)
 - **Tip:** 3 velocity layers x 2 round robins
 
 ### Studio Drum Kit
@@ -398,6 +453,8 @@ Synthesised acoustic/hybrid kit: 20 pieces, 3 velocity layers x 3 round robins.
   | A#3 | 70 | Shaker | Perc |
 
 - **Effects chain (built by the script):** Filter > Bus Compressor > Supercharger GT > Stereo Modeller > Raum Reverb
+- **Presets:** Default, Studio Dry, Big Room, Crushed
+- **Other formats:** SFZ: `Studio Drum Kit.sfz`; Decent Sampler: `Studio Drum Kit.dspreset` (in `SFZ/03 Band and Keys` and `Decent Sampler/03 Band and Keys`)
 - **Tip:** GM layout, 3 velocity layers x 3 round robins, Note Repeat
 
 ### Synthwave Kit
@@ -430,6 +487,8 @@ Synthesised acoustic/hybrid kit: 20 pieces, 3 velocity layers x 3 round robins.
   | G#2 | 56 | Cowbell | Perc |
 
 - **Effects chain (built by the script):** Filter > Bus Compressor > Supercharger GT > Stereo Modeller > Raum Reverb
+- **Presets:** Default, Studio Dry, Big Room, Crushed
+- **Other formats:** SFZ: `Synthwave Kit.sfz`; Decent Sampler: `Synthwave Kit.dspreset` (in `SFZ/03 Band and Keys` and `Decent Sampler/03 Band and Keys`)
 - **Tip:** 80s gated snares and big synth toms
 
 ### Trap Kit
@@ -459,6 +518,8 @@ Modern trap kit: long 808, snares, claps, hats with Note Repeat rolls, percs and
   | G2 | 55 | Vox Chop | Perc |
 
 - **Effects chain (built by the script):** Filter > Bus Compressor > Supercharger GT > Stereo Modeller > Raum Reverb
+- **Presets:** Default, Studio Dry, Big Room, Crushed, Hat Rolls 1/32
+- **Other formats:** SFZ: `Trap Kit.sfz`; Decent Sampler: `Trap Kit.dspreset` (in `SFZ/03 Band and Keys` and `Decent Sampler/03 Band and Keys`)
 - **Tip:** Note Repeat (PLAY page) for hi-hat rolls
 
 ### Cinematic Mallets
@@ -471,6 +532,8 @@ Modal-synthesis marimba, vibraphone, celesta and glockenspiel.
 - **Samples:** 34 zones in 4 groups (Marimba, Vibes, Celesta, Glock), mono, 24-bit / 44.1 kHz, 8.6 MB
 - **Instruments (menu + layer):** Marimba, Vibraphone, Celesta, Glockenspiel
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Studio, Ambient Wash, Strummed Chords, Celesta + Glock
+- **Other formats:** SFZ: `Cinematic Mallets - Celesta.sfz`, `Cinematic Mallets - Glockenspiel.sfz`, `Cinematic Mallets - Marimba.sfz`, `Cinematic Mallets - Vibraphone.sfz`; Decent Sampler: `Cinematic Mallets - Celesta.dspreset`, `Cinematic Mallets - Glockenspiel.dspreset`, `Cinematic Mallets - Marimba.dspreset`, `Cinematic Mallets - Vibraphone.dspreset` (in `SFZ/03 Band and Keys` and `Decent Sampler/03 Band and Keys`)
 - **Tip:** Pick an instrument, layer a second one on top
 
 ## 04 Cinematic
@@ -485,6 +548,8 @@ Trailer braams: brass-like saw walls and a ring-modulated, folded 'Blaster'.
 - **Samples:** 10 zones in 2 groups (Braam, Blaster), stereo, 24-bit / 44.1 kHz, 11.6 MB
 - **Instruments (menu + layer):** Braam, Blaster
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Studio, Ambient Wash, Strummed Chords, Inception Stack
+- **Other formats:** SFZ: `Braams and Hits - Blaster.sfz`, `Braams and Hits - Braam.sfz`; Decent Sampler: `Braams and Hits - Blaster.dspreset`, `Braams and Hits - Braam.dspreset` (in `SFZ/04 Cinematic` and `Decent Sampler/04 Cinematic`)
 - **Tip:** Low keys = biggest braams. Layer Braam + Blaster
 
 ### Drones and Textures
@@ -496,6 +561,8 @@ Eight evolving underscore beds: strings, air, choir, metal, rumble, ghost, tensi
 - **Playable range:** C0 - C6 (MIDI 24-96)
 - **Samples:** 8 zones in 8 groups (DarkStrings, GlassAir, ChoirDrone, MetalShimmer, SubRumble, GhostPad, TensionCluster, Heartbeat), stereo, 24-bit / 44.1 kHz, 9.9 MB
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Lush and Wide, Dark and Close, Epic Octaves, Tempo Pulse
+- **Other formats:** SFZ: `Drones and Textures - ChoirDrone.sfz`, `Drones and Textures - DarkStrings.sfz`, `Drones and Textures - GhostPad.sfz`, `Drones and Textures - GlassAir.sfz`, `Drones and Textures - Heartbeat.sfz`, `Drones and Textures - MetalShimmer.sfz`, `Drones and Textures - SubRumble.sfz`, `Drones and Textures - TensionCluster.sfz`, `Drones and Textures.sfz`; Decent Sampler: `Drones and Textures - ChoirDrone.dspreset`, `Drones and Textures - DarkStrings.dspreset`, `Drones and Textures - GhostPad.dspreset`, `Drones and Textures - GlassAir.dspreset`, `Drones and Textures - Heartbeat.dspreset`, `Drones and Textures - MetalShimmer.dspreset`, `Drones and Textures - SubRumble.dspreset`, `Drones and Textures - TensionCluster.dspreset` (in `SFZ/04 Cinematic` and `Decent Sampler/04 Cinematic`)
 - **Tip:** Pick two textures and blend them
 
 ### Dark Atmospheres
@@ -507,6 +574,8 @@ Eight dark beds: abyss, wind, bowed metal, haunted choir, machine hum, deep spac
 - **Playable range:** C0 - C6 (MIDI 24-96)
 - **Samples:** 8 zones in 8 groups (Abyss, Wind, BowedMetal, HauntedChoir, MachineHum, DeepSpace, Pulse, Shimmer), stereo, 24-bit / 44.1 kHz, 10.0 MB
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Lush and Wide, Dark and Close, Epic Octaves, Tempo Pulse
+- **Other formats:** SFZ: `Dark Atmospheres - Abyss.sfz`, `Dark Atmospheres - BowedMetal.sfz`, `Dark Atmospheres - DeepSpace.sfz`, `Dark Atmospheres - HauntedChoir.sfz`, `Dark Atmospheres - MachineHum.sfz`, `Dark Atmospheres - Pulse.sfz`, `Dark Atmospheres - Shimmer.sfz`, `Dark Atmospheres - Wind.sfz`, `Dark Atmospheres.sfz`; Decent Sampler: `Dark Atmospheres - Abyss.dspreset`, `Dark Atmospheres - BowedMetal.dspreset`, `Dark Atmospheres - DeepSpace.dspreset`, `Dark Atmospheres - HauntedChoir.dspreset`, `Dark Atmospheres - MachineHum.dspreset`, `Dark Atmospheres - Pulse.dspreset`, `Dark Atmospheres - Shimmer.dspreset`, `Dark Atmospheres - Wind.dspreset` (in `SFZ/04 Cinematic` and `Decent Sampler/04 Cinematic`)
 - **Tip:** Horror and thriller beds. Blend any two
 
 ### Reverse Swells
@@ -519,6 +588,8 @@ Chromatic reversed piano, strings and pad swells for transitions.
 - **Samples:** 15 zones in 3 groups (RevPiano, RevStrings, RevPad), stereo, 24-bit / 44.1 kHz, 10.3 MB
 - **Instruments (menu + layer):** Reverse Piano, Reverse Strings, Reverse Pad
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Studio, Ambient Wash, Strummed Chords
+- **Other formats:** SFZ: `Reverse Swells - Reverse Pad.sfz`, `Reverse Swells - Reverse Piano.sfz`, `Reverse Swells - Reverse Strings.sfz`; Decent Sampler: `Reverse Swells - Reverse Pad.dspreset`, `Reverse Swells - Reverse Piano.dspreset`, `Reverse Swells - Reverse Strings.dspreset` (in `SFZ/04 Cinematic` and `Decent Sampler/04 Cinematic`)
 - **Tip:** Pitched reverse swells: play them just before the beat
 
 ### Cinematic FX
@@ -554,6 +625,8 @@ Twenty trailer-style one-shots: impacts, risers, whooshes, downers and stingers.
   | G2 | 55 | Distant Thunder | Misc |
 
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Replika Delay > Raum Reverb
+- **Presets:** Default, Studio Dry, Big Room, Crushed
+- **Other formats:** SFZ: `Cinematic FX.sfz`; Decent Sampler: `Cinematic FX.dspreset` (in `SFZ/04 Cinematic` and `Decent Sampler/04 Cinematic`)
 - **Tip:** C2-G3: impacts, risers, whooshes, downers, stingers
 
 ### Hybrid Trailer Percussion
@@ -585,6 +658,8 @@ Hybrid trailer percussion: booms, slams, distorted toms, chains and glitch hits.
   | D#2 | 51 | Rumble Hit | Booms |
 
 - **Effects chain (built by the script):** Filter > Bus Compressor > Supercharger GT > Stereo Modeller > Raum Reverb
+- **Presets:** Default, Studio Dry, Big Room, Crushed
+- **Other formats:** SFZ: `Hybrid Trailer Percussion.sfz`; Decent Sampler: `Hybrid Trailer Percussion.dspreset` (in `SFZ/04 Cinematic` and `Decent Sampler/04 Cinematic`)
 - **Tip:** Distorted booms, slams and toms. Try Note Repeat
 
 ### Sci-Fi FX
@@ -618,6 +693,8 @@ Eighteen sci-fi effects: lasers, alarms, robots, data, teleports, ships and warp
   | F2 | 53 | Warp | SciFi |
 
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Replika Delay > Raum Reverb
+- **Presets:** Default, Studio Dry, Big Room, Crushed
+- **Other formats:** SFZ: `Sci-Fi FX.sfz`; Decent Sampler: `Sci-Fi FX.dspreset` (in `SFZ/04 Cinematic` and `Decent Sampler/04 Cinematic`)
 - **Tip:** C2 upwards: lasers, alarms, robots, teleports, ships
 
 ### Tension Toolkit
@@ -645,6 +722,8 @@ Suspense tools: clock, heartbeat and pulse loops, scrapes, clusters, stingers, b
   | B1 | 47 | Metal Creak | Textures |
 
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Replika Delay > Raum Reverb
+- **Presets:** Default, Studio Dry, Big Room, Crushed
+- **Other formats:** SFZ: `Tension Toolkit.sfz`; Decent Sampler: `Tension Toolkit.dspreset` (in `SFZ/04 Cinematic` and `Decent Sampler/04 Cinematic`)
 - **Tip:** C2-D#2 are loops: hold the key
 
 ## 05 World
@@ -658,6 +737,8 @@ Hand-played steel hang drum with soft, singing overtones.
 - **Playable range:** A1 - G#5 (MIDI 45-92)
 - **Samples:** 14 zones in 2 groups (RR1, RR2), mono, 24-bit / 44.1 kHz, 5.6 MB
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Studio, Ambient Wash, Strummed Chords, Pentatonic Arp
+- **Other formats:** SFZ: `Hang Drum.sfz`; Decent Sampler: `Hang Drum.dspreset` (in `SFZ/05 World` and `Decent Sampler/05 World`)
 - **Tip:** 2 round robins, rings out naturally
 
 ### Steel Pan
@@ -669,6 +750,8 @@ Caribbean steel pan, bright and percussive.
 - **Playable range:** D2 - C6 (MIDI 50-96)
 - **Samples:** 14 zones in 2 groups (RR1, RR2), mono, 24-bit / 44.1 kHz, 2.9 MB
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Studio, Ambient Wash, Strummed Chords, Pentatonic Arp
+- **Other formats:** SFZ: `Steel Pan.sfz`; Decent Sampler: `Steel Pan.dspreset` (in `SFZ/05 World` and `Decent Sampler/05 World`)
 - **Tip:** 2 round robins, rings out naturally
 
 ### Kalimba
@@ -680,6 +763,8 @@ Thumb piano tines on a wooden resonator box.
 - **Playable range:** D2 - C6 (MIDI 50-96)
 - **Samples:** 14 zones in 2 groups (RR1, RR2), mono, 24-bit / 44.1 kHz, 3.6 MB
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Studio, Ambient Wash, Strummed Chords, Pentatonic Arp
+- **Other formats:** SFZ: `Kalimba.sfz`; Decent Sampler: `Kalimba.dspreset` (in `SFZ/05 World` and `Decent Sampler/05 World`)
 - **Tip:** 2 round robins, rings out naturally
 
 ### Gamelan Bells
@@ -691,6 +776,8 @@ Balinese-style metallophone with shimmering beating pairs.
 - **Playable range:** G1 - E6 (MIDI 43-100)
 - **Samples:** 18 zones in 2 groups (RR1, RR2), stereo, 24-bit / 44.1 kHz, 13.8 MB
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Studio, Ambient Wash, Strummed Chords, Pentatonic Arp
+- **Other formats:** SFZ: `Gamelan Bells.sfz`; Decent Sampler: `Gamelan Bells.dspreset` (in `SFZ/05 World` and `Decent Sampler/05 World`)
 - **Tip:** 2 round robins, rings out naturally
 
 ### Sitar and Tanpura
@@ -703,6 +790,8 @@ Sitar with buzzing jawari bridge and sympathetic strings, plus a looping tanpura
 - **Samples:** 15 zones in 3 groups (RR1, RR2, Tanpura), mono, 24-bit / 44.1 kHz, 5.3 MB
 - **Instruments (menu + layer):** Sitar, Tanpura Drone
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Studio, Ambient Wash, Strummed Chords, Raga Drone
+- **Other formats:** SFZ: `Sitar and Tanpura - Sitar.sfz`, `Sitar and Tanpura - Tanpura Drone.sfz`; Decent Sampler: `Sitar and Tanpura - Sitar.dspreset`, `Sitar and Tanpura - Tanpura Drone.dspreset` (in `SFZ/05 World` and `Decent Sampler/05 World`)
 - **Tip:** Layer the Tanpura drone under the sitar
 
 ### Duduk
@@ -718,6 +807,8 @@ Mournful double-reed flute in the duduk style, with legato slides.
   - `C#0` **Staccato** - short, round robin, velocity (StacRR1 / StacRR2)
   - `D0` **Swell** - auto-swell, CC1 dynamics (Sus)
 - **Effects chain (built by the script):** Filter > Stereo Modeller > Choral > Replika Delay > Raum Reverb
+- **Presets:** Default, Epic Legato, Soft Underscore, Ostinato 1/16, Desert Lament
+- **Other formats:** SFZ: `Duduk.sfz`; Decent Sampler: `Duduk - Staccato.dspreset`, `Duduk - Sustain.dspreset`, `Duduk - Swell.dspreset` (in `SFZ/05 World` and `Decent Sampler/05 World`)
 - **Tip:** Mournful double-reed lead, legato on
 
 ## Performer (PERFORM page, all melodic instruments)

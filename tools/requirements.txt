@@ -1,6 +1,7 @@
 numpy>=1.26
 scipy>=1.11
 numba>=0.60
+pillow>=10.0   # wallpapers
 # optional: spectrogram sheets (qa_report.py --png) and Lua dry-run tests
 matplotlib>=3.8
 lupa>=2.0

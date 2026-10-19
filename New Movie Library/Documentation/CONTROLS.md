@@ -1,12 +1,16 @@
 # New Movie Library: Controls
 
 Every instrument has the same three pages. The tabs are at the top left; the
-line next to them shows a tip for the loaded instrument. Hover over any control
-to see its help text in Kontakt's info pane.
+line next to them shows a tip for the loaded instrument, and the **Preset** menu
+is at the top right. Hover over any control to see its help text in Kontakt's
+info pane.
+
+The [player plugin](../../Plugin/README.md) has exactly the same controls, with the
+same names, ranges and defaults, so everything below applies to it too.
 
 ## PLAY
 
-### Synth engine (pads, choir, supersaw, bass, drones)
+### Synth engine (pads, choir, supersaw, brass synth, mono bass, 808, drones, atmospheres)
 
 | Control | What it does |
 |---|---|
@@ -19,7 +23,7 @@ to see its help text in Kontakt's info pane.
 | Mono / Glide + Glide | Monophonic legato with portamento, for leads and bass. Bypasses chords and arp. |
 | Mod > Tone | How far the mod wheel (CC1) opens the filter. |
 
-### Articulation engine (strings, brass, woodwinds, timpani)
+### Articulation engine (strings, solo violin and cello, brass, horns, woodwinds, timpani, duduk)
 
 | Control | What it does |
 |---|---|
@@ -31,21 +35,22 @@ to see its help text in Kontakt's info pane.
 | Swell Time | Fade-in length of the *Swell* articulation. |
 | Legato + Leg. Speed + Portamento | Monophonic legato for sustained articulations: overlapping notes crossfade, with an optional slide into the new note. |
 | Vel Range / Vel Curve | Velocity response of the short articulations. |
+| Close Mic / Hall Mic | (Ensemble Strings, Brass Ensemble) Levels of the close and the distant hall microphones on the sustained articulations. All the way down = that mic is off and uses no voices. Short articulations use the close mics. |
 
 CC11 (expression) scales the overall level on top of the dynamics.
 
-### Keys engine (EP, guitar, bass, organ, mallets, pluck, braams)
+### Keys engine (pianos, EP, guitars, bass, organ, mallets, harp, pluck, tape keys, braams, reverse swells, world instruments)
 
 | Control | What it does |
 |---|---|
-| Instrument / Layer / Layer Level | Choose the sound and optionally layer a second one (mallets, organ, braams). |
+| Instrument / Layer / Layer Level | Choose the sound and optionally layer a second one (mallets, organ, braams, tape keys, electric guitar, sitar + tanpura). |
 | Attack / Release | Fade-in and release time. |
 | Vel Range / Vel Curve | Velocity to volume range and curve. Velocity also picks the sample layer. |
 | Let Ring | Notes ring out naturally instead of stopping on key release. |
 | Re-strike | How fast a ringing note fades when the same key is played again. |
 | Wheel = Fast | (Organ) Mod wheel above half switches the rotary speaker to fast. |
 
-### Drum engine (drum kit, orchestral percussion, FX)
+### Drum engine (drum kits, orchestral and trailer percussion, cinematic and sci-fi FX, tension toolkit)
 
 | Control | What it does |
 |---|---|
@@ -54,7 +59,8 @@ CC11 (expression) scales the overall level on top of the dynamics.
 | Vel Range / Vel Curve | Velocity response. Velocity also picks the soft/hard layer. |
 | Humanize | Small random level and pitch changes per hit, on top of the round robins. |
 | Kit Spread | Stereo placement of the pieces (drummer's perspective). |
-| Roll Release / Roll Dyn | Release time and level (also CC1) of held rolls. |
+| Roll Release / Roll Dyn | Release time and level (also CC1) of held rolls and loops. |
+| Note Repeat | Held keys retrigger in time with the host tempo: 1/8, 1/8 T, 1/16, 1/16 T or 1/32. Great for hi-hat rolls and fills. Velocity of the held key is kept. Held rolls and loops are not repeated. |
 
 ## SOUND
 
@@ -90,3 +96,20 @@ time it runs. It's saved with the instrument.
 Chords feed the arpeggiator, and Scale Lock applies to both. For example, Scale
 Lock *Natural Minor* + Chord *Diatonic Triad* + Arp *Up 1/16* turns single
 notes into in-key arpeggiated chords.
+
+## Presets
+
+The **Preset** menu (top right) recalls complete snapshots of every control:
+
+- **Default** resets the instrument to how it was built.
+- **Pads and synths:** Lush and Wide, Dark and Close, Epic Octaves, Tempo Pulse, plus a few specials
+  (Supersaw *Mono Lead*, 808 *Distorted Slide*).
+- **Orchestral:** Close Mics, Concert Hall (mic mixes), Epic Legato, Soft Underscore, Ostinato 1/16.
+- **Keys and world:** Studio, Ambient Wash, Strummed Chords, plus specials such as Harp *Glissando*,
+  Felt Piano *Intimate*, Electric Guitar *Power Chords* / *Chugs*, Braams *Inception Stack*,
+  world instruments *Pentatonic Arp*, Sitar *Raga Drone*, Duduk *Desert Lament*.
+- **Drums and FX:** Studio Dry, Big Room, Crushed, and Trap Kit *Hat Rolls 1/32*.
+
+The [Instrument Guide](INSTRUMENT%20GUIDE.md) lists the presets of every instrument. Picking a preset
+changes the controls the same way as moving them by hand, so you can tweak further and save
+the result with your project (Kontakt saves it in the instrument or multi).
