@@ -161,6 +161,18 @@ def write_extras():
             f.write("\n".join(f"  {n}.nki" for n in names) + "\n")
 
 
+def write_formats(insts):
+    """SFZ + Decent Sampler versions, the MIDI phrase pack and the wallpapers."""
+    from nml import artwork, formats, midi_pack
+    for sub in ("SFZ", "Decent Sampler", "MIDI"):
+        shutil.rmtree(os.path.join(LIB, sub), ignore_errors=True)
+    counts = formats.export(insts, LIB)
+    n_mid = midi_pack.export(LIB)
+    n_pic = artwork.export(LIB)
+    print(f"{counts['SFZ']} SFZ files, {counts['Decent Sampler']} Decent Sampler presets, {n_mid} MIDI files, "
+          f"{n_pic} pictures")
+
+
 def write_docs(insts):
     from nml.docs_gen import instrument_guide
     sizes = {}
@@ -203,6 +215,7 @@ def main():
     write_scripts(CATALOG)
     write_manifest(CATALOG)
     write_extras()
+    write_formats(CATALOG)
     write_docs(CATALOG)
     from nml import plugin_gen
     n, p, size = plugin_gen.export(CATALOG, os.path.join(ROOT, "plugin-src", "src", "generated"))

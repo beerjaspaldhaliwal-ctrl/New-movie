@@ -8,3 +8,5 @@
 *.vst3 binary
 *.so binary
 *.mid binary
+*.sfz text eol=lf
+*.dspreset text eol=lf
